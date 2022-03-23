@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본적인 갤러리의 시작을 카피</title>
+  <style>
+    body {
+      margin: 20px auto;
+      padding: 0;
+      width: 620px;
+      background: #192829;
+    }
+
+    .thumbs {
+      float: left;
+      width: 100px;
+      background: wheat;
+    }
+
+    .thumbs img {
+      margin-bottom: 3px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .thumbs img:hover {
+      border-color: tomato;
+    }
+
+    #largeImg {
+      margin-left: 110px;
+      padding: 5px;
+      width: 500px;
+      height: 280px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    #caption {
+      position: relative;
+      padding: 10px;
+      font-family: "나눔고딕", "맑은 고딕";
+      font-size: 12px;
+      background-color: wheat;
+      color: tomato;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script src="js/jQuery.js"></script> <!-- 이걸 써줘야 제이쿼리 사용-->
+</head>
+
+<body>
+
+  <div class="thumbs">
+    <a href="images/pic1.jpg" title="img1"><img src="images/th_pic1.jpg" alt=""></a>
+    <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores omnis reprehenderit aperiam, iure odit ducimus
+      deserunt praesentium, sint culpa cumque, deleniti non quod voluptatum illo quas debitis sequi vero consequuntur.
+      Recusandae, dignissimos dolor voluptatum perferendis iure numquam illum suscipit culpa error officia sequi
+      corrupti pariatur laborum ratione officiis soluta ab necessitatibus explicabo harum fugit? Obcaecati officiis
+      incidunt reprehenderit ut expedita.
+      turi perferendis deserunt recusandae praesentium voluptatum at officia temporibus eveniet odio quos sed dolorum
+      suscipit delectus explicabo nobis, veritatis aliquam blanditiis quibusdam nam modi sapiente? Optio, eaque esse?
+      Accusamus, neque.
+    </em>
+
+    <a href="images/pic2.jpg" title="img2"><img src="images/th_pic2.jpg" alt=""></a>
+    <em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ipsa eius eligendi architecto a ipsum magnam in
+      odit rem. Laudantium aut voluptate similique voluptates praesentium, illum repellendus nobis hic iusto!
+      Eaque adipisci optio sit dicta fugiat iusto quam hic illum iste, reprehenderit accusamus debitis blanditiis cumque
+      necessitatibus nobis asperiores ad eligendi consequuntur nam nesciunt dolores provident rerum similique. Aliquid,
+      voluptatem?</em>
+
+    <a href="images/pic3.jpg" title="img3"><img src="images/th_pic3.jpg" alt=""></a>
+    <em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et aspernatur dolorem ea quae? Provident cumque ad
+      deserunt expedita quae, molestiae voluptas deleniti aliquam adipisci accusantium iusto eos officiis odit eum!</em>
+
+  </div>
+
+  <div id="largeImg"><img src="images/pic1.jpg" alt="image1"></div>
+
+  <script>
+    $("em").hide(); // em 태그의 애들 숨기자
+
+    $(".thumbs a").click(function (e) {
+      e.preventDefault(); // a 태그라서 클릭하면 href 이벤트가 실행되는데 이것을 막음(prevent)
+
+      if ($("#caption")) {  // 만약에 캡션이 있으면 
+        $("#caption").remove(); // 캡션을 지워라
+      }
+
+      var path = $(this).attr("href"); // attr = href태그로 들어오는 애들이 뭔지를 보여주네
+      console.log(path);
+
+      if (path != $("#largeImg img").attr("src")) {
+        $("#largeImg img").attr({ src: path });  // 속성 적용
+        $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 }, 500);
+      }
+
+      // 툴팁(==설명문)에 들어갈 내용을 갖고온다.. this == .thumbs a 
+      var msg = $(this).next("em").text();
+      // 해당되는 em의 텍스트만 msg 변수에 담는다.
+      // console.log(msg);
+
+      // 이렇게하면 이미지태그에 caption이 뒤에 붙는다는 건가
+      $("#largeImg").append('<div id="caption"></div>');
+      // $("largeImg") 안에 마지막 자식요소 뒤에 태그를 추가
+      $("#largeImg #caption").text(msg);
+      // 추가된 태그에 msg를 텍스트로 적용
+
+      var posy = $("#largeImg #caption").height() + 27;
+      $("#largeImg #caption").animate({ top: "-=" + posy + "px" });
+
+
+    });
+
+  </script>
+</body>
+
+</html>

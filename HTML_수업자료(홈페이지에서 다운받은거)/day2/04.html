@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 문단에 대한 기본스타일</title>
+    <style type="text/css">
+        /*
+        - line-height "normal, 숫자, 숫자em, %“ : 줄간격
+        - text-indent "숫자em, 퍼센트, 숫자“ : 들여쓰기, 음수사용시 내어쓰기
+        - text-align "left, right, center, justify" : 텍스트나 이미지 수평정렬
+        - text-decoration “none, underline, overline, line-through" : 줄 긋기 유전되지 않음
+        - letter-spacing "normal, 숫자em, 숫자“ : 글자 간격  
+        - text-transform "capitalize, uppercase, lowercase, none" : 영문자 변환 첫글자만 대문자 소문자
+        - vertical-align "baseline, sup, sub, middle, text-top, - top, text-bottom, bottom" :텍스트나 이미지 수직정렬
+       
+        */ 
+        .txt05{line-height:1.2; font-size: 12px;
+               letter-spacing: 0px;
+               word-spacing: 30px;
+               text-indent: -3000px;}
+        a{text-decoration: none;}      
+        
+        .box{width: 1000px; height: 150px;
+            background-color: darkorange;
+            text-align: center;
+            font-size: 20px; 
+            font-weight: 900;
+            color: #fff;
+           line-height: 150px;}
+     </style>
+    </head>
+<body>
+  
+
+    <p class="txt05">
+        문단태그 입니다<br>
+        문단 태그 입니다<br>
+        문단태그 입니다<br>
+        문단태그 입니다<br>
+        문단태그 입니다
+    </p>
+
+    <a href="#">네이버로가기</a>
+    <p style="text-decoration: underline;">링크입니다</p>
+    <p style="text-decoration: line-through;">링크입니다</p>
+    <p style="text-decoration: overline;">링크입니다</p>
+
+    <h2 style="text-transform:capitalize;">aaaaaa</h2>
+    <h2 style="text-transform:lowercase;">aaaaaa</h2>
+    <h2 style="text-transform:uppercase;">aaaaaa</h2>
+    <h2>aaaaaa</h2>
+
+    <p class="box">box</p>
+</body>
+</html>

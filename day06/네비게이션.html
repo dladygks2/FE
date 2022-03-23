@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    .main_nav {
+        margin: 50px;
+        width: 500px;
+        height: 30px;
+        border: 1px solid #ccc;
+    }
+
+    .main_nav>li {
+        float: left;
+        width: 25%;
+    }
+
+    .main_nav a {
+        display: block;
+        height: 30px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .main_nav a:hover {
+        background-color: beige;
+        transition: 0.7s;
+    }
+
+    .sub_nav {
+        /* display: none; */
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    .main_nav>li:hover .sub_nav {
+        /* display: block; */
+        opacity: 1;
+        transition: 0.7s;
+    }
+</style>
+
+<body>
+
+    <ul class="main_nav">
+        <li><a href="#">menu1</a>
+            <ul class="sub_nav">
+                <li><a href="">submn1</a></li>
+                <li><a href="">submn2</a></li>
+                <li><a href="">submn3</a></li>
+                <li><a href="">submn4</a></li>
+                <li><a href="">submn5</a></li>
+            </ul>
+        </li>
+        <li><a href="#">menu2</a>
+            <ul class="sub_nav">
+                <li><a href="">submn1</a></li>
+                <li><a href="">submn2</a></li>
+                <li><a href="">submn3</a></li>
+                <li><a href="">submn4</a></li>
+                <li><a href="">submn5</a></li>
+            </ul>
+        </li>
+        <li><a href="#">menu3</a>
+            <ul class="sub_nav">
+                <li><a href="">submn1</a></li>
+                <li><a href="">submn2</a></li>
+                <li><a href="">submn3</a></li>
+                <li><a href="">submn4</a></li>
+                <li><a href="">submn5</a></li>
+            </ul>
+        </li>
+        <li><a href="#">menu4</a>
+            <ul class="sub_nav">
+                <li><a href="">submn1</a></li>
+                <li><a href="">submn2</a></li>
+                <li><a href="">submn3</a></li>
+                <li><a href="">submn4</a></li>
+                <li><a href="">submn5</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수_Math 객체</title>
+</head>
+<body>
+   <script>
+       'use strict';
+       
+       console.log(Math.min()); //Infinity 무한
+       console.log(Math.max()); //Infinity
+       console.log(Math.min(1,10,-10,1000,0)); //-10
+       console.log(Math.min(1,10,'-10',1000,0));//-10
+       console.log(Math.min(1,10,-10,'천',0)); //NaN, Not-A-Number(숫자가 아님)
+  
+       console.log(Math.round(10.49)); //10
+       console.log(Math.round(10.5));  //11
+       console.log(Math.round(-10.5)); //-10
+       console.log(Math.round(-10.51)); //-11
+
+       console.log(Math.floor(10.49)); // 10
+       console.log(Math.floor(10.5));  // 10
+       console.log(Math.floor(-10.5)); // -11
+       console.log(Math.floor(-10.51));// -11
+
+       console.log(Math.ceil(10.49));
+       console.log(Math.ceil(10.5));
+       console.log(Math.ceil(-10.5));
+       console.log(Math.ceil(-10.51));
+       
+
+       console.log('------------------');
+
+       // 0 ~ 0.9999999.. 1빼고
+       console.log(Math.random());
+       
+       //0 ~ 10 , 10빼고 
+       console.log(Math.random() * 10); 
+
+       //0 ~ 10
+       console.log((Math.random() * 10)+1); 
+
+
+        console.log('------------------');
+        
+        // 0 ~ 5.99999..
+        console.log(Math.random() * 6);
+        // 1 ~ 6
+        console.log(Math.floor(Math.random() * 6) + 1);
+        
+   </script>
+    
+    
+</body>
+</html>

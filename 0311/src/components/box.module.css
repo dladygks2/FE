@@ -1,0 +1,11 @@
+.Box {
+    background-color:red;
+    color: white;
+    padding: 2rem;
+}
+
+.Box02 {
+    background-color:rgb(89, 235, 179);
+    color: white;
+    padding: 2rem;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체_클래스</title>
+</head>
+<body>
+   <script>
+       'use strict';
+       function Dog(name, age, color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+
+        const Rucy = new Dog("루시", 10, "흰색");//생성자 
+        console.log(`이름 : ${Rucy.name}`);
+        console.log(`색상 : ${Rucy.color}`);
+        console.log(`나이 : ${Rucy.age}`);
+        console.log(Rucy);
+
+
+        const PPomi = new Dog("뽀미", 5, "흰색");//생성자 
+        console.log(`이름 : ${PPomi.name}`);
+        console.log(`색상 : ${PPomi.color}`);
+        console.log(`나이 : ${PPomi.age}`);
+   </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        const aaa = 10;
+
+        // switch문의 끝은 무조건 break 해줘라
+        // switch (aaa) {
+        //     case "10":
+        //         실행문; break;
+
+        //     case "20":
+        //         실행문; break;
+
+        //     case "30":
+        //         실행문; break;
+        //     default: 실행문; // 위의 case에 해당하는 것이 없으면 전부 default로 가고 default가 실행된 후에 끝난다.
+        // }
+
+
+        // 예금 관련 문의사항
+
+        // const Num = prompt("번호를 입력해주세요.");
+
+        // switch (Num) {
+        //     case "1":
+        //         document.write('예금조회를 선택하셨습니다.'); break;
+        //     case "2":
+        //         document.write('예금출금을 선택하셨습니다.'); break;
+        //     case "3":
+        //         document.write('예금입금을 선택하셨습니다.'); break;
+        //     case "4":
+        //         document.write('예금이체를 선택하셨습니다.'); break;
+        //     default:
+        //         document.write('번호를 잘못누르셨습니다.');
+        // }
+
+
+        // 메뉴 주문. 피자= p, 스타게티 = s, 리조또 = r, 드링크 = d
+        var menu = prompt('메뉴를 선택하세요');
+        switch (menu) {
+            case 'P':
+            case 'p':
+                document.write('피자를 주문하셨습니다.'); braak;
+            case 'S':
+            case 's':
+                document.write('스파게티를 주문하셨습니다.'); braak;
+            case 'R':
+            case 'r':
+                document.write('리조또를 주문하셨습니다.'); braak;
+            case 'd':
+            case 'D':
+                document.write('드링크를 주문하셨습니다.'); braak;
+            default:
+                document.write('메뉴가 없습니다.')
+        }
+    </script>
+
+</body>
+
+</html>

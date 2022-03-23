@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseWheelTest</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #wrap>div {
+            width: 100%;
+            height: 100vh;
+            font-size: 200px;
+        }
+
+        #wrap>div.con1 {
+            background-color: aquamarine;
+        }
+
+        #wrap>div.con2 {
+            background-color: rgb(216, 204, 30);
+        }
+
+        #wrap>div.con3 {
+            background-color: rgb(100, 102, 233);
+        }
+
+        #wrap>div.con4 {
+            background-color: rgb(226, 78, 226);
+        }
+
+        #wrap>div.con5 {
+            background-color: rgb(206, 121, 150);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="con1">con1</div>
+        <div class="con2">con2</div>
+        <div class="con3">con3</div>
+        <div class="con4">con4</div>
+        <div class="con5">con5</div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // ht는 현재화면의 높이
+            var ht = $(window).height();  // 현재 화면의 높이값을 변수 ht에 대입
+            $('#wrap> div').height(ht);   // 지정된 대상의 높이를 화면의 높이로 지정
+
+            // 화면크기가 바뀔때'resize'
+            $(window).on('resize', function () {    // 화면의 크기가 바뀐다면 아래에 값들도 함께 바꿔 준다.
+                var ht = $(window).height();
+                $('#wrap> div').height(ht);
+            });
+
+            // 마우스 휠 이벤트 
+            $('#wrap> div').on('mousewheel', function (event, delta) {
+                // delta값이 마우스휠의 상태로 값이 0보다 크거나 작게 된다면 화면의 스크롤에 의해서 상하로 이동
+                if (delta > 0) {
+                    var prev = $(this).prev().offset().top;
+                    $('html, body').stop().animate({ 'scrollTop': prev }, 1000, 'easeOutExpo');
+                } else if (delta < 0) {
+                    var next = $(this).next().offset().top;
+                    $('html, body').stop().animate({ 'scrollTop': next }, 1000, 'easeOutExpo');
+                }
+            });
+
+        }); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+1개월차) html 
+2months) javascript for JQUERY
+
+DB = MONGO DB
+
+html - 웹 문서의 구조
+css - 웹 문서 디자인
+
+동적인 부분 : JQUERY 같은 애들, 처음에는 자바스크립트 그다음엔 플래시 그다음엔 제이쿼리 요즘인 자바스크립트로 다시 돌아옴
+
+자바스크립트 기본 -> JQUERY -> 자바스크립트 spa -> 이 2개 주로 사용(리액트, 뷰JS), 랭귤러
+
+---변천사
+HTML4 -> XHTML -> HTML5(모바일)
+
+
+

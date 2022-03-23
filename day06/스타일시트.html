@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 20000px;
+        }
+
+        body {
+            /* background-color: burlywood; */
+        }
+
+        .box01 {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        .color_box1 {
+            background-color: aquamarine;
+        }
+
+        .color_box2 {
+            background-color: #cccc;
+            /* 투명도를 정해주는 스타일시트 얘는 글자포함 전부다 투명도 주네*/
+            /* opacity: 0.2; */
+            opacity: 1;
+        }
+
+        .color_box3 {
+            /* (빨강, 초록, 파랑, 투명도) */
+            background: rgba(0, 0, 0, 0.1);
+            /* 얘는 사라지게 하는 애다. */
+            /* display: none; */
+
+            /* 얘는 숨김 그러나 자리는 차지하고 있다. */
+            /* visibility: hidden; */
+            display: block;
+        }
+
+        .color_box4 {
+            background: hsla(207, 75%, 75%, 0.4);
+        }
+
+        /*  */
+
+        .box02 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        .border_radius1 {
+            /* border-radius: 50%; */
+
+            border-radius: 0px;
+            /* border-radius: 50px; */
+        }
+
+        /* hover */
+        .border_radius1:hover {
+            border-radius: 50%;
+            transition: 1s;
+        }
+
+        .border_radius2 {
+            /* border-radius: 50% 50px 50% 50px; */
+            border-radius: 20px 50px 70% 90px;
+        }
+
+        .border_radius3 {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .border_radius4 {
+            border-radius: 50%;
+        }
+
+        /*  */
+        .box03 {
+            margin: 80px;
+            width: 200px;
+            height: 150px;
+            background-color: khaki;
+            box-shadow: 10px 10px 20px 10px gray;
+        }
+
+        /*  */
+        .box03-1 {
+            margin: 80px;
+            width: 200px;
+            height: 150px;
+            background-color: khaki;
+            box-shadow: -10px -10px 20px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /*  */
+        .txt {
+            /* color: red; */
+            text-shadow:
+                0 0 4px #ccc,
+                0 -3px 4px #ff3,
+                1px -6px 6px #fd3,
+                -1px -9px 11px #f80,
+                1px -12px 18px #f20;
+        }
+
+
+
+        #main_img {
+            width: 100%;
+            height: 464px;
+            background: url(../day06/main.jpg) no-repeat 50% 0;
+            /* background-size: 100%; */
+            /* background-size: contain; */
+            background-size: cover;
+            border-bottom: 5px solid red;
+        }
+
+
+        .box04 {
+            margin: 100px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #f80;
+            outline: 2px solid #f20;
+            /* offset은 여백 (확장 및 축소가 가능) */
+            /* outline-offset: 20px; */
+            outline-offset: -20px;
+        }
+
+        /*  */
+        .box05 {
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-top: 30px;
+        }
+
+        .gradient1 {
+            /* background: linear-gradient( red, green, blue); */
+            /* 밑은 linear의 방향 조절 */
+            /* background: -webkit-linear-gradient(right, red, green, blue); */
+            /* 밑은 각을 줘서 */
+            /* background: -webkit-linear-gradient(45deg, red, green, blue); */
+
+            background: -webkit-linear-gradient(45deg, red 0%, green 50%, blue 60%);
+        }
+
+        .gradient2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(red 10%, green 20%, blue);
+        }
+
+        .gradient3 {
+            background: -gradient(red, green);
+        }
+
+        /* -------------------------------------------------------- */
+
+        .box06 {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            /* transform: translate(100px, 300px); */
+        }
+
+        .box06:hover {
+            /* hover: 마우스 커서를 올리면 이렇게 하겠다. */
+            transform: translate(100px, 100px);
+            transition: 1s;
+        }
+
+        .box07 {
+            margin: 100px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            /* transform: translate(100px, 300px); */
+        }
+
+        .box07:hover {
+            margin: 100px;
+            /* hover: 마우스 커서를 올리면 이렇게 하겠다. */
+            /* scale(1.5) = 1.5배로 커지겠다. */
+            transform: scale(1.5);
+            transition: 1s;
+        }
+
+        .box08 {
+            margin: 100px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            /* transform: translate(100px, 300px); */
+        }
+
+        .box08:hover {
+            transform: rotate(360deg);
+            transition: 1s;
+        }
+
+        .box09 {
+            margin: 100px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            /* transform: translate(100px, 300px); */
+        }
+
+        .box09:hover {
+            /* transform: skew(45deg, 0); */
+            /* transform: skew(-45deg, 0); */
+            /* transform: skew(0, 45deg); */
+            transform: skew(0, -45deg);
+            transition: 1s;
+        }
+
+        .box09-1 {
+            margin: 100px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            /* transform: translate(100px, 300px); */
+            /* transition: 1s; */
+        }
+
+        .box09-1:hover {
+            transition: skewX(-45deg);
+            /* transition: scaleY(); */
+            transition: 1s;
+        }
+    </style>
+</head>
+<!-- '사파리'랑 '크롬 브라우저'를 깔아봐란다. -->
+
+<body>
+    <!-- css3  -->
+    <!-- box shadow 같은애들 -->
+    <div class="box01 color_box1">color_box1</div>
+    <div class="box01 color_box2">color_box2</div>
+    <div class="box01 color_box3">color_box3</div>
+    <div class="box01 color_box4">color_box4</div>
+
+    <div class="box02 border_radius1">border_radius1</div>
+    <div class="box02 border_radius2">border_radius2</div>
+    <div class="box02 border_radius3">border_radius3</div>
+    <div class="box02 border_radius4">border_radius4</div>
+    <div class="box02 border_radius5">border_radius5</div>
+
+    <div class="box03">box_shadow</div>
+    <div class="box03-1">box_shadow-1</div>
+
+    <!-- text shadow -->
+
+    <h1 class="txt">text_shadow</h1>
+
+    <div id="main_img"></div>
+
+    <!-- outline (border랑 조금 비슷, outline은 offset이 있다는 차이가 있다.) -->
+
+    <div class="box04">outline</div>
+
+
+
+
+    <div class="box05 gradient1">gradient1</div>
+    <div class="box05 gradient2">gradient2</div>
+    <div class="box05 gradient3">gradient3</div>
+
+
+    <!--
+ transform: 요소의 형태를 변경
+
+translate : 지정한 크기만큼 이동 , 그냥 자기 자신의 위치를 기준으로 이동
+scale : 지정한 배율 만큼 확대함, 1= 100% ,2=200%
+rotate : 회전시킴 단위: deg
+skew : 경사
+
+-->
+
+
+
+
+    <!-- 스타일시트 요소 변형 -->
+
+    <div class="box06">translate(상대적으로 이동)</div>
+    <div class="box07">scale(상대적인 값으로 크기조절)</div>
+    <div class="box08">rotate(회전)</div>
+    <div class="box09">skew(기울기조절)1</div>
+    <div class="box09">skew(기울기조절)</div>
+    <div class="box10">skew(기울기조절)</div>
+    <div class="box09-1">(09-1)skew(기울기조절)</div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

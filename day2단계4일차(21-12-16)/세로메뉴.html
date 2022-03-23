@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 애니메이션</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .mainmn {
+            width: 400px;
+        }
+
+        .mainmn>li {
+            width: 100px;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .mainmn>li>div {
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+
+
+        .mainmn>li>div.on {
+            color: brown;
+            background-color: pink;
+            transition: 0.8s;
+        }
+
+        .mainmn .submn {
+            width: 100%;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+
+        }
+    </style>
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".submn").hide();
+
+
+            $(".mainmn>li>div").click(function () {
+                $(".mainmn>li>div").removeClass("on");
+                $(this).addClass("on");
+
+                $(".submn").hide();  // each문 사용을 추천한다.
+                // 기본구조 : $(대상).메서드()
+                // $(대상).이벤트(fuction(){});
+                // $(this).next(".submn").show();
+                // $(this).next(".submn").fadeIn();
+                $(this).next(".submn").slideDown();
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <ul class="mainmn">
+        <li>
+            <div>menu</div>
+            <ul class="submn">
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <div>menu</div>
+            <ul class="submn">
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <div>menu</div>
+            <ul class="submn">
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+            </ul>
+        </li>
+        <li>
+            <div>menu</div>
+            <ul class="submn">
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+                <li><a href="">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>

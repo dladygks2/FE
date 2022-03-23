@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>기본적인 갤러리의 시작</title>
+    <style>
+      body {
+        margin: 20px auto;
+        padding: 0;
+        width: 620px;
+        background: #192839;
+      }
+      .thumbs {
+        float: left;
+        width: 100px;
+      }
+      .thumbs img {
+        margin-bottom: 3px;
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+      .thumbs img:hover {
+        border-color: #ef4018;
+      }
+      #largeImg {
+        margin-left: 110px;
+        padding: 5px;
+        width: 500px;
+        height: 280px;
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="thumbs">
+      <a href="images/pic1.jpg" title="image1"
+        ><img src="images/th_pic1.jpg"
+      /></a>
+      <a href="images/pic2.jpg" title="image2"
+        ><img src="images/th_pic2.jpg"
+      /></a>
+      <a href="images/pic3.jpg" title="image3"
+        ><img src="images/th_pic3.jpg"
+      /></a>
+    </div>
+    <div id="largeImg"><img src="images/pic1.jpg" alt="image1" /></div>
+    <script>
+      //제이쿼리에서 태그의 속성를 갖고 오거나 새로이 적용할때 attr()메소드를 사용
+      //속성을 갖고오는 방법은 var 변수 = $(대상).attr(갖고오고자하는속성을 지정);
+      //속성을 적용하는 방법은 $(대상을 지정하고).attr({속성객체:속성값저장한변수});
+
+      $(".thumbs a").click(function (e) {
+        e.preventDefault();
+        var path = $(this).attr("href");
+        // console.log(path);
+        
+		if(path != $("#largeImg img").attr("src")){
+			$("#largeImg img").attr({ src: path });
+            $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 });
+		}
+      
+      });
+    </script>
+  </body>
+</html>

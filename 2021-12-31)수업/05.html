@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* portfolio_study */
+        #portfolio {
+            background-color: violet;
+        }
+
+        #portfolio_study {
+            background-color: blue;
+            color: white;
+        }
+
+        .html {
+            background-color: #ccc;
+        }
+
+        .selected {
+            background-color: gold;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="html">HTML2</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        var cont = document.querySelector(".container");
+        // console.log("cont.hasChildNodes: " + cont.hasChildNodes());
+        // cont.hasChildNodes()
+        // 대상 엘리먼트에 자식요소가 있는지 확인 : true가 나온다.
+        //////////////////////////////////////////////////////////
+        // var blank = document.querySelector(".blank");
+        // console.log("has child nodes : " + blank.hasChildNodes());
+        // 얘는 자식요소가 없으니 false가 나오지
+        //////////////////////////////////////////////////////////
+        var htmlLi = document.querySelector(".html");
+        // console.log(htmlLi.classList);
+        // console.log("class list type : " + typeof (htmlLi.classList)); // type이 object라...
+
+        // for (var i = 0; i < htmlLi.length; i++) {
+
+        //     htmlLi[i].classList('.selected');  // addClass 기능
+        // htmlLi.classList.remove('.selected');  // removeClass 기능   
+        // }
+
+        htmlLi.addEventListener("click", function (e) {
+            var bool = e.target.classList.toggle("selected");
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 애니메이션</title>
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 초기값으로 .box를 숨긴다.
+            // $(".box").hide();
+
+            // .ani
+            $(".ani").click(function () {
+                // 1000 = 1초
+                // $(".box").stop().delay().css({}).animate({}, 1000);  
+                //stop() : 이전의 움직임들을 정지시켜준다.
+                //delay() : 대기시간을 가지고 움직임을 시작한다.
+                //css({}) : 애니메이션 시작부분을 설정한다.
+                //animate({애니메이션 최종상태}, 1000);
+
+                $(".box").stop().delay(100).css({ left: "50px" }).animate({ left: "1000px" }, 1000);
+
+
+            });
+
+            // .ani2
+            $(".ani2").click(function () {
+                $(".box").css({ left: "1000px" }).animate({ left: "50px" }, 500);
+            });
+
+            // .box
+            $(".box").delay(300).css({ left: "0px" }).animate({ left: "0px" }, function () {
+                $(".box").delay(300).css({ left: "50px" }).animate({ left: "1000px" }, function () {
+                    $(".box").delay(100).css({ top: "100px" }).animate({ top: "500px" }, function () {
+                        $(".box").delay(500).css({ left: "1000px" }).animate({ left: "50px" });
+                    });
+                });
+            });
+
+            // 얘들은 따로따로 불러 오는거고 위에는 하나를 움직여주는거다.
+            // $(".box").delay(300).css({ left: "50px" }).animate({ left: "1000px" });
+            // $(".box").delay(100).css({ top: "100px" }).animate({ top: "500px" });
+            // $(".box").delay(500).css({ left: "1000px" }).animate({ left: "50px" });
+            // $(".box").delay(500).css({ top: "50px" }).animate({ top: "1000px", width: "300px" });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button class="ani">start</button>
+    <button class="ani2">back</button>
+
+
+    <div class="box" style="
+            margin: 20px;
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            width: 150px; 
+            height :150px; 
+            border : 2px solid #000; 
+            background-color: aqua;">box</div>
+
+    <!--  -->
+</body>
+
+</html>

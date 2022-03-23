@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width: 500px;
+        height: 200px;
+        margin: 0 auto;
+        border: 3px solid red;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column-reverse;  */
+        /* flex-direction: column-reverse; : 밑에서부터 순서대로 쌓아올린다.  */
+        /* flex-direction: ; */
+        /* flex-direction: column;    세로배치*/
+
+    }
+
+    .wrapper div {
+        width: 100px;
+        border: 1px solid #000;
+        background-color: blueviolet;
+    }
+
+    /* #box3 {
+        align-self: flex-start;
+    } */
+
+    #box1 {
+        order: 1;
+    }
+
+    #box2 {
+        order: 2;
+    }
+
+    #box3 {
+        order: 3;
+    }
+</style>
+
+<body>
+    <h2>flex ))) justify-content</h2>
+    <h3>justify-content :flex-start(기본값)</h3>
+    <div id="container1" class="wrapper">
+        <div id="box1">
+            <p>1</p>
+        </div>
+        <div id="box2">
+            <p>2</p>
+        </div>
+        <div id="box3">
+            <p>3</p>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        이거 카페에 올려준단다...
+
+        노드, 스타일 (DOM) 
+        <head><body> 이런거 하나하나를 각각 node라고 한다.
+        node는 하나의 객체지만 태그도 있고... 등등
+
+        노드도 우선순위가 있다.
+
+        parse : 분석
+
+        웹표준 : 코딩문법의 기준
+
+     -->
+
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="html">HTML2</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        // 상위 노드에 접근
+        // node.parentNode
+        // Return Value : A node object
+
+        // var html = document.querySelector(".html");
+        // var contUl = html.parentNode;
+        // console.log(contUl);
+
+        // 상위 HTML 노드에 접근
+        // node.parentElement
+        // Return Value : An Element Object
+
+        // var html = document.querySelector(".html");
+        // var contUl = html.parentElement; //html.parentNode 얘랑 똑같이 console창에 찍히네
+        // console.log(contUl);
+
+        // 하위 노드에 접근
+        // element.childNodes
+        // Return : A NodeList object
+        // var cont = document.querySelector("#tutorial");
+        // var contLi = cont.childNodes;
+        // console.log(contLi);
+
+        // 하위 처음 HTML 노드에 접근
+        // node.firstElementChild
+        // Return Value : A Node object
+        // var cont = document.querySelector("#tutorial");
+        // var contChild = cont.firstElementChild;
+        // var contChild2 = cont.lastElementChild;
+        // console.log(contChild);
+        // console.log(contChild2);
+
+        // 하위 마지막 노드에 접근
+        // node.lastChild
+        // Return Value : A Node object
+        // var cont = document.querySelector("#tutorial");
+        // var contChild = cont.lastChild;
+        // console.log(contChild);
+
+        // 이전 노드에 접근
+        // node.previousSibling
+        // Return Value = A Node object
+        // var css = document.querySelector(".css");
+        // var previous = css.previousSibling;
+        // console.log(previous);
+
+        // 다음 노드에 접근
+        // node.nextSibling
+        // Return Value = A Node object
+        // var html = document.querySelector(".html");
+        // var next = html.nextSibling;
+        // console.log(next);
+
+    </script>
+
+</body>
+
+</html>

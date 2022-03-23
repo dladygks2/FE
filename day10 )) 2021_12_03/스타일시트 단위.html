@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+           em과 rem 
+           em:부모 엘리먼트의 폰트 크기 기준
+           rem:최상위의 엘리먼트의 폰트 크기 기준
+
+           vw: 화면의 가로값의 기준으로 폰트 크기 100vw화면가로크기 100% 맞춤
+           vh: 화면의 세로값의 기준으로 폰트 크기 100vw화면세로크기 100% 맞춤
+          
+           vmin(Viewport Minimum) : 뷰포트 너비 또는 높이를 기준으로 하는 최소 값입니다.
+           vmax(Viewport Maximum) : 뷰포트 너비 또는 높이를 기준으로 하는 최대 값입니다.
+        */
+        body{
+            font-size: 15px;
+        }
+   
+        .box01{ font-size: 2em;}
+        .box01 .box01-1{ font-size: 2em;}
+
+        .box02{ font-size: 30px; width: 500px; height: 300px;
+                border: 2px solid #000;}
+        .box02 .box02-1{font-size: 2rem; width: 80%; height: 50%;
+                       border: 1px solid #000; }
+                       .box02 .box02-1-1{ width: 50vw; height: 10vw;
+                        border: 1px solid red;}
+    </style>
+</head>
+<body>
+    <div class="box01">
+        스타일시트단위1 30px
+        <div class="box01-1">
+            스타일시트단위1-1 
+        </div>
+    </div>
+    <div class="box02">
+        스타일시트단위2 30px
+        <div class="box02-1">
+            스타일시트단위2-1 30px
+            <div class="box02-1-1">
+                스타일시트단위2-1-1 30px
+            </div>
+        </div>
+    </div>
+</body>
+</html>

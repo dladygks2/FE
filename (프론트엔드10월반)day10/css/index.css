@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+#wrap{ width: 100%;}
+
+#main{ width: 100%; height:680px;
+        background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
+        background-size: 100%;}
+#header{ width: 100%; height: 140px;
+         background: rgba(0,0,0,0.4);}       
+#header_in{ margin: 0 auto;
+                     width: 1300px; height: 140px;}
+#header_in .logo{float: left; margin-top: 50px;}
+    
+                     
+#header_in .r_box{float: right; }
+#header_in .info_mn{float:left;  margin: 15px 0 0 490px; }
+#header_in .info_mn li{ float: left; border-right: 1px solid #fff;
+                             margin-right: 10px; padding-right: 10px; line-height: 14px;}
+#header_in .info_mn li:last-child{border-right: 0;
+                                margin-right: 0px; padding-right: 0px; }            
+#header_in .info_mn a{ font-size: 14px; color: #fff;}
+
+.main_nav{clear:left; padding: 30px 0 0 0; }
+.main_nav li{ float:left; margin-right: 99px;}
+.main_nav li:last-child{margin-right: 0px;}
+.main_nav a{ font-size: 20px; color: #fff;}
+
+#main > .main_txt{ width: 100%; height:160px;
+                   padding-top: 70px;}
+#main > .main_txt > h3{ margin: 0 auto;
+                        width:455px; font-size:41px; color:#fff; 
+                        border-bottom: 1px solid #fff; 
+                        padding-bottom: 15px;}
+#main > .main_txt > p{ padding-top: 30px; font-size: 20px; color:#fff; 
+                       text-align: center;}     
+                       
+/* 콘텐츠*/
+#contents{ width: 100%;}
+/*다시 찾는 인기 여행지 TOP3 */
+#contents .top3_area{width: 100%; height: 860px;
+                     background: linear-gradient(#fff 35%,rgba(247, 238, 189,1) 35%);}
+#contents .top3_area_h{margin: 0 auto;
+                      width:1300px; height:190px;}
+#contents .top3_area_h > h3{font-size:48px;
+                            text-align: center; 
+                            line-height: 190px;}                      
+#contents .top3_area_b{margin: 0 auto;
+                      width:1300px; height:670px;}
+#contents .top3_area_b li{ float: left; 
+                          margin-right: 20px;
+                          width:420px; height:670px; }
+#contents .top3_area_b li:last-child{margin-right: 0;} 
+#contents .top3_area_b img{ width: 100%;} 
+#contents .top3_area_b h4{font-size: 25px; 
+                          color: #000;
+                          text-align: center;
+                          padding:35px 0 15px;}
+#contents .top3_area_b p{ font-size: 20px;
+                          text-align: center;
+                          line-height: 40px;}
+#contents .top3_area_b a{  display: block;
+                           width:45px; margin: 0 auto;  
+                           margin-top:30px ;  
+                           font-size: 16px; text-align: center; 
+                           border-top: 1px solid #000;
+                           padding-top: 10px;
+                         }  
+#contents .group{margin:0 auto; 
+                 width: 1300px; height:485px;}                                         
+#contents .advice_area{float: left;
+                 margin-top:75px;
+                 width:860px; height:240px;
+                 background:url(../images/bg_app.jpg)no-repeat 0 0;
+                 background-size:100% 100%;}
+#contents .advice_area ul{float: left; margin: 75px 0 0 65px;}
+#contents .advice_area li{float: left; padding: 30px 80px 30px 30px;
+                          border:2px solid #fff;
+                          margin-right: 20px;}               
+#contents .advice_area li > img{ vertical-align:top;}
+#contents .advice_area li > span{font-size:30px;
+                                color:#fff; font-weight: 800;
+                                display: inline-block;
+                                height: 43px;
+                                line-height:43px;}
+
+#contents .notice{ float:right;
+                 margin-top:75px;
+                 width:400px; height:240px;}
+#contents .notice_h{width:400px; height: 50px; }
+#contents .notice_h > h3{ font-size:25px; line-height: 50px;}
+/* #contents .notice_b{} */
+#contents .notice_b li{width: 390px; height:20px;
+                       background:url(../images/ico_bullet.png)no-repeat 8px 8px;
+                       padding-left: 20px;
+                       font-size: 14px; line-height: 20px;
+                       margin-bottom: 15px;
+                }
+#footer{ width: 100%; height: 200px;
+         border: 1px solid #000}
+#footer_in{margin:0 auto;
+           width: 1300px; height: 200px;
+           background-color: aqua;}         
+#footer .info_mn{ float: left;}
+#footer .info_mn li{ float:left;}
+#footer .info_mn li:first-child::after{content:"|";
+                  display: inline-block; padding:0 5px;
+                  font-size:15px; position: relative; top:-2.5px;}
+#footer .info_mn li > a{font-size: 20px; color: #555;}
+#footer .address{}
+
+
+@media screen and (max-width:1300px) {
+#main{ width: 100%; height:680px;
+                background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
+                background-size: auto;}
+#header{ width: 100%; height: 140px;
+                 background: rgba(0,0,0,0.4);}          
+#header_in{ margin: 0 auto;
+            width: 100%; height: 140px;
+            background-color: blue;}
+#header_in .logo{float: left; margin-top: 50px;}
+
+                
+#header_in .r_box{float: right; }
+#header_in .info_mn{float:left;  margin: 15px 0.8vw 0 490px; }
+#header_in .info_mn li{ float: left; border-right: 1px solid #fff;
+                        margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
+#header_in .info_mn li:last-child{border-right: 0;
+                           margin-right: 0px; padding-right: 0px; }            
+#header_in .info_mn a{ font-size: 14px; color: #fff;}
+
+.main_nav{clear:both; float: right; padding: 30px 0 0 0; }
+.main_nav li{ float:left; margin-right: 7vw;} /*% 자신의 부모를 기준 vw 1300  */
+.main_nav li:last-child{margin-right: 2vw;}
+.main_nav a{ font-size: 20px; color: #fff;}   
+}

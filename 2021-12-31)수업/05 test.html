@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    2021-12-31 의 수업하다가 만거다. 
+    이거는 하지말란다. 다시 봐준다고
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tutorial {
+            width: 700px;
+            height: 30px;
+            border: 1px solid #ccc;
+
+        }
+
+        #tutorial>li {
+            float: left;
+            width: 120px;
+            line-height: 30px;
+            list-style: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #tutorial>li:hover {
+            background-color: gold;
+            color: brown
+        }
+
+        .sub_mn {
+            border: none;
+            border: 1px solid purple;
+            opacity: 0;
+        }
+
+        .sub_mn>li {
+            list-style: none;
+
+        }
+
+        .selected {
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        /* .reselected {
+            opacity: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html"><a href="#">HTML</a>
+                <ul class="sub_mn">
+                    <li><a href="#">HTML1</a></li>
+                    <li><a href="#">HTML2</a></li>
+                    <li><a href="#">HTML3</a></li>
+                    <li><a href="#">HTML4</a></li>
+                </ul>
+            </li>
+            <li class="css"><a href="#">CSS</a>
+                <ul class="sub_mn">
+                    <li><a href="#">CSS1</a></li>
+                    <li><a href="#">CSS2</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">CSS4</a></li>
+                </ul>
+            </li>
+            <li class="css3"><a href="#">CSS3</a>
+                <ul class="sub_mn">
+                    <li><a href="#">CSS3_1</a></li>
+                    <li><a href="#">CSS3_2</a></li>
+                    <li><a href="#">CSS3_3</a></li>
+                    <li><a href="#">CSS3_4</a></li>
+                </ul>
+            </li>
+            <li class="javascript"><a href="#">JavaScript</a>
+                <ul class="sub_mn">
+                    <li><a href="#">JavaScript1</a></li>
+                    <li><a href="#">JavaScript2</a></li>
+                    <li><a href="#">JavaScript3</a></li>
+                    <li><a href="#">JavaScript4</a></li>
+                </ul>
+            </li>
+            <li class="jquery"><a href="#">jQuery</a>
+                <ul class="sub_mn">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // window.addEventListener('load', function () { //$(document).ready(function(){}); 과 같은가보다
+        //     var menu = document.getElementById("tutorial");
+        //     var sub_mn = document.getElementsByClassName("sub_mn")
+
+        //     //classname은 for문으로 돌린다.
+        //     // for (var j = 0; sub_mn.length; j++) {
+        //     //     // sub_mn[j].classList.remove("selected");
+        //     //     sub_mn[j].style.display = "none";
+        //     // }
+
+        //     menu.addEventListener('click', function (e) {
+
+        //         var target = e.target.children[0];
+        //         target.classList.toggle("selected");
+        //     });
+
+        // });
+
+
+        var menu = document.querySelectorAll("#tutorial > li");
+        var sub_mn = document.getElementsByClassName("sub_mn")
+
+        for (var i = 0; i < menu.length; i++) {
+            menu[i].addEventListener('click', function (e) {
+                for (var j = 0; j < sub_mn.length; j++) {
+                    sub_mn[j].classList.remove("selected");
+                }
+                var target = e.target.children[0];
+                target.classList.toggle("selected");
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트</title>
+    <script src="js/jQuery.js"></script>
+    <style>
+        * {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // html
+            // $("#wrapper").html($("#hidden").html());
+            // var html = $("#hidden").html(); ==> html을 갖고 올때
+            // $("#wrapper").html(html); ==> html을 적용할 때
+
+            // text
+            $("#wrapper").text($("#hidden").text());
+            // var text = $("#hidden").text(); //==> text를 갖고 올때
+            // $("#wrapper").text(text); //==> text를 적용할 때
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper" style="border:1px solid #000; padding: 50px; font-size: 20px;">
+        <span>이곳의 내용을 바꿔 주세요.</span>
+    </div>
+
+    <div id="hidden">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+
+</html>

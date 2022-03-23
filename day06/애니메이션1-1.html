@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트 애니</title>
+    <style>
+        body {
+            height: 20000px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            margin: 50px;
+
+        }
+
+        /* 자기자신에게 애니적용 */
+
+        .box1-1 {
+            animation-name: ani01;
+            animation-delay: 3s;
+            animation-duration: 10s;
+            /* 밑은 반복횟수 설정 */
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+
+        @keyframes ani01 {
+
+            /* 얘는 타임라인 기능 / 시작과 끝을 가진다. */
+            /* %는 거의 시간이라고 볼 수 있다. */
+            0% {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+
+            10% {
+                position: absolute;
+                top: 150px;
+                left: 750px;
+            }
+
+            40% {
+                position: absolute;
+                top: 300px;
+                left: 0px;
+            }
+
+            50% {
+                position: absolute;
+                top: 50px;
+                left: 500px;
+
+            }
+
+            60% {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                transform: rotate(0deg);
+            }
+
+            70% {
+                position: absolute;
+                top: 300px;
+                left: 500px;
+                /* 회전 */
+                transform: rotate(180deg);
+                /*기본은 시작과 끝을 마음대로 잡고 돌아버림*/
+            }
+
+            /* 80% ~ 90% 동안 정적인 상태로 만들고 싶다. */
+            80% {
+                position: absolute;
+                top: 500px;
+                left: 700px;
+                transform: rotate(180deg);
+            }
+
+            90% {
+                position: absolute;
+                top: 500px;
+                left: 700px;
+                transform: rotate(180deg);
+            }
+
+            100% {
+                position: absolute;
+                top: 600px;
+                left: 1000px;
+                transform: rotate(180deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1-1">box1-1</div>
+
+
+    </div>
+
+
+</body>
+
+</html>

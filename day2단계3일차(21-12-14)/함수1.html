@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        사용자 정의 함수(function)
+
+        하나의 특별한 목적의 작업을 
+        수행하도록 설계된 독립적인 블록을 의미
+        함수는 필요할 때마다 호출하여 
+        해당 작업을 반복해서 수행하기 때문에 
+        코드를 재활용할수 있습니다. 
+
+        1. 이름만 존재하는 함수
+
+        예) 특정 대상에게 즉정 이벤트 적용될 때 함수를 선언(){
+            실행
+        }
+
+        function 함수명(){
+            실행문
+        }
+
+        함수명(); -> 이렇게 호출을 해야 사용가능 function 부분은 정의
+
+        - 함수 선언식
+
+        - 함수 표현식
+        const 함수명 = function(){
+            함수가 호출되었을 때 실행할 문장;
+            ---
+        }
+
+        함수명();
+        :: 단순 코드 블록이라서 단독으로 실행되지 않는다.
+        함수명을 호출해야 함(함수명();)
+
+        javascript : 웹브라우저의 동적인 작용을 위해서 만들어짐. 
+        선언된 함수부터 읽어들인다. 
+    -->
+
+    <script>
+        'use strict';
+        // 함수의 선언부
+        function func1() {
+            console.log('func1 호출되었습니다.');
+        }
+
+        function func2() {
+            console.log('func2 호출되었습니다.');
+        }
+
+        function func3() {
+            console.log('func3 호출되었습니다.');
+        }
+
+        // 함수를 호출하는 법
+        func1(); // 함수를 실행하는 법
+        func2();
+        func3();
+        func1();
+        func1();
+
+
+
+    </script>
+
+
+
+</body>
+
+
+</html>

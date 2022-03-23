@@ -1,0 +1,228 @@
+@charset "utf-8";
+
+#wrap{width: 100%;}
+
+/* main */
+#main{width: 100%; height: 800px;
+        background-color: aquamarine;}
+/* header */
+#header{
+    width: 100%;
+    height: 200px;
+    background-color: aliceblue;
+    display: flex; /* 적용되고자 하는 녀석의 부모요소에 선언한다.*/
+    justify-content: center;
+    align-items: center;
+}
+
+#header_in{
+    width: 1300px;
+    height: 150px;
+    background-color: blueviolet;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#header_in .logo{
+    width: 300px;
+    height: 150px;
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header_in .top_group{
+    width: 500px;
+    height: 150px;
+    background-color: bisque;
+}
+
+#header_in .top_group ul{
+    display: flex;
+    flex-direction: row; /* 일렬로 세운다*/
+    justify-content: space-between;
+}
+
+#header_in .top_group > div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* div는 블록 요소이므로 padding*/
+    /* padding: 10px 10px 0 0; */
+    padding-right: 10px;
+    height: 40px;
+    box-sizing: border-box; /* 내부요소가 영역을 벗어나지 않는다.*/
+    background-color: brown;
+
+}
+
+#header_in .top_group ul.info_mn {
+    width: 120px;
+    /* background-color: black; */
+}
+
+#header_in .top_group nav{
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+
+}
+
+#header_in .top_group nav ul{
+    width: 100%;
+}
+
+
+
+
+/* contents */
+#contents{
+    width: 100%;
+    background-color: blanchedalmond;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 위의 column 때문에 가로배치로 성질이 바뀜 */
+}
+
+#contents .con1{
+    width: 100%;
+    height: 800px;
+    background-color: cadetblue;
+    /* 중요 flex-direction으로 축방향을 바꿔라 (요소가 2개이상인 경우)*/
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: row; */
+    align-items: center;
+}
+
+#contents .con1 header{
+    width: 1300px;
+    height: 150px;
+    background-color: darkkhaki;
+
+    /* 얘는 하나밖에 없으니 위에 direction 할 필요없다. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contents .con1 section{
+    width: 1300px;
+    height: 650px;
+    background-color: darkmagenta;
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+#contents .con1 section ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+#contents .con1 section ul li{
+    width: 400px;
+    height: 550px;
+    background-color: #ccc;
+}
+
+#contents #con_group{
+    width: 1300px;
+    height: 400px;
+
+    display: flex;
+    justify-content: space-between;
+     
+}
+
+#contents .con2{
+    width: 850px;
+    height: 400px;
+    background-color: rgb(136, 130, 104);
+
+    display: flex;
+    align-items: center; /* 요소가 하나밖에 없으니 direction이런거 필요없다.*/
+}
+
+#contents .con2 .inbox{
+    width: 850px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: orange;
+}
+
+#contents .con2 ul{
+    width: 810px;
+    
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+}
+
+#contents .con2 li{
+    width: 400px;
+    height: 250px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+
+
+
+#contents .con3{
+    width: 430px;
+    height: 400px;
+    background-color: darkgreen;
+    
+    display: flex;
+    align-items: center;
+}
+
+#contents .con3 > div {
+    width: 100%;
+}
+
+#contents .con3 header{
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    background-color: orange;
+}
+
+#contents .con3 section{
+    width: 100%;
+    height: 250px;
+    background-color: darkred;
+}
+
+
+
+/* footer */
+#footer{
+        width: 100%; 
+        height: 200px;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+    
+    }
+
+#footer_in{
+        width: 1300px;
+        height: 200px;
+        background-color: darksalmon;
+
+}   
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        for 문 
+        : 
+
+     -->
+    <script>
+        'use strict';
+
+        // for (let i = 1; i <= 5; i++) { // 초기값; 조건식; 증감식
+        //     document.write(`<p>${i}번째 반복</p>`);
+
+
+        // }
+
+        let sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+
+        document.write(`1~100까지의 합 : ${sum}<br><br><br>`);
+        /////////////////////////////////////////////////////////////////////////
+
+        let sum2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sum2 += i;
+            }
+        }
+
+        document.write(`1~100까지 중에서 짝수의 총합 : ${sum2}`);
+    </script>
+</body>
+
+</html>

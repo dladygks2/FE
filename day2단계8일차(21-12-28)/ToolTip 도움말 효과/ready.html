@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> ToolTip 도움말 효과 </title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		body {
+			margin: 20px auto;
+			padding: 0;
+			width: 400px;
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		p {
+			line-height: 1.5;
+			margin-bottom: 5px;
+		}
+
+		#tip {
+			position: absolute;
+			width: 300px;
+			color: #FFF;
+			padding: 5px;
+			display: none;
+
+			background: #05184D;
+			border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div>
+		<p>
+			There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+			some form, by injected humour, or randomised words which don't look even slightly believable.
+		</p>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a <a href="#"
+				title="There are many variations of passages of Lorem Ipsum available passages of Lorem Ipsum available passages of Lorem Ipsum available passages of ">galley</a>
+			of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+			leap into electronic typesetting, remaining essentially unchanged.
+		</p>
+		<p>
+			Contrary to popular belief, <a href="http://www.lipsum.com/" title="img/site.jpg" class="img">Lorem
+				<!-- class에 img를 넣어야 title을 img로 인식한다.-->
+				Ipsum
+			</a> is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
+			making it over 2000 years old.
+		</p>
+	</div>
+	<!-- a태그에서 title과 class를 정해 넣을 수 있다. 마우스를 올리면 title의 속성을 가져온다 -->
+
+
+
+	<!------------------------ jQuery 코드 ----------------------->
+
+	<script>
+		/* 
+			도움말 두가지 넣는데 변수 필요
+			1. 소스가 들어있는 속성값을 담는 변수
+			2. 이미지 또는 텍스트를 구분하는 변수
+		*/
+		var tempTitle;  // 위의 1
+		var type;	  	// 위의 2
+
+
+		$("a").hover(  // 호버에 기능을 2개를 넣을 것이다.
+			function (e) {
+				// 각각 해당되는 변수에 값을 대입하고
+				tempTitle = $(this).attr("title"); // 위의 title 속성을 정의해놓았다.
+				type = $(this).attr("class");
+				// $(this).attr("title", ""); // 특정속성에 값을 지정 title을 "(빈공간)"으로 바꿔라는 뜻
+
+				// 툴팁에 들어갈 내용이 이미지이면 
+				// "html형식으로 설정"하고, 아니라면 다음 명령어로 이동
+				if (type == "img") {
+					tempImg = '<img src="' + tempTitle + '" width:"100px" height:"100px" "/>'
+				}
+
+
+				// 태그를 추가(append)
+				$("body").append('<div id="tip"></div>');
+
+				// 추가된 태그에 내용을 기입
+				if (type == "img") {
+					$("#tip").html(tempImg); // 위의 type == "img" 가 실행
+					$("#tip").css("width", "100px");
+				} else {
+					$("#tip").text(tempTitle); // tempTitle이 실행
+				}
+
+				// 추가된 태그의 위치를 설정(animate)
+				// positon(=absolute와 개념이 같다.) 
+				// offset(=relative랑 개념이 같다. 자신의 위치를 기준으로 )
+				// position : 현재 화면를 기준으로 잡는것이 기본값. position(기준값) 넣어줄 수 있다.
+				var pageX = $(this).offset().left - 20;  // 왼쪽으로 20
+				var pageY = $(this).offset().top - $("#tip").innerHeight();
+
+				$("#tip").css({ left: pageX + "px", top: pageY + "px" }).fadeIn(500);
+
+
+			},
+			function () {
+				// $("#tip").remove();
+			}
+		);
+
+	</script>
+
+</body>
+
+</html>

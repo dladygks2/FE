@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 기본배치</title>
+    <style type="text/css">
+        /*
+        float:배치 
+        float:left;요소를 왼쪽 배치
+        float:right;요소를 오른쪽 배치
+        *****웹페이지를 가운데 정렬은 margin: 0 auto;
+
+
+        clear: float배치설정을 무시하고 새롭게 배치를 하는 속성
+        clear:left;
+        clear:right;
+        */ 
+        div{ width: 150px; height: 150px;}
+        .box1{ float: left; background-color: red;}
+        .box2{ float: left; background-color: green;}
+        .box3{ clear: left; background-color: blue;}
+     </style>
+    </head>
+<body>
+       <div class="box1">box1</div>
+       <div class="box2">box2</div>
+       <div class="box3">box3</div>
+</body>
+</html>

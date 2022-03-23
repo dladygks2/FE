@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+
+        // let i = 1;
+        // let sum = 0;
+
+        // while (i <= 10) {// 12345...10
+        //     document.write(`${i} 번째 반복 : 자바스크립트! <br> `);
+        //     ++i;
+        //     sum += i;
+        // }
+
+        // console.log(`1부터 10까지의 총합 : ${sum}`);
+        // document.write(`1부터 10까지의 총합 :${sum}`);
+
+
+        // 1~100까지 짝수의 합
+
+        let n = 1;
+        let sum = 0;
+
+        while (n <= 100) {
+            if (n % 2 == 0) {
+                sum += n;
+            }
+            n++;
+            // sum += n;
+        }
+
+        document.write(`1부터 100까지 짝수의 총합 : ${sum}`);
+
+
+    </script>
+
+</body>
+
+</html>

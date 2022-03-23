@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>어디서나 펼쳐지는 내비게이션</title>
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<!-- jquery-ui : 배경색에 관련된 효과, 인터페이스에 관련된 효과 -->
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div#container {
+			width: 600px;
+			height: 200px;
+			left: 0px;
+			top: 0px;
+			position: relative;
+			border: 1px solid #000;
+		}
+
+		div#home {
+			width: 50px;
+			height: 200px;
+			background: #FF9999;
+			left: 0px;
+			top: 0px;
+			position: absolute;
+			z-index: 2;
+		}
+
+		ul {
+			width: 600px;
+			height: 200px;
+			list-style: none;
+			left: -600px;
+			top: 0px;
+			position: absolute;
+			z-index: 1;
+		}
+
+		ul li {
+			width: 200px;
+			height: 200px;
+			float: left;
+			opacity: 0.7;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			cursor: none;
+			background-color: coral;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+
+	<div id="container">
+		<div id="home">HOME </div>
+
+		<ul id="menu">
+			<li><img src="th_bg1.jpg" /></li>
+			<li><img src="th_bg2.jpg" /></li>
+			<li><img src="th_bg3.jpg" /></li>
+		</ul>
+	</div>
+
+	<div class="box"></div>
+
+
+
+	<script>
+		// mousemove 이벤트 활용(세로 방향)
+		$("#home").mousemove(function (e) {  // 'e'가 들어가는 경우: 이벤트가 들어가는 대상에게 메서드 안에서 특정 이벤트 실행하도록 하고 싶을 때
+			//e.target
+
+			var pos = e.pageY - parseInt($('#container').css("height")) / 2 + "px";
+			$('#container').css({ "top": pos });
+		});
+
+		// 추가 이벤트
+		$(".box").mousemove(function (e) {  // 'e'가 들어가는 경우: 이벤트가 들어가는 대상에게 메서드 안에서 특정 이벤트 실행하도록 하고 싶을 때
+			var posx = e.pageX - parseInt($('.box').css("width")) / 2 + "px"; //width : 50px
+			var posy = e.pageY - parseInt($('.box').css("height")) / 2 + "px"; //height : 50px
+			$(this).css({ "top": posy, "left": posx });
+
+		});
+
+
+		// click(toggle)
+		$("#home").toggle(
+			function () {
+				$("ul").stop().animate({ left: "50px" }, 500);
+			},
+			function () {
+				$("ul").stop().animate({ left: "-600px" }, 500);
+			},
+			function () { }
+		);
+
+		// hover
+		$("#menu li").hover(
+			function () {
+				$(this).animate({ opacity: 1 }, 300)
+			},
+			function () {
+				$(this).animate({ opacity: 0.5 }, 300)
+			}
+		);
+
+
+	// hover
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{ margin: 0; padding: 0;}
+     a{text-decoration: none;}
+
+       .container {
+	    margin: 35px;
+        }
+        .check input {
+            margin-left: 20px;
+            margin-top: 40px;
+            vertical-align: middle;
+        }
+        .check input#check1 {
+            margin-top: 0;
+        }
+        .check_box1 {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background: url(images/spr_form.png) no-repeat 0 0;
+        }
+        .check_box1.checked {
+            background-position: -36px 0;
+        }
+
+
+        .check_box2 {
+            display: inline-block;
+            margin-top: 40px;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background: url(images/spr_form.png) no-repeat -80px 0;
+        }
+        .check_box2.checked {
+            background-position: -107px 0;
+        }
+        .check_box3 {
+            display: inline-block;
+            margin-top: 40px;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background: url(images/spr_form.png) no-repeat 0 -30px;
+            transition: all 0.5s;
+     
+        }
+        .check_box3.checked {
+            background-position: -36px -30px;
+        }
+        .check_box4 {
+            display: inline-block;
+            margin-top: 40px;
+            width: 56px;
+            height: 33px;
+            vertical-align: middle;
+            background: url(images/spr_form.png) no-repeat 0 -66px;
+            transition: all 0.5s;
+        }
+        .check_box4.checked {
+            background-position: -72px -66px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+          var container = document.getElementsByClassName('container')[0];
+
+          //form객체로선언
+          for(var i=0; i<container.children.length; i++){
+                if(container.children[i].tagName == "FORM"){
+                    var formArea=container.children[i];
+                }
+          }
+
+           //<div class="check">들을 객체로 해서 반복으로 실행
+          for(i=0; i<formArea.children.length; i++){
+
+            if(formArea.children[i].className == "check"){ //<div class="check">중에 체크가 된 엘리먼트를 선택
+                var checkBox=formArea.children[i].children[0];//<a href="" class="check_box1">를 객체로 선택
+
+                checkBox.addEventListener("click", function(e){//클릭하고자 하는 a태그
+                        e.preventDefault();
+                        if(e.target.classList.contains("checked") == false){//체크 상태가 아니라면 참
+                            e.target.classList.add("checked");//a태그에 클래스를 적용해서 배경이미지의 위치 이동
+                            e.target.nextElementSibling.setAttribute("checked", "true");
+                            //nextElementSibling 다음요소를 선택의 의미,,,
+                            //setAttribute("checked", "true"); 체크상태로 설정
+                        }
+                        else{
+                            //클래스 삭제와 다음요소 선택 상태 해제
+                            e.target.classList.remove("checked");
+                            e.target.nextElementSibling.removeAttribute("checked");
+                        }
+			    });
+
+            }
+          }
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+       <form action="" method="">
+        <div class="check">
+             <a href="" class="check_box1"></a>
+             <input type="checkbox" id="check1">
+        </div>
+
+        <!-- 추가 -->
+        <div class="check">
+			<a href="" class="check_box2" title="check box2"></a>
+			<input type="checkbox" id="check2">
+		</div>
+		<div class="check">
+			<a href="" class="check_box3" title="check box3"></a>
+			<input type="radio" id="check3">
+		</div>
+		<div class="check">
+			<a href="" class="check_box4" title="check box4"></a>
+			<input type="radio" id="check4">
+		</div>
+       </form>
+
+    </div>
+</body>
+</html>

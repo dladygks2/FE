@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트</title>
+    <script src="js/jQuery.js"></script>
+    <style>
+        * {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            var cloneEl = $(".li02").clone();
+
+            $(".li01 li").eq(3).append(cloneEl);
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <ul class="li01">
+
+        <li>1-1</li>
+        <li>1-2</li>
+        <li>1-3</li>
+        <li>1-4</li>
+
+    </ul>
+
+
+    <ul class="li02">
+
+        <li>2-1</li>
+        <li>2-2</li>
+        <li>2-3</li>
+        <li>2-4</li>
+
+    </ul>
+
+
+
+</body>
+
+</html>

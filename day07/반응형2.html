@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{width:100%; height: 500px; 
+            background-color:blue ;}
+        /* 디바이스의 방향을 구분 
+        portrait는 height 값이 width 값보다 상대적으로 클 때, 적용
+        landscape는 width 값이 height 값보다 상대적으로 클 때 적용
+        */
+
+
+        @media all and (orientation:portrait) {
+            #wrap{width:100%; height: 500px; 
+            background-color:grey ;}
+
+        }
+
+        @media all and (orientation:landscape) {
+            #wrap{width:100%; height: 500px; 
+            background-color:green ;}
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        반응형 사이즈 별로 배경색상변경
+    </div>
+</body>
+</html>

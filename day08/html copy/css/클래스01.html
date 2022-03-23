@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        border: 3px solid red;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        /* flex-wrap: nowrap; */
+        /* flex-wrap: wrap; */
+        /* 
+            flex-wrap : 부모의 자리가 없을때 
+            자식을 밑으로 넘길지 선택하는거 
+            nowrap은 내리지 않는다.
+            
+            flex는 블록을 어떻게하는지 결정
+
+            nowrap: 다음줄로 넘어가지않음
+            wrap: 기본값
+
+            wrap-reverse : 밑에서부터 좌에서 우로 쌓아간다.
+        */
+
+    }
+
+    #container div {
+        width: 200px;
+        border: 1px solid #000;
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <h2>flex - flex-wrap</h2>
+    <div id="container">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>기본적인 갤러리의 시작</title>
+  <style>
+    body {
+      margin: 20px auto;
+      padding: 0;
+      width: 620px;
+      background: #192839;
+    }
+
+    .thumbs {
+      float: left;
+      width: 100px;
+    }
+
+    .thumbs img {
+      margin-bottom: 3px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .thumbs img:hover {
+      border-color: #ef4018;
+    }
+
+    #largeImg {
+      margin-left: 110px;
+      padding: 5px;
+      width: 500px;
+      height: 280px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    #caption {
+      position: relative;
+      padding: 10px;
+      font-family: "나눔고딕", "맑은 고딕";
+      font-size: 12px;
+      background-color: rgba(211, 209, 209, 0.3);
+      color: #fff;
+      border: 1px solid #ccc;
+
+    }
+  </style>
+  <script src="js/jquery.js"></script>
+</head>
+<!-- ---------------------- -->
+
+<body>
+  <!-- em 태그 글자 강조하는 것 -->
+  <div class="thumbs">
+    <a href="images/pic1.jpg" title="image1"><img src="images/th_pic1.jpg" /></a>
+    <em>Lorem Ipsum is simply dummy text of the pdrinting and typesetting
+      industry.</em>
+    <a href="images/pic2.jpg" title="image2"><img src="images/th_pic2.jpg" /></a>
+    <em>Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+      Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis
+      tempor magna sem vel justo. Etiam eget ipsum ante.</em>
+    <a href="images/pic3.jpg" title="image3"><img src="images/th_pic3.jpg" /></a>
+    <em>Lorem Ipsum is simply dummy.</em>
+  </div>
+  <div id="largeImg"><img src="images/pic1.jpg" alt="image1" /></div>
+  <!-- 이미지에 대한 설명태그 추가 -->
+
+
+  <script>
+    //제이쿼리에서 
+    //태그의 속성를 갖고 오거나, 새로이 적용할때 attr()메소드를 사용
+    //속성을 갖고오는 방법은 
+    //var 변수 = $(대상).attr(갖고오고자하는속성을 지정);
+    //속성을 적용하는 방법은 $(대상을 지정하고).attr({속성객체:속성값저장한변수});
+    //메소드()
+    // $(".thumbs a").click(function(e){
+    //     e.preventDefault();
+    // });
+
+    // var path = $("thumbs a").attr("href") 
+    // images/pic1.jpg 를 가져오는 거란다.
+    // $("largeImg img").attr({속성객체:속성값저장한변수})이 사용법이다.
+
+
+    $("em").hide();
+
+    $(".thumbs a").click(function (e) {
+      e.preventDefault(); // a태그에 href이벤트를 초기화
+
+      // if 괄호안에 얘가 있느냐? 없느냐?를 물어보는거
+      if ($("#caption")) {      // 기존에 캠션이 있다면
+        $("#caption").remove(); // 캡션을 삭제해라 .append()에 반대기능
+      }
+
+      var path = $(this).attr("href");
+      // console.log(path);
+
+      // 똑같은 접근이면 화면을 새로 불러오지 않도록
+      if (path != $("#largeImg img").attr("src")) { // 새로운 경로 path와 현재 largeImg img가 같지 않다면 실행
+        $("#largeImg img").attr({ src: path });     // 속성 적용
+        $("#largeImg img").css({ opacity: 0 }).animate({ opacity: 1 }, 500);    // 추가된 속성의 태그의 애니메이션효과
+      }
+
+      // 툴팁에 들어갈 내용을 갖고오기 (툴팁 == 설명문)
+      var msg = $(this).next("em").text();
+      // 해당되는 em의 내용. 즉, 텍스트만 변수에 담는다.
+      // console.log(msg);
+      // 설명문이 들어갈 태그를 추가
+      $("#largeImg").append('<div id="caption"></div>');
+      //$("#largeImg") 안에 마지막 자식요소 뒤에 태그를 추가
+      $("#largeImg #caption").text(msg);
+      // 추가된 태그에 msg를 텍스트로 적용
+
+      var posy = $("#largeImg #caption").height() + 27;
+      $("#largeImg #caption").animate({ top: "-=" + posy + "px" });
+      // 문자열과 숫자의 합은 문자열이 된다. 뒤에"px"를 붙이면 숫자가 된다.
+      // posy = posy -1  => posy -= 1 
+      //                         -= posy
+      // posy -= posy == -= posy
+    });
+
+
+
+  </script>
+</body>
+
+</html>

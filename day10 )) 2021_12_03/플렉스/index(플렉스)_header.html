@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/layout.css"> -->
+    <style>
+     #wrap{ width: 100%;}
+     #main{ width: 100%; height: 500px; background-color: blueviolet;}
+     #header{ width: 100%; height: 200px; 
+              background-color: cadetblue;
+              display: flex; justify-content: center; align-items: center;}
+     #header_in{ width: 1300px; height: 150px; background-color: chocolate;
+                 display: flex; justify-content: space-between;}
+     #header_in .logo{ width: 300px;  height: 150px; background-color: cornsilk;
+                       display: flex; justify-content: center; align-items: center;}
+     #header_in .top_group{ width: 600px; height: 150px; background-color: crimson;}
+     #header_in .top_group > div{display: flex; justify-content: flex-end;}
+     #header_in .top_group ul{ display: flex; flex-direction: row;}
+     #header_in .top_group nav{ display: flex; justify-content: center; align-items: center;}
+    </style>
+</head>
+<body>
+    <div id="wrap"><a name="top"></a>
+        <section id="main">
+            <header id="header">
+                <div id="header_in">
+                    <div class="logo">
+                        <h1><img src="images/logo.png" alt=""></h1>
+                    </div>
+                    <div class="top_group">
+                        <div>
+                            <ul class="info_mn">
+                                <li><a href="">로그인</a></li>
+                                <li><a href="">회원가입</a></li>
+                            </ul>
+                        </div>
+                        <nav class="main_nav">
+                            <ul>
+                                <li><a href="#">여행정보</a></li>
+                                <li><a href="#">고객센터</a></li>
+                                <li><a href="#">상품투어</a></li>
+                                <li><a href="#">티켓/가이드</a></li>
+                            </ul>
+                        </nav>
+                        <a href="#" id="all_mn">
+                            <span></span>
+                            <span></span>
+                            <span></span>   
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <div id="main_txt">
+                <h3>TRUST &amp; INFORMATION</h3>
+                <p>믿을 수 있는 여행정보, 여행... 어디로 가세요?</p>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

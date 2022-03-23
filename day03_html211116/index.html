@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트만들기</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- 스타일 시트는 저장하는 위치에 따라서 3가지로 나눔 : 내부/ 외부/(하나는 뭐지...)
+      -->
+</head>
+
+<body>
+    <!-- div: divide: 기준 영역을 나누어 준단다. id 선택자는 한번만 선언이 가능하다? -->
+    <div id="wrap">
+        <!-- 상단부분 -->
+        <div id="header">
+            <h1 class="logo">나의여행</h1>
+            <ul class="nav">
+                <li><a href="#">일본패키지</a></li>
+                <li><a href="#">일본자유</a></li>
+                <li><a href="#">동남아여행</a></li>
+                <li><a href="#">제주/국내</a></li>
+                <li><a href="#">현지버스투어</a></li>
+                <li><a href="#">호텔/료칸</a></li>
+
+            </ul>
+        </div>
+        <!-- 메인 이미지 부분 -->
+        <div id="main_img"></div>
+        <!-- 콘텐츠 부분 -->
+        <div id="contents">
+            <div id="product_area">
+                <div id="product">
+                    <!-- 컨텐츠 안의 제목은 <h3>으로 잡는다. -->
+                    <h3>인기상품</h3>
+                    <img src="images/img1.jpg" alt="">
+
+                    <h4>1</h4>
+
+                    <div class="group">
+                        <p>울릉도 패키지</p>
+                        <span>199000원~</span>
+                    </div>
+
+
+                    <a href="#">구매하기</a>
+                </div>
+                <!-- 사이드에 4줄짜리 -->
+                <div id="pro_list">
+                    <ul>
+                        <li>
+                            <h4>2</h4>
+                            <img src="images/img2.jpg" alt="">
+                            <div class="group">
+                                <p>제주도 당일치기 패키지</p>
+                                <span>359000원~</span>
+                            </div>
+                            <a href="#">구매하기</a>
+                        </li>
+                        <li>
+                            <h4>3</h4>
+                            <img src="images/img18.jpg" alt="">
+                            <div class="group">
+                                <p>일본 패키지 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <span>1232000원~</span>
+                            </div>
+                            <a href="#">구매하기</a>
+                        </li>
+                        <li>
+                            <h4>4</h4>
+                            <img src="images/img110.jpg" alt="">
+                            <div class="group">
+                                <p>미국 패키지 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <span>759000원~</span>
+                            </div>
+                            <a href="#">구매하기</a>
+                        </li>
+                        <li>
+                            <h4>5</h4>
+                            <img src="images/img113.jpg" alt="">
+                            <div class="group">
+                                <p>유럽 5박6일 패키지</p>
+                                <span>359000원~</span>
+                            </div>
+                            <a href="#">구매하기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="banner"><img src="images/banner180807.gif" alt=""></div>
+            <div id="event"> 이벤트영역
+                <h3 class="event_t">기획전/이벤트</h3>
+                <ul class="event_b">
+                    <!-- event_b : event body -->
+                    <li>1</li>
+                    <li>2</li>
+                    <li class="last">3</li>
+
+
+                </ul>
+                <div class="event_f">
+                    <a href="#">더불러오기</a>
+                </div>
+                이벤트 영역
+            </div>
+
+            <div id="advice">advice</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+
+</html>

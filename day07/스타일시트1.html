@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{margin: 0; padding: 0;}
+      body{height: 20000px;}
+    
+      .box01{ width: 300px; height: 200px; 
+              border: 1px solid #000; 
+              margin-bottom: 20px;}
+      .color_box1{ background-color: aquamarine;}
+      .color_box2{ background-color: #cccccc; opacity: 1 ;}
+      .color_box3{background: rgba(0,0,0,0.2); display: block;}
+      .color_box4{background: hsla(207, 75%, 75%, 0.2);}
+       /* opacity:0;   visibility: hidden; ->숨겨지더라도 그위치는 그대로 유지
+        display: none; -> 숨김을 주게 되면 요소의 자리도 없어짐 */
+
+
+
+        .box02{ width: 300px; height: 300px; 
+              border: 1px solid #000; 
+              margin-bottom: 20px;} 
+        .border_radius1{border-radius: 0px;}      
+        .border_radius1:hover{border-radius: 50%; transition: 1s;}
+
+        .border_radius2{border-radius: 20px 50px 70px 90px;}
+        .border_radius3{border-top-left-radius: 20px;}  
+        .border_radius4{border-radius: 50px;} 
+
+
+        .box03{margin: 80px; width: 200px; height: 150px; background-color: khaki;
+               box-shadow:10px 10px 20px 10px gray;}
+        .box03-1{margin: 80px; width: 200px; height: 150px; background-color: khaki;
+               box-shadow:-10px -10px 20px 10px rgba(0,0,0,0.2);}
+
+         .txt{ font-size: 50px;
+               text-shadow:
+                0 0 4px #ccc,
+                0 -3px 4px #ff3,
+                1px -6px 6px #fd3,
+                -1px -9px 11px #f80,
+                1px -12px 18px #f20;}  
+                
+                
+
+         #main_img{ width: 100%; height: 464px;
+                    background: url(main_img.jpg) no-repeat 50% 0;
+                    background-size: cover;
+                    border-bottom: 5px solid red;}  
+                
+        .box04{ margin: 100px; width: 150px; height: 150px;
+                border: 2px solid #f80;
+                outline: 2px solid #f20;
+                outline-offset: -20px;}   
+                
+                
+        .box05{ width: 500px; height: 200px;
+                border: 1px solid #000;
+                margin-top: 30px;}  
+                .gradient1{background: -webkit-linear-gradient(45deg, red 0% , green 50% ,blue 60%);}     
+                .gradient2{width: 500px; height: 500px; background: radial-gradient(red 10%, green 20%);}     
+                .gradient3{} 
+                
+                /* ----------------------------------------------------------- */
+
+        .box06{ margin: 100px; width: 150px; height: 150px;
+                border: 1px solid #000; 
+                }
+        .box06:hover{transform: translate(100px, 100px); transition: 1s;}
+
+
+        .box07{ margin: 100px; width: 150px; height: 150px; 
+                border: 1px solid #000; 
+                }
+        .box07:hover{transform: scale(1.5); transition: 1s;}
+
+
+        .box08{ margin: 100px; width: 150px; height: 150px; 
+                border: 1px solid #000; 
+                }
+        .box08:hover{ transform: rotate(360deg); transition: 1s;}
+
+        .box09{ margin: 100px; width: 150px; height: 150px; 
+                border: 1px solid #000; transition: 1s
+                }    
+        .box09:hover{ transform: skew(0, -45deg); transition: 1s;}
+        
+        
+        .box09-1{ margin: 100px; width: 150px; height: 150px; 
+                border: 1px solid #000; transition: 1s
+                }    
+                .box09-1:hover{transform: skewX(-45deg); transition: 1s;}       
+
+</style>
+</head>
+<body>
+<!-- 
+[CSS3 웹 브라우저별 접두사(vendor prefix) ]
+
+CSS3는 표준안이 아직 확정되지 않은 상태이기 때문에 최신 웹 브라우저들은 CSS3 속성을 실험적으로 제공하고 있음. 
+이를 위해 속성이나 속성 값 앞에 웹 브라우저별로 접두사(vendor prefix)를 제공하고 있으며 
+이 접두사의 경우 웹 브라우저별로 다르기 때문에 하나의 속성을 선언하기 위해서는 여러 번의 동 일한 선언을 지정해야 함.
+
+파이어폭스 -moz-
+크롭, 사파리 -webkit-
+오페라 -o-
+익스플로러 -ms-
+사용예=>
+    #footer_t { line-height: 52px;
+                -webkit-line-height: 52px;
+                -ms-line-height: 52px;
+    }
+[RGBA 형식 및 HSLA 형식의 사용 예]
+
+ http://www.colorpicker.com/
+    
+ RGBA형식 -> color:rgba(255, 127, 45, 0.5)
+ color:rgba(red, greeen, blue, 투명도)
+ http://www.workwithcolor.com/hsl-color-picker-01.htm
+    
+ HSLA형식 -> color:hsla(0, 0%, 100%, 0.5)
+            olor:hsla(색상, 채도, 명도, 투명도)
+
+
+box-shadow:[dx] [dy] [bulr] [spread] [set]
+;지정된 요소의 그림자를 설정함
+
+dx : 그림자의 가로방향 위치
+dy : 그림자의 세로방향 위치
+bulr : 흐려짐 정도
+spread : 번짐 정도
+set : 그림자의 형태
+ •outset : 요소 바깥쪽으로 그림자가 떨어짐 (기본값)
+ •inset : 요소 안쪽으로 그림자가 떨어짐
+사용예
+#Box01{
+        box-shadow:10px 10px 5px 5px gray;
+        -webkit-box-shadow:10px 10px 5px 5px gray;
+        -moz-box-shadow:10px 10px 5px 5px gray;
+ } 
+
+
+ text-shadow:[dx] [dy] [bulr] [color]
+;텍스트에 그림자를 지정
+
+dx : 본체와 그림자의 가로방향 거리
+dy : 본체와 그림자의 세로방향 거리
+bulr : 그림자의 흐려짐 정도
+color : 그림자의 색상
+
+  #Text{
+            background:#afbc22;
+            text-shadow:3px 3px 5px #000;
+        }
+
+
+background-size : [x], [y]
+;백 그라운 이미지의 크기를 지정한다.
+
+[x]% [y]% : 적용되는 요소의 크기에 비례하여 배경 이미지 적용
+[x]px [y]px : 절대 크기로 배경 이미지 적용
+100%: 배경이미지가 적용된 요소의 크기에 맞춤(크기의 변화가 생기면 배경의사이즈도 변화생김.)
+auto: 배경이미지의 원래크기를 그대로 유지
+cover : 배경 이미지를 늘여 적용되는 요소 전체에 표시
+          배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 작은크기를 기준으로 
+                                                             배경이미지의 사이즈 변화생김 
+contain : 배경 이미지의 가로 세로 비율을 맞춰 요소에 표시할수 있는 최대 크기로 표시
+             배경이미지 영역의 사이즈 바뀔때->  이미지의 가로,세로크기중 큰크기를 기준으로 
+                                                             배경이미지의 사이즈 변화생김   
+                                                             
+                                                             
+
+
+outline요소의 아웃라인을 그림 border와는 별개의 속성이며 border를 설정한는 것과 같이 아래의 속성을 단축하여 사용할 수 있음
+
+outline-style : 아웃라인의 형식
+outline-color : 아웃라인의 색상
+outline-width : 아웃라인의 두께
+outline-offset:[d];
+
+d : 아웃라인을 옵셋시키는 거리로 음수값도 가능함    
+
+
+gradient
+:gradient를 생성함
+
+http://www.colorzilla.com/gradient-editor/
+
+
+
+
+
+transform:요소의 형태를 변경함
+
+translate([dx],[dy]) : 지정한 크기 만큼 이동 시킴
+scale([ds]) : 지정한 배율 만큼 확대함
+rotate([deg]) : 지정한 각도만큼 회전 시킴
+skew([degx],[degy]) : 지정한 경사로 기울림
+ -->
+ <div class="box01 color_box1">color_box1</div>
+ <div class="box01 color_box2">color_box2</div>
+ <div class="box01 color_box3">color_box3</div>
+ <div class="box01 color_box4">color_box4</div>
+
+ <div class="box02 border_radius1">border_radius1</div>
+ <div class="box02 border_radius2">border_radius2</div>
+ <div class="box02 border_radius3">border_radius3</div>
+ <div class="box02 border_radius4">border_radius4</div>
+ <div class="box02 border_radius5">border_radius5</div>
+ 
+ <div class="box03">box_shadow</div>
+ <div class="box03-1">box_shadow-1</div>
+
+  <h1 class="txt">text_shadow</h1>
+
+  <div id="main_img"></div>
+
+
+  <div class="box04">outline</div>
+
+
+  <div class="box05 gradient1">gradient1</div>
+  <div class="box05 gradient2">gradient2</div>
+  <div class="box05 gradient3">gradient3</div>
+
+  
+
+  <!-- 스타일시트 요소 변형 -->
+
+  <div class="box06">translate(상대적으로 이동)</div>
+  <div class="box07">scale(상대적인값으로 크기조절)</div>
+  <div class="box08">rotate(회전)</div>
+  <div class="box09">skew(기울기조절)</div>
+  <div class="box09-1">skew(기울기조절)</div>
+</body>
+</html>

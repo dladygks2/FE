@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트 애니</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1000px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            margin: 100px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        /* 자기자신에게 애니적용 */
+
+        .box1-1:hover {
+            transform: scaleX(1.5);
+            /* transition-delay: 2s; */
+            transition-delay: 0s;
+            transition-duration: 1s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            background-color: pink;
+            font-size: 20px;
+            border: 5px solid red;
+        }
+
+        /* 자기자신의 바로 옆에(다음에 오는 태그) 애니적용 - 인접형제선택 */
+        /* 1-2에 마우스를 올렸을 때 1-3에 변화를 주고싶다. */
+        .box1-2:hover+.box1-3 {
+            transition-delay: 0s;
+            transition-duration: 5s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            transform: translate(500px, 0);
+
+        }
+
+        /* 자기자신 안에 있는 자식요소 애니적용*/
+        .box1-4:hover .box1-4-1 {
+            transform: rotate(360deg);
+            transition-delay: 0.5s;
+            transition-duration: 2s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+        }
+
+
+        .box1-4-1 {
+            margin: 0;
+        }
+
+        /* 자기자신에게 애니적용 */
+        /* + : 바로 근처에 있는 애 */
+        /* ~ : 좀 멀리 떨어져있는 애 */
+        /* 자기자신의 형제 중에 한칸이상 떨어져 있는 형제 요소에게 애니적용 */
+        .box1-5:hover~.box1-7 {
+            width: 300px;
+            transition-delay: 0.5s;
+            transition-duration: 2s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            transform: translate(100px, 0);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1-1">box1-1</div>
+
+    <div class="box box1-2">box1-2</div>
+    <div class="box box1-3">box1-3</div>
+
+
+    <div class="box box1-4">
+        <div class="box box1-4-1">box1-4-1</div>
+
+        <div class="box box1-5">box1-5</div>
+        <div class="box box1-6">box1-6</div>
+        <div class="box box1-7">box1-7</div>
+
+    </div>
+
+
+</body>
+
+</html>

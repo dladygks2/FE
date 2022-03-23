@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트</title>
+    <script src="js/jQuery.js"></script>
+    <style>
+        * {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // click
+            // $("p").click(function () {
+
+            //     alert("텍스트가 선택되었습니다.")
+            // });
+
+            // $("p").mousedown(function () {
+            //     $(this).after('<p style="color: blue">마우스down</p>'); // $(this) == p 태그중에서 마우스 다운 이벤트를 받는 애라는 뜻 
+            // });
+
+            // $("p").mouseup(function () {
+            //     $(this).after('<p style="color: green">마우스up</p>'); // $(this) == p 태그중에서 마우스 다운 이벤트를 받는 애라는 뜻 
+            // });
+
+            //      toggle은 다음에 설명
+            //     $("p").toggle(
+            //         function () {
+            //             $(this).after('<p style="color: blue">마우스이벤트1</p>');
+            //         },
+            //         $(this).after('<p style="color: blue">마우스이벤트2</p>');
+            // },
+            //     $(this).after('<p style="color: blue">마우스이벤트3</p>');},
+            // $(this).after('<p style="color: blue">마우스이벤트4</p>');},
+            // $(this).after('<p style="color: blue">마우스이벤트5</p>');} 
+
+            //         );
+
+
+
+            // dbclick
+            // $("p").dbclick(function () {
+
+            //     alert("텍스트가 선택되었습니다.")
+            // });
+
+            //hover
+            // $("p").hover(
+            //     // 커서가 올라올때
+            //     function () {
+            //         $("p").css({ background: "#cccccc" });
+            //     },  // , 로 구분지어준다.
+            //     // 커서가 올라갔다가 나갈때
+            //     function () {
+            //         $("p").css({ background: "#ffffff" });
+            //     }
+            // );
+
+
+            // mouseover
+            // $("p").mouseover(function () {
+            //     $("p").css({
+            //         background: "#cccccc"
+            //     });
+            // });
+
+            // mouseout
+            // $("p").mouseout(function () {
+            //     $("p").css({
+            //         background: "#555555"
+            //     });
+            // });
+
+            // mouseenter
+            // $("p").mouseenter(function () {
+            //     $("p").css({
+            //         background: "#cccccc"
+            //     });
+            // });
+
+            // mouseleave
+            // $("p").mouseleave(function () {
+            //     $("p").css({
+            //         background: "#555555",
+            //         color: "white"
+            //     });
+            // });
+
+            // focus (글쓰는데가 깜빡깜빡거리는 기능)
+            // $("div").focusin(function () {
+            //     $(this).css({
+            //         background: "#cccccc"
+            //     });
+            // });
+            // $("div").focusout(function () {
+            //     $(this).css({
+            //         background: "#555555",
+            //         color: "white"
+
+            //     });
+            // });
+
+            // mousemove (마우스가 움직일 때 )
+            $(document).mousemove(function (event) {    // e == event매개변수 : 현재 일어나는 이벤트 남는 변수
+                // 이벤트가 일어날 때마다 span 태그에 글자를 넣을 것.
+                $("span").text("x 좌표 : " + event.pageX + ", " + "y좌표 : " + event.pageY);
+            });
+
+
+
+
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>마우스 좌표는 : <span></span> 입니다.</p>
+
+
+
+    <p><b>여기를 클릭하세요.</b></p>
+
+    <div style="border: 1px solid #000; padding : 20px;">
+        <p>이름 : <input type="text"></p>
+        <p>주소 : <input type="text"></p>
+    </div>
+</body>
+
+</html>

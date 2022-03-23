@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict';
+        // 함수의 선언부
+        function func1(num1) {
+            console.log(`func1 호출되었습니다. 전달받은 매개변수는 ${num1}입니다.`);
+        }
+
+        function func2(start, end) {
+            // console.log('func2 호출되었습니다.');
+            let sum = 0;
+            for (let i = start; i <= end; i++) {
+                sum += i;
+            }
+            console.log(`${start}부터 ${end}까지의 총합은 ${sum}입니다.`);
+        }
+        function func3(num1 = 1, num2 = 1) {
+            console.log(`${num1} + ${num2} = ${num1 + num2}`);
+            console.log(`${num1} - ${num2} = ${num1 - num2}`);
+            console.log(`${num1} * ${num2} = ${num1 * num2}`);
+            console.log(`${num1} / ${num2} = ${num1 / num2}`);
+        }
+
+        function func4(num1, num2, ...num3) {
+            // ...num3 : 밑에 나머지 애들을 배열로 받아낸다.
+            console.log(num1);
+            console.log(num2);
+            console.log(num3);
+        }
+
+        function func5(...jumsu) {
+            for (let i of jumsu) {
+                console.log(i);
+            }
+        }
+
+
+        // 함수를 호출하는 법
+        // func1(10); // 함수를 실행하는 법
+        // func1(20);
+        // ---------------------------------------------
+        // func2(10, 50);
+        // func2(10, 500);
+        // ---------------------------------------------
+        func3(); // 초기값 선언되어 있기때문에 사용가능한거네
+        func3(5, 3);
+        // ---------------------------------------------
+        func4(100, 90, 40, 50, 80, 90, 30);
+        func5(100, 90, 40, 50, 80, 90, 30);
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <!-- 
+        사용자 정의 함수(function)
+
+        하나의 특별한 목적의 작업을 
+        수행하도록 설계된 독립적인 블록을 의미
+        함수는 필요할 때마다 호출하여 
+        해당 작업을 반복해서 수행하기 때문에 
+        코드를 재활용할수 있습니다. 
+
+        1. 이름만 존재하는 함수
+
+        예) 특정 대상에게 즉정 이벤트 적용될 때 함수를 선언(){
+            실행
+        }
+
+        function 함수명(){
+            실행문
+        }
+
+        함수명(); -> 이렇게 호출을 해야 사용가능 function 부분은 정의
+
+        - 함수 선언식
+
+        - 함수 표현식
+        const 함수명 = function(){
+            함수가 호출되었을 때 실행할 문장;
+            ---
+        }
+
+        함수명();
+        :: 단순 코드 블록이라서 단독으로 실행되지 않는다.
+        함수명을 호출해야 함(함수명();)
+
+        javascript : 웹브라우저의 동적인 작용을 위해서 만들어짐. 
+        선언된 함수부터 읽어들인다. 
+    -->
+
+
+
+
+
+</body>
+
+
+</html>

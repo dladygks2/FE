@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자(성적관리프로그램)</title>
+</head>
+
+<body>
+    <h2>논리연산자(성적관리프로그램)</h2>
+
+    <script>
+        'use strict';
+
+        const name = prompt("이름을 입력해주세요");
+        const kor = Number(prompt("국어 점수를 입력해주세요"));
+        const eng = Number(prompt("영어 점수를 입력해주세요"));
+        const math = Number(prompt("수학 점수를 입력해주세요"));
+
+        const total = kor + eng + math;
+        const avg = total / 3;
+
+        // 화면 출력
+        document.write(`<h2> ${name} 님의 성적표</h2>`);
+        document.write(`<p>국어점수 : ${kor} 점</p>`);
+        document.write(`<p>영어점수 : ${eng} 점</p>`);
+        document.write(`<p>수학점수 : ${math} 점</p>`);
+        document.write(`<p>총점수 : ${total} 점</p>`);
+        document.write(`<p>평균 : ${avg} 점</p>`);
+
+        // 변수 = 0;
+        // 변수 = '';
+        // 변수 = true /false
+    </script>
+</body>
+
+</html>

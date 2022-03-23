@@ -1,0 +1,162 @@
+#wrap{width: 100%;}
+/* 상단부분 */
+#header{
+    width:100%;
+    height: 165px;
+}
+#header_in{
+    margin: 0 auto;/*가운데배치*/
+    width:1200px;
+    height: 165px;
+}
+
+#header_in .logo{ width: 100%;
+                  height: 100px;
+                  font-size:30px; color:#444;
+                  text-align: center;
+                  line-height: 100px;}
+
+#header_in .nav{width: 100%; height:65px;}
+#header_in .nav li{float: left; 
+                   width: 171.4px; height:65px;
+                   text-align: center;
+                   line-height:65px;}
+#header_in .nav li a{font-size: 18px;
+                     font-weight: 700;}
+
+/* 메인이미지부분 */
+#main_img{
+    width:100%;
+    height: 805px;
+    background-image:url(../images/visual.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    /* background: url(../images/visual.jpg)no-repeat 50% 0;*/
+} 
+
+/* 콘텐츠부분 */
+#contents{width:100%;}
+#contents_in{margin: 0 auto;
+            width:1200px; 
+            height: 1600px;}
+  /* 인기상품 */
+  .product{float: left; 
+           width:600px; height:670px; }
+  .product h3{width:595px; height: 70px;
+              font-size: 18px; font-weight: 500;
+              line-height:70px;
+              padding-left: 5px;}
+  /* .product img{} */
+  /* .product .info_box{} */
+  .product .info_box > h4{float: left; margin: 40px 0 0 20px; 
+                          font-size: 40px;}
+  .product .info_box .group{ float: left; margin: 45px 0 0 20px;}
+  /* 한줄에 한개 존재 두개이상일 경우는 문단그룹 묶어준다 */
+  .product .info_box p{font-size: 20px;}
+  .product .info_box span{font-size:14px;}
+  .product .info_box > a{ float: right; margin: 55px 20px 0 0; 
+                          font-size: 18px;}
+
+   /* 리스트박스 */
+   .list_box{float: right; width:545px;}
+   .list_box > ul{margin-top: 50px; }
+   .list_box > ul > li{
+       border-bottom: 1px solid #ccc;
+       height:160px;
+   }
+   .list_box li > h4{float:left; margin: 55px 0 0 20px; font-size: 40px;}
+   .list_box li > img{float:left; margin: 25px 0 0 20px;}
+   .list_box li > .group{float:left; margin: 60px 0 0 20px;}
+   .list_box li > .group > p{font-size: 20px;}
+   .list_box li > .group > span{font-size: 14px;}
+   .list_box li > a{float: right; font-size: 18px;
+                          margin: 70px 20px 0 0;}
+
+   /* 배너영역 */
+   .banner{float: left; width: 1200px; height:140px;}
+
+   /* 기획/이벤트영역 */
+   .event{float: left;
+          width: 1200px;
+          height: 760px;}
+   .event_h{width:1200px; height:50px;
+            font-size: 18px;}
+   .event_b{width:1200px; }
+   .event_b > li{float: left; margin-right: 40px;
+    /*float: left; == display:inline-block 블록태그인 li는 세로기준인데 가로기준으로 다시배치*/                 
+    width:370px; height:520px;
+    border: 1px solid #ccc;}
+
+   .event_b > li.last{margin-right: 0px;} 
+   .event_b > li > img{ width:100%;
+                        border-bottom: 1px solid #ccc;}
+   .event_b > li > h4{ margin: 25px 0 0 18px; 
+                       font-size:20px;
+                       color: #555;} 
+   .event_b > li > p{ margin: 10px 0 0 18px;
+                      font-size: 13px;}                 
+   .event_b .group > span{float: left; margin: 30px 0 0 20px;
+                        font-size:15px;}
+   .event_b .group > a{float: right;  margin: 30px 20px 0 0 ;
+                       font-size:15px;}
+
+   .event_bom{float: left; width: 1200px; height:170px;}
+   .event_bom > a{ display: block; 
+                   margin: 0 auto; margin-top:65px;
+                   width:120px; height: 25px;
+                   font-size: 14px;
+                   text-align: center; line-height: 25px;
+                   border: 1px double #ccc;
+                   }
+    .event_bom > a:hover{ background-color: beige;
+                        font-weight: 500;
+                        border-radius:10px;
+                        transition: 0.5s;
+                        text-decoration: none;}
+    /* imfo영역 */
+    .info{width:100%; height:150px;
+          border-top:1px solid #ccc;
+          border-bottom:1px solid #ccc;}
+    .info .center_box{margin: 0 auto;
+        width: 1200px; height: 150px;}   
+    .info .center_box .box1{float:left;
+        width: 240px; height: 150px;}
+        .info .box1 > span{margin: 30px 0 0 0; 
+                        font-size: 11px;
+                         display: block;}    
+        .info .box1 > h4{margin: 8px 0 0 0;
+                       font-size: 25px;}    
+        .info .box1 > p{margin: 8px 0 0 0;
+                      font-size: 13px;} 
+
+    .info .center_box .box2{float:left;
+        margin-left: 140px;
+        width: 480px; height: 150px;}
+        .info .box2 >p{
+            margin-top:50px;
+            font-size: 13px;}
+        .info .box2 >h4{
+            margin-top:6px;
+            font-size: 30px;}
+
+
+    .info .center_box .box3{float:right;
+        width: 265px;} 
+        .info .box3 > p{margin-top:60px;} 
+        .info .box3 >img{margin-top:6px;width: 100%;} 
+
+/* 하단부분 */
+#footer{width: 100%; 
+        height: 165px; background-color: #f1f1f1;}
+#footer_in{ margin: 0 auto; 
+            padding-top: 30px;
+            width: 1200px;
+            height: 165px;}        
+#footer_in .footer_mn{ margin: 0 auto; width: 550px;}
+#footer_in .footer_mn > li{ float: left; width: 78.5px; 
+                            text-align: center; }  
+#footer_in .footer_mn > li > a{ font-size: 13px;}   
+
+#footer_in .address{float: left; margin-top: 20px; 
+                    width: 100%; text-align: center;
+                    font-size: 13px; line-height: 1.2;} 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* portfolio_study */
+        #portfolio_study {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        이거 카페에 올려준단다...
+
+        노드, 스타일 (DOM) 
+        <head><body> 이런거 하나하나를 각각 node라고 한다.
+        node는 하나의 객체지만 태그도 있고... 등등
+
+        노드도 우선순위가 있다.
+
+        parse : 분석
+        웹표준 : 코딩문법의 기준
+     -->
+
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="html">HTML2</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        // 노드의 속성 읽기
+        // element.getAttribute(attributename)
+        // Return Value : A String
+
+        // var li = document.querySelectorAll("#tutorial > li");
+        // for (var i = 0; i < li.length; i++) {
+        //     var className = li[i].getAttribute("class");
+        //     console.log("className : " + className);
+        // }
+
+        // 노드의 속성 변경
+        // element.setAttribute(attributename, attributevalue)
+        // Return Value : No return Value
+        // var p = document.querySelectorAll("p");
+        // for (var i = 0; i < p.length; i++) {
+        //     if (p[i].textContent == "portfolio") {
+        //         p[i].setAttribute("id", "portfolio_study");
+        //     }
+        // }
+
+        // 노드의 속성이 있는지 점검
+        // element.hasAttribute(attributename)
+        // Return Value : A Boolean
+        var p = document.querySelectorAll("p");
+
+        for (var i = 0; i < p.length; i++) {
+            if (p[i].hasAttribute("id")) {
+                p[i].style.backgroundColor = "pink";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

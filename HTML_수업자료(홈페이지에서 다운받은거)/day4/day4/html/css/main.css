@@ -1,0 +1,121 @@
+#wrap{ width: 100%;}
+/* 상단부분 */
+#header{width:100%; height: 170px;}
+#header .logo{
+        margin:0 auto;
+        width:1000px; height:110px;
+        text-align: center;
+        line-height:110px;
+        font-size: 35px; color:#000;}
+.nav{ margin: 0 auto; margin-top: 20px; 
+      width: 1000px;}
+.nav > li{ float: left; width: 142.8px;
+           text-align: center;}
+.nav > li > a{ font-size: 16px; color:#777;} 
+
+/* 메인이미지 */
+#main_img{width:100%; height:800px;
+         background-image:url(../images/visual.jpg);
+         background-position: 50% 0;
+         background-repeat: no-repeat; }
+
+/* 콘텐츠  */
+#contents{ width: 100%; height: 1800px;}
+#product_area{margin: 0 auto;  margin-top: 15px;
+             width: 1200px; height:665px;}          
+/* 인기상품 */
+#product{float: left;
+          width: 600px; height:665px;
+          border:1px solid #ccc;
+          }
+#product > h3{width:100%; height: 50px;
+              font-size: 18px; 
+              line-height: 50px;}
+#product > img{width: 100%;}
+#product > h4{float: left; margin: 50px 0 0 20px;
+              font-size:40px;}
+#product .group{ float: left; width:160px;}              
+#product p{float: left; margin: 60px 0 0 20px; 
+             font-size: 20px;}
+#product span{margin: 6px 0 0 20px; 
+              font-size: 13px; }
+#product > a{float: right; margin: 80px 20px 0 0;
+             font-size:16px; color: aqua;}
+
+#pro_list{ float: right; margin-top: 20px;
+           width: 540px;  height:665px;}
+#pro_list li{ width:540px; height:160px;
+             border-bottom:1px solid #ccc;}
+#pro_list li > h4{float: left; 
+                  margin: 50px 0 0 20px;
+                  font-size:40px;}
+#pro_list li > img{float: left; margin: 25px 0 0 20px;}
+#pro_list li > .group{float: left; width:250px;}
+#pro_list li p{float: left; margin: 60px 0 0 20px; 
+               font-size: 20px;}
+#pro_list li span{margin: 6px 0 0 20px; 
+                  font-size: 13px;}
+#pro_list li > a{float: right; margin: 65px 20px 0 0;
+                 font-size:16px; color: cadetblue;}
+
+
+#banner{margin: 0 auto; margin-top: 20px;
+         width:1200px; height:140px;}
+
+#event{margin: 0 auto; margin-top: 20px; 
+       width:1200px; height:750px;}
+#event .event_t{ width:100%; height: 50px;
+                 font-size: 18px; 
+                 line-height: 50px;
+}
+#event .event_b{width: 100%;}
+#event .event_b > li{float: left; margin-right: 57px;
+                width:360px; height: 520px;
+                border:1px solid #ccc;}
+#event .event_b > li.last{margin-right: 0px;}               
+#event .event_b > li > img{width:100%;}
+#event .event_b > li > h4{padding: 30px 0 0 15px; font-size: 20px;}
+#event .event_b > li > p{padding: 10px 15px 0 15px;  font-size: 16px;}
+#event .event_b > li > span{float: left; padding: 30px 0 0 15px; 
+                            font-size: 16px;}
+#event .event_b > li > a{ float: right; margin: 30px 15px 0 0; 
+                          font-size: 16px;}
+
+
+
+#event .event_f{clear: left; width: 1200px; height:160px;
+                padding-top: 60px;}
+#event .event_f > a{ margin: 0 auto;
+                     width: 100px; height: 30px;
+                     background-color: darkgray;
+                     display: block;
+                     font-size: 16px;
+                     text-align: center; line-height: 30px;}
+
+#advice{ width: 100%; height:150px;
+        border-top:1px solid #000;}
+        #advice > ul{ margin: 0 auto; width:1200px;}       
+#advice li{ float: left;}
+#advice li:nth-child(1){width: 370px; height: 150px;}
+#advice li:nth-child(1) > span{ display: block; padding: 30px 0 0 0 ; font-size: 12px;}
+#advice li:nth-child(1) > h4{ padding-top: 8px;  font-size: 24px;}
+#advice li:nth-child(1) > p{padding-top: 6px; font-size: 13px;}
+
+#advice li:nth-child(2){width: 570px; height: 150px;}
+#advice li:nth-child(2) > span{display: block; padding: 50px 0 0 0; font-size: 12px;}
+#advice li:nth-child(2) > h4{padding: 6px 0 0 0; font-size: 30px; color: #777;}                        
+#advice li:nth-child(3){width: 260px; height: 150px;}
+#advice li:nth-child(3) > span{ display: block; padding: 50px 0 0 0; font-size: 12px;}
+#advice li:nth-child(3) > img{width: 100%;}
+
+/* 하단부분  */
+#footer{ width:100%; height:165px; background-color: #f1f1f1;
+         border-top:1px solid #000; padding-top: 30px;}
+#footer .info_mn{ margin: 0 auto; width: 644.3px;}
+#footer .info_mn > li{ float:left; width: 85.7px;
+                       text-align: center;}
+#footer .info_mn > li > a{ font-size: 13px;}
+#footer .info_mn > li:nth-child(5){ width: 130px;}
+#footer .address{clear:both; padding-top: 20px; 
+                 width:100% ; text-align: center;
+                 color: #333;}

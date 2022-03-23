@@ -1,0 +1,67 @@
+
+[MongoDB 문법]
+document(객체) -> collection -> database
+
+
+
+몽고디비편집툴
+확인
+cmd -> mongo 
+
+
+데이터베이스 확인
+show dbs;
+
+
+데이터베이스 생성 및 선택
+use 데이터베이스명;
+
+
+use frontenddb;
+* 데이터베이스가 없으면 생성, 있으면 선택합니다.
+* 데이터베이스의 자료가 없을 경우 show dbs에서 나타나지 않습니다.
+
+
+컬렉션 생성
+db.createCollection('컬렉션명');
+db.createCollection('testCollection');
+결과 {"ok":1}
+
+
+컬렉션 확인
+show collections;
+
+컬렉션 삭제
+db.컬렉션명.drop();
+db.testCollection.drop();
+결과 true
+
+연습용 컬렉션 만들기
+db.createCollection("member");
+
+ 
+
+ 
+
+document 추가
+db.컬렉션명.insert(객체);
+db.member.insert({'userid':'apple','userpw':'1111'});
+db.member.insert({'userid':'banana','userpw':'2222','username':'반하나'});
+
+db.member.insert({"userid":"orange","userpw":"3333","gender":"남자"});
+db.member.insert({"userid":"melon","userpw":"4444","gender":"남자", "username":"이메론"});
+
+db.member.insert({"userid":"cherry","userpw":"5555", "username":"채리","gender":"여자","point":2000});
+db.member.insert({"userid":"avocado","userpw":"6666", "username":"안카도","gender":"남자","point":1500});
+db.member.insert({"userid":"berry","userpw":"7777", "username":"배애리","gender":"여자","point":1800});
+db.member.insert({"userid":"coconut","userpw":"8888", "username":"고코넛","gender":"남자","point":1700});
+
+ 
+
+ 
+
+ 
+
+document 확인
+db.컬렉션명.find();
+db.member.find();

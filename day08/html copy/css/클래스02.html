@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width: 500px;
+        height: 50px;
+        margin: 0 auto;
+        border: 3px solid red;
+        display: flex;
+        /* flex-wrap: wrap-reverse; */
+        /* flex-wrap: nowrap; */
+        /* flex-wrap: wrap; */
+        /* 
+            flex-wrap : 부모의 자리가 없을때 
+            자식을 밑으로 넘길지 선택하는거 
+            nowrap은 내리지 않는다.
+            
+            flex는 블록을 어떻게하는지 결정
+
+            nowrap: 다음줄로 넘어가지않음
+            wrap: 기본값
+
+            wrap-reverse : 밑에서부터 좌에서 우로 쌓아간다.
+        */
+
+    }
+
+    .wrapper div {
+        width: 100px;
+        border: 1px solid #000;
+        background-color: blueviolet;
+    }
+
+    #container1 {}
+
+    #container2 {
+        justify-content: flex-start;
+    }
+
+
+    #container3 {
+        justify-content: flex-end;
+    }
+
+    #container4 {
+        justify-content: center;
+    }
+
+    #container5 {
+        justify-content: space-between;
+    }
+
+    #container6 {
+        justify-content: space-around;
+    }
+
+    #container7 {
+        justify-content: space-evenly;
+    }
+</style>
+
+<body>
+    <h2>flex ))) justify-content(기본값)</h2>
+    <div id="container1" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+    <h3>justify-content : flex-start </h3>
+    <div id="container2" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+    <h3>justify-content : flex-end </h3>
+    <div id="container3" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+    <h3>justify-content : center </h3>
+    <div id="container4" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+    <h3>justify-content : space-between </h3>
+    <!-- 얘는 컨텐츠와 컨텐츠 사이의 간격을 가진다는 개념 -->
+    <div id="container5" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+    <h3>justify-content : space-around </h3>
+    <!-- 얘는 컨텐츠의 좌우로 값이 들어간다는 개념 -->
+    <div id="container6" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+    </div>
+
+    <h3>justify-content : space-evenly </h3>
+    <!-- 얘는 빈공간의 크기를 모두 같도록 -->
+    <div id="container7" class="wrapper">
+        <div id="box1">
+            <h3>1</h3>
+        </div>
+        <div id="box2">
+            <h3>2</h3>
+        </div>
+        <div id="box3">
+            <h3>3</h3>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+
+        .container{ margin-top: 50px; min-width:440px;}
+        nav ul{ margin: 16px 0 16px 0;
+                padding: 8px 0;
+                text-align: left;
+                font-weight: 400;
+                border-bottom: 1px solid #d4d4d4;}
+        nav ul li{display: inline;}
+        nav ul li a{margin-right: 0;
+                    padding: 10px 20px 10px;
+                    font-size: 0.87rem;
+                    border:1px solid #d4d4d4;
+                    border-bottom: none;
+                    transition:  all 0.4s;}
+        nav ul li.on a{
+                 background-color:#8ac007;
+                 color: #fff;
+                 border-color:#8ac007;
+        }
+        .description{
+            display: none;
+            margin: 30px 0;
+            padding: 30px 0;
+            font-size: 0.8rem;
+            color:#333;
+            border-bottom: 4px solid #d4d4d4; 
+        }
+        .description.active{
+            display: block;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+
+         
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="tab1"><a href="#">HTML</a></li>
+                <li class="tab2"><a href="#">CSS</a></li>
+                <li class="tab3"><a href="#">Javascript</a></li>
+                <li class="tab4"><a href="#">jQuery</a></li>
+            </ul>
+        </nav>
+        <div class="description HTML">subject : HTML</div>
+        <div class="description CSS">subject : CSS</div>
+        <div class="description JavaScript">subject : JavaScript</div>
+        <div class="description jQuery">subject : jQuery</div>
+    </div>
+</body>
+</html>

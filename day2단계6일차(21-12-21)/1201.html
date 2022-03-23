@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        img{border:0}
+        ul, li{list-style: none;}
+        a{text-decoration: none;}
+
+        /* 전체영역 */
+        #slider{margin: 200px; position: relative;
+                width: 600px; height: 350px; 
+                border: 3px solid #000;}
+
+        /* 이미지박스 */
+        #viewer{height: 350px; position: relative; opacity: 0.3;}
+
+        /* 이미지 좌표 */
+        #viewer > img{position: absolute; top:0px;}
+        #viewer > img:nth-child(1){left:0;}
+        #viewer > img:nth-child(2){left:600px;}
+        #viewer > img:nth-child(3){left:1200px;}
+        #viewer > img:nth-child(4){left:1800px;}
+
+        /* 버튼 */
+        .btns{ position: absolute; right: 20px; top:320px }
+        .btns li{float: left; 
+                 width: 16px; height: 16px; 
+                 margin-right: 6px;}
+                 
+    </style>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script>
+     $(document).ready(function(){
+        
+      $(".btns > li").click(function(e){
+          e.preventDefault();
+          var n = $(this).index();
+          slide_ani(n);
+      });  
+      
+
+    //viewer 이미지 그룹의 애니메이션
+    function slide_ani(n){
+       var pos = n * (-600) + "px"; //0, 1, 2, 3
+       $("#viewer").animate({left:pos},1000);
+    }
+
+     });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <div id="viewer">
+            <img src="images/slide1.jpg" alt=""><!--0 * 0-->
+            <img src="images/slide2.jpg" alt=""><!--1 * 600-->
+            <img src="images/slide3.jpg" alt=""><!--2 * 1200-->
+            <img src="images/slide4.jpg" alt=""><!--3 * 1800-->
+        </div>
+        <ul class="btns">
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+        </ul>
+    </div>
+</body>
+</html>

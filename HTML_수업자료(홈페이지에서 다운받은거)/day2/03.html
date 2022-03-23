@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 폰트에대한 기본스타일</title>
+    <style type="text/css">
+        /*
+        - font-family : 글꼴, 글꼴 이름은 쉼표(,)로 구분, 글꼴 이름이 두 단어 이상이면 큰 따옴표로 묶는다. 
+              브라우저는 앞에 있는 글꼴 부터 보여준다.
+        - font-style "normal, italic, oblique" : 기울임꼴을 적용
+        - font-variant "normal, small-caps" :
+                    small-caps 크기가 작은 대문자
+        - font-weight "normal, bold, 100～900" : 글자 굵기
+             normal=400, bold=700, 숫자는 인식 못하는 경우 있음
+        - font-size "숫자em(상위 element 크기에 배수), 숫자pt" : 글자 크기 유전되지 않음  => px, %
+        */ 
+        h1{font-family:"맑은고딕"; color: #000; font-size: 12px;}
+        p{font-size: 25px;  color: darkmagenta; }
+        .txt01{font-weight: 200; font-style: italic;}
+        .txt02{font-weight: 400;}
+        .txt03{font-weight: 500;}
+        .txt04{font-weight: 900;}
+
+        .name{ font-variant: small-caps;}
+     </style>
+    </head>
+<body>
+    <h1 class="title">제목 1입니다</h1>
+    <h1 id="txt">제목 1입니다</h1>
+    <h1 id="txt">제목 1입니다</h1>
+
+    <h2 class="name">kim sun jo</h2>
+    <h2>KIM SUN JO</h2>
+
+    <p class="txt01">문단태그입니다</p>
+    <p class="txt02">문단태그입니다</p>
+    <p class="txt03">문단태그입니다</p>
+    <p class="txt04">문단태그입니다</p>
+
+    <a href="#">버튼1</a>
+    <a href="#">버튼2</a>
+    <a href="#">버튼3</a>
+
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+
+    <p class="txt05">
+        문단태그입니다<br>
+        문단태그입니다<br>
+        문단태그입니다<br>
+        문단태그입니다<br>
+        문단태그입니다
+    </p>
+</body>
+</html>

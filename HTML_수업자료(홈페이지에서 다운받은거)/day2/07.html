@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 기본배치 여백조절</title>
+    <style type="text/css">
+       /* 
+        margin:0; 요소의 테두를 기준으로 바깥쪽 여백
+        margin:0 0; 마진의 세로값 가로값
+        margin:0 0 0; 위 좌우 아래
+        margin:0 0 0 0; top right bottom left
+        margin-top, margin-right, margin-bottom, margin-left 하나하나 마진을 적용할때
+        *****두개요소의 마진값이 중복이 될때 큰값이 적용됨.
+
+
+        padding:0;요소의 테두를 기준으로 안쪽 여백
+        padding:0 0; 패딩의 세로값 가로값
+        padding:0 0 0; 위 좌우 아래
+        padding:0 0 0 0; top right bottom left
+        padding-top, padding-right, padding-bottom, padding-left 하나하나 패딩을 적용할때
+        *****패딩은 안쪽 여백이므로 값이 요소의 가로값, 세로값에서 벗어나면 요소가 크기가 변화됨 
+        */
+
+        div{ float: left; width: 100px; height: 100px;}
+        .box1{ background-color: brown; margin: 50px;}
+        .box2{ background-color: cadetblue; margin: 100px 20px; }
+        .box3{ background-color: cyan; margin: 100px 0 0 200px;}
+     </style>
+    </head>
+<body>
+       <div class="box1">box1</div>
+       <div class="box2">box2</div>
+       <div class="box3">box3</div>
+</body>
+</html>

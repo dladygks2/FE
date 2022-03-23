@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* portfolio_study */
+        #portfolio {
+            background-color: violet;
+        }
+
+        #portfolio_study {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="html">HTML2</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        // var liList = document.querySelectorAll("#tutorial li");
+
+        // 대상을 지정
+        // 대상.addEventListener("이벤트", "function(){
+        //       실행문
+        // }")
+
+        // for (var i = 0; i < liList.length; i++) {
+        //     liList[i].addEventListener("click", function (e) {
+        //         // e.target == 여러개의 대상 중에서 이벤트가 적용되는 대상, 여기서는 click되는 대상
+        //         // e는 자기 자신이라고 볼 수 있다.
+        //         var ul = e.target.parentNode;
+        //         e.target.style.background = "green" // e.target : 현재 이벤트가 적용되는 대상
+        //         ul.style.backgroundColor = "yellow"
+        //     });
+        // }
+
+        // 속성 지우기
+        var p = document.getElementsByTagName("p");  // 태그명으로 대상 접근
+        // 태그는 위처럼해서 for문을 돌린다고 한다.
+
+        for (var i = 0; i < p.length; i++) {  // 태그명으로 접근시 노드리스트이므로 for문 사용
+
+            if (p[i].getAttribute("id") == "portfolio") {  // 반복문 안에서 조건을 지정
+                p[i].addEventListener('click', function (e) {   // 해당 지정된 대상을 클릭이벤트 부여함
+                    e.target.removeAttribute("id"); // 속성제거 removeAttribute("id")
+                });
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict'
+
+        // var a = 10;
+        // var b = 5;
+
+        // var a = Number(prompt("첫 번째 숫자를 입력해주세요."))
+        // var b = Number(prompt("두 번째 숫자를 입력해주세요."))
+
+        // if (a > b) {
+        //     document.write(a + ", 즉 첫 번째 값이 더 큽니다.");
+        // } else {
+        //     document.write(b + ", 즉 두 번째 값이 더 큽니다.");
+        // }
+
+
+        // 학점을 구하는 조건문
+
+        // var score = Number(prompt("점수를 입력하세요."));
+
+        // if (score >= 90 && score <= 100) {
+        //     document.write("A학점 입니다.");
+        // } else if (score >= 80 && score <= 100) {
+        //     document.write("B학점 입니다.");
+        // } else if (score >= 70 && score <= 100) {
+        //     document.write("C학점 입니다.");
+        // } else if (score >= 60 && score <= 100) {
+        //     document.write("D학점 입니다.");
+        // } else if (score >= 0 && score <= 100) {
+        //     document.write("F학점 입니다.");
+        // } else {
+        //     document.write("다시 입력해주세요")
+        // }
+
+
+        // 할인율 10000원 구매시 => 10% 할인, 5000원 구매시 => 5% 할인, 3000원 구매시 => 1% 할인, 그외는 할인 없다.
+
+        var price, price2
+        price = Number(prompt("가격을 입력해주세요."));
+
+
+        if (price >= 10000) {
+            price2 = 0.1 * price
+            document.write(`받은 금액은 ${price}입니다.<br>`)
+            document.write(`할인된 금액은 ${price2}원 입니다.<br>`);
+            document.write(`결제할 금액은 ${price - price2}원 입니다.`);
+        } else if (price >= 5000) {
+            price2 = 0.05 * price
+            document.write(`받은 금액은 ${price}입니다.<br>`)
+            document.write(`할인된 금액은 ${price2}원 입니다.<br>`);
+            document.write(`결제할 금액은 ${price - price2}원 입니다.`);
+        } else if (price >= 3000) {
+            price2 = 0.03 * price
+            document.write(`받은 금액은 ${price}입니다.<br>`)
+            document.write(`할인된 금액은 ${price2}원 입니다.<br>`);
+            document.write(`결제할 금액은 ${price - price2}원 입니다.`);
+        } else if (price >= 0) {
+            price2 = 0;
+            document.write(`받은 금액은 ${price}입니다.<br>`)
+            document.write(`할인된 금액은 ${price2}원 입니다.<br>`);
+            document.write(`결제할 금액은 ${price}원 입니다.`)
+        } else {
+            document.write("다시 입력해주세요.")
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

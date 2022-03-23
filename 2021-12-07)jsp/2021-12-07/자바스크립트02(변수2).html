@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명시적 타입 변환</title>
+
+</head>
+
+<body>
+    <script>
+        'use strict'; // 자바스크립트를 엄격하게 하겠다는 선언
+
+        var a = 10; // a변수 초기값 설정
+        a = a + " : 문자열"; //  문자열 변수로 변환
+
+        console.log(a);
+        document.write("A 변수의 값: " + a + "<br>");  // 현재 문서를 말함. 
+        // 문서.화면에 출력 --> 을 의미한다.
+
+        var b = "3";
+        b = "3" * "5" + " : 문자열인데도 그냥 곱해주나보네";
+        // 문자이지만 숫자글자이기때문에 연산이 된다.
+
+        console.log(b);
+        document.write("B 변수의 값 : " + b + "<br>");
+        var c = "10"; // 문자열
+        c = "10" - 5 + " : 문자열하고 숫자도 계산 되는 듯";
+        console.log(c);
+        document.write("C 변수의 값 : " + c + "<br>");
+
+        let d = 10;
+
+        d = d - "문자열" + " : 아싸리 문자열은 뭐 어떻게 안되는가보네";
+        console.log(d); // NaN : 값을 찾을 수 없다는 의미
+        document.write("D 변수의 값 : " + d + "<br>");
+
+
+
+    </script>
+</body>
+
+</html>

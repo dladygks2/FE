@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 애니메이션</title>
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 초기값으로 .box를 숨긴다.
+            // $(".box").hide();
+            $(".box").css({ display: "none" }); // 얘랑 같다.
+
+            $(".fadeIn").click(function () {
+                $(".box").fadeIn(1000); // 1000 = 1초
+            });
+
+            $(".fadeOut").click(function () {
+                $(".box").fadeOut(1000);
+            });
+
+            $(".fadeTo").click(function () {
+                $(".box").fadeTo(1000, 0.2); // (나타나는 시간, 투명도)
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <button class="fadeIn">fadeIn</button>
+    <button class="fadeOut">fadeOut</button>
+    <button class="fadeTo">fadeTo</button>
+    <div class="box" style=" margin: 20px;
+            width: 150px; 
+            height :150px; 
+            border : 2px solid #000; 
+            background-color: aqua;">box</div>
+
+    <!--  -->
+</body>
+
+</html>

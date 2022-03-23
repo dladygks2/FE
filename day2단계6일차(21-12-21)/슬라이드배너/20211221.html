@@ -1,0 +1,372 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+	<title>slide_banner</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+	<style>
+		/* common */
+		html {
+			width: 100%;
+			height: 100%;
+			overflow-y: scroll
+		}
+
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
+			margin: 0px;
+			padding: 0px;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		body {
+			font-size: 12px;
+			font-family: Dotum, Arial;
+			color: #74767a;
+			line-height: 120%;
+		}
+
+		a,
+		a:link,
+		a:visited {
+			color: #74767a;
+			text-decoration: none
+		}
+
+		ul,
+		ol {
+			list-style: none
+		}
+
+		table,
+		fieldset,
+		th,
+		td,
+		img {
+			border: none
+		}
+
+		img,
+		input,
+		select {
+			vertical-align: middle
+		}
+
+		#wrap {}
+
+		#brandVisual {
+			position: relative;
+			width: 100%;
+			min-width: 1000px;
+			margin: 0 auto;
+			overflow: hidden;
+			height: 500px;
+			background: #8c908c;
+		}
+
+		#brandVisual ul {
+			position: relative;
+			float: left;
+			width: 100%;
+			height: 500px;
+		}
+
+		#brandVisual li {
+			position: absolute;
+			width: 100%;
+			height: 500px;
+		}
+
+		#brandVisual li a {
+			display: block;
+			text-indent: -9999px
+		}
+
+		#brandVisual .visual_0 {
+			left: 0px;
+			background: url("img/0.png") 50% 0 no-repeat;
+		}
+
+		#brandVisual .visual_1 {
+			left: 100%;
+			background: url("img/1.png") 50% 0 no-repeat;
+		}
+
+		#brandVisual .visual_2 {
+			left: 200%;
+			background: url("img/2.png") 50% 0 no-repeat;
+		}
+
+		#buttonList:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		#buttonList li {
+			background: url("img/btnVisual.png") 0 -16px no-repeat;
+			width: 14px;
+			height: 15px;
+			float: left;
+			position: relative;
+			left: 50%;
+			top: -135px;
+			overflow: hidden;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+
+		#buttonList li.on {
+			background-position: 0 0;
+		}
+
+		#buttonList li a {
+			display: block;
+			text-indent: -9999px
+		}
+
+		.mn {
+			position: absolute;
+			top: 230px;
+			z-index: 3000;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			border: 1px solid #333;
+			text-align: center;
+			line-height: 60px;
+			background-color: #fff;
+			cursor: pointer;
+		}
+
+		#left_mn {
+			left: 100px;
+		}
+
+		#right_mn {
+			right: 100px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="brandVisual">
+			<ul>
+				<li class="visual_0"><a href="#">배너이미지 1</a></li>
+				<li class="visual_1"><a href="#">배너이미지 2</a></li>
+				<li class="visual_2"><a href="#">배너이미지 3</a></li>
+			</ul>
+		</div>
+		<ul id="buttonList">
+			<li class="on"><a href="#">배너1</a></li>
+			<li><a href="#">배너2</a></li>
+			<li><a href="#">배너3</a></li>
+		</ul>
+		<div id="left_mn" class="mn">left</div>
+		<div id="right_mn" class="mn">right</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+
+			var current = 0;  // 모든 함수에서 사용할 수 있는 전역변수
+			var setIntervalId; // 자동실행문을 객체 전역변수로 변환
+
+
+			// 버튼 이벤트에 의해서 버튼을 보이는 슬라이드의 번째와 매칭을 시킴
+			$("#buttonList li").click(function (e) {
+				e.preventDefault(); // 기능 없애는 기능. a태그 이벤트를 없애라
+
+				var i = $(this).index();
+				$("#buttonList li").removeClass("on");
+				$("#buttonList li").eq(i).addClass("on");
+
+				move(i);
+				console.log(i);
+			});
+
+			// 좌우버튼
+			$("#left_mn").click(function () {
+				var i = current + 1;
+				if (i >= 3) {
+					i = 0;
+				}
+				console.log(i);
+				move(i);
+			});
+
+			$("#right_mn").click(function () {
+				var i = current - 1;
+				if (i < 0) {
+					i = 2;
+				}
+				console.log(i);
+				move2(i);
+			});
+
+
+
+
+			// 시간에 맞추어 자동으로 실행을 제어
+			// setInterval(실행문, 3000) == 3초에 한번씩 실행문을 실행한다.
+			// clearInterval() == setInterval()을 실행중지시킨다.
+			// setTimeout(실행문, 3000) == 3초가 지나면 실행문을 실행한다.
+			// clearTimeout() == setTimeout()을 실행중지시킨다.
+
+			// 마우스 이벤트를 활용해서 자동실행문 제어
+			$("#wrap").on({   // on메서드는 하나의 대상에 여러개 이벤트를 걸어줄때 사용
+				mouseover: function () {
+					clearInterval(setIntervalId);
+				},
+				mouseout: function () {
+					timer();
+				}
+			});
+
+			// $(대상).on("이벤트","function(){}") 이런것도 있다.
+
+
+			timer(); // 자동실행문을 제어하는 함수 호출
+
+			function timer() {
+				setIntervalId = setInterval(function () {
+
+					var i = current + 1;
+					// var i = current;
+					console.log(`3초가 지나고 i값 : ${i}`);
+					if (i >= 3) {
+						i = 0;
+					}
+					move(i);
+
+					$("#buttonList li").removeClass("on");
+					$("#buttonList li").eq(i).addClass("on");
+				}, 3000)
+
+			}
+
+
+
+			// 이동하는 애니메이션
+			// move(n)
+			function move(n) {
+				if (current == n) return;  // 같은 번호로 들어가면 새로부르지 않고 그냥 넘긴다(retrun)
+				// 즉, 현재 보이는 슬라이드 current와 다음 슬라이드 n이 같다면 return 그대로 반환
+
+				// 움직이는 변수 currentEl와 nextEl 선언
+				var currentEl = $("#brandVisual > ul > li").eq(current);
+				var nextEl = $("#brandVisual > ul > li").eq(n);
+
+				currentEl.css({ left: "0%" }).animate({ left: "-100%" });
+				nextEl.css({ left: "100%" }).animate({ left: "0%" });
+
+				current = n;
+
+			};
+			// move2
+			function move2(n) {
+				if (current == n) return;  // 같은 번호로 들어가면 새로부르지 않고 그냥 넘긴다(retrun)
+				// 즉, 현재 보이는 슬라이드 current와 다음 슬라이드 n이 같다면 return 그대로 반환
+
+				// 움직이는 변수 currentEl와 nextEl 선언
+				var currentEl = $("#brandVisual > ul > li").eq(current);
+				var nextEl = $("#brandVisual > ul > li").eq(n);
+
+				currentEl.css({ left: "0%" }).animate({ left: "100%" });
+				nextEl.css({ left: "-100%" }).animate({ left: "0%" });
+
+				current = n;
+
+			};
+
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>kwicks 네비게이션</title>
+	<style>
+		body {
+			padding: 0px;
+			font-family: "맑은 고딕";
+			font-size: 0.9em;
+			background: #1d1e21;
+		}
+
+		ul.kwicks {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			width: 100%;
+		}
+
+		ul.kwicks li {
+			display: block;
+			padding: 0;
+			width: 25%;
+			height: 350px;
+			overflow: hidden;
+			/* outline: 1px solid #09f; */
+		}
+
+		ul.kwicks.horizontal li {
+			float: left;
+			margin-right: 5px;
+		}
+
+		ul.kwicks.horizontal li.kwick_4 {
+			margin-right: none;
+		}
+
+		li {
+			background: #09f;
+		}
+
+		li.kwick_1 {
+			background: #53b388;
+		}
+
+		li.kwick_2 {
+			background: #5a69a9;
+		}
+
+		li.kwick_3 {
+			background: #c26468;
+		}
+
+		li.kwick_4 {
+			background: #bf7cc7;
+		}
+	</style>
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.kwicks-1.5.1.pack.js"></script>
+	<script>
+		$(function () {
+			$(".kwicks").kwicks({
+				max: 1200,
+				spacing: 3,
+				// isVertical: true,
+				ishorizontal: true,
+				// behavior: "menu",
+				event: "click",
+				easing: "easeOutBounce"
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	horizontal navigation1
+	<ul class="kwicks horizontal">
+		<li class="kwick_1">menu1</li>
+		<li class="kwick_2">menu2</li>
+		<li class="kwick_3">menu3</li>
+		<li class="kwick_4">menu4</li>
+	</ul>
+
+
+
+</body>
+
+</html>

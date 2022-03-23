@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 효과</title>
+    <style>
+     *{margin: 0; padding: 0;}
+     ul,li{list-style: none;}
+     a{text-decoration: none;}
+
+     .container{ margin:50px; min-width:440px;}
+     .controller{ padding-top: 20px;}
+     .controller li{ display: inline-block; margin-right: 10px;}
+     .controller li:last-child{ margin-right: 0px;}
+     .controller li a{ display: block;
+                       width: 20px; height: 20px;
+                       background-color: beige;
+                       border-radius:10px;
+                       transition:  all 0.3s;}
+     .controller li.on a{ width: 50px;
+                          background-color: #8ac007;}
+
+     .picture{ margin-top: 30px; 
+               position: relative;
+               width: 400px; height: 400px; 
+               overflow:hidden;}
+     .picture ul{position: absolute; top:0; left: 0;
+                 width: 2400px; 
+                 transition: left 0.4s;}
+     .picture ul li{float: left; width: 400px; height: 400px;}
+     .picture ul li img{ max-width: 100%; height: auto;} 
+
+    </style>
+
+    <script>
+        window.addEventListener("load",function(){
+         var container = document.getElementsByClassName("container")[0];
+         var controller = container.children[0];
+         var picture = document.getElementsByClassName('picture')[0];
+         var pictureUl = picture.children[0];
+         var liList = controller.children; //버튼이 되는 li리스트 입니다
+         var n=0;
+         var targetx = 0;
+
+        //  console.log(container);
+        //  console.log(controller);
+        //  console.log(liList);
+
+        // for(var i=0; i < liList.length; i++){
+        //     liList[i].addEventListener('click', function(e){
+        //          e.preventDefault();
+        //          for(var j=0; j<liList.length; j++){
+        //             liList[j].classList.remove('on');
+        //          }
+        //          console.log(liList[i]);
+        //          e.currentTarget.classList.add('on');
+        //         // console.log(e.target);
+        //         // console.log(e.currentTarget);
+        //         //e.currentTarget  이벤트가 부착된 부모의 위치를 반환
+        //         //e.Target 부모로부터 이벤트가 위임되어 발생하는 자식의 위치, 내가 클릭한 자식 요소를 반환
+                
+        //     });
+        // }
+            
+        for(var i=0; i<liList.length; i++){
+		liList[i].index=i;//0 1 2 3 4 인덱스값
+
+            liList[i].addEventListener("click", function(e){
+                e.preventDefault();
+                n=e.currentTarget.index;//현재이벤트가적용된대상의 인덱스값
+                targetx = n * 400 * (-1);
+                pictureUl.style.left = targetx + "px";
+
+
+                for(var j=0; j<liList.length; j++){
+                    if(j == n){
+                        liList[j].classList.add("on");
+                    }
+                    else{
+                        liList[j].classList.remove("on");
+                    }
+                }
+            });
+	    }
+
+       
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+       <ul class="controller">
+           <li class="on"><a href="#" ></a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#"></a></li>
+       </ul>
+       <div class="picture">
+           <ul>
+               <li><img src="images/work1.jpg" alt=""></li>
+               <li><img src="images/work2.jpg" alt=""></li>
+               <li><img src="images/work3.jpg" alt=""></li>
+               <li><img src="images/work4.jpg" alt=""></li>
+               <li><img src="images/work5.jpg" alt=""></li>
+               <li><img src="images/work6.jpg" alt=""></li>
+           </ul>
+       </div>
+    </div>
+</body>
+</html>

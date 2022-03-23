@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 선택자와 속성</title>
+    <style type="text/css">
+        /* 내부스타일시트선언 */
+        /* h1{font-size: 50px; color:blue;} */
+        /* 선택자{속성:속성값; 속성:속성값;}  
+           전체선택자(*)는 body내에 모든 태그에게 스타일을 적용이 됨 그래서 기본값을 선언할때 주로 사용
+           클래스선택자(.선택자명)는 하나이상의 태그에게 스타일을 적용이됨 
+                          레이아웃 작업시 화면에 보여지는 글자 이미지 버튼등에게 선언함
+           아이디선택자(#선택자)는 하나의 태그에게만 스타일을 적용됨 
+                          레이아웃 작업시 화면에 보이는 태그가 아니라 블록 즉 영역을 선언할때 주로 사용
+        */
+       
+        *{ font-size: 30px; color: brown; font-family:"바탕체";}
+        h1{ color: chartreuse;}
+        h2{ color: crimson;}
+        p{color: cyan;}
+    
+        .title{ font-family:"맑은고딕"; text-decoration: underline;}
+        #txt{ font-size: 100px;}
+     </style>
+    </head>
+<body>
+    <h1 class="title">제목 1입니다</h1>
+    <h1 id="txt">제목 1입니다</h1>
+    <h1 id="txt">제목 1입니다</h1>
+
+    <h2 class="title">제목태그 2입니다</h2>
+    <h2>제목태그 2입니다</h2>
+
+    <p class="title">문단태그입니다</p>
+    <p>문단태그입니다</p>
+    <p>문단태그입니다</p>
+    <p>문단태그입니다</p>
+
+    <a href="#">버튼1</a>
+    <a href="#">버튼2</a>
+    <a href="#">버튼3</a>
+
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+</body>
+</html>

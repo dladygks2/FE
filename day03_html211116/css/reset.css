@@ -1,0 +1,18 @@
+*{margin: 0; padding:0;}
+body{ font-family: "맑은 고딕";
+    font-size: 12px;
+    color: #333;}
+
+img{border: 0px;}
+/* 밑을 그룹선택자라고 한다. */
+ul, ol, li{list-style: none;}
+
+
+/* 가상선택자 (4가지 : link, hover, active, visited) */
+a{text-decoration: none;}
+/* a:link{text-decoration: none;}
+a:hover{text-decoration: underline;}
+a:active{text-decoration: line-through;}
+a:visited{text-decoration: overline;} */
+
+

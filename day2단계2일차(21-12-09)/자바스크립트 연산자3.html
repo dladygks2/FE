@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+
+<body>
+    <h2>비교연산자</h2>
+
+    <script>
+        'use strict'
+
+        const num1 = 3;
+        const num2 = 5;
+
+        const str1 = "3";
+        const str2 = "abcde";
+        const str3 = "bcd";
+
+        // 예전에는 var로  상수,변수를 선언했었다.
+        // 이제는 변수선언은 let로
+        // 상수선언은 const로 하기로 했다.
+
+        let result = num1 > num2; // (true) or (false)
+        console.log(`num1 > num2 : ${result}`);
+
+        result = str2 <= str3;  // "abcde" <= "bcd" ---> true : 아스키코드를 비교한 결과
+        console.log(`str2 <= str3 : ${result}`);
+
+        result = num1 == num2;
+        console.log(`num1 == num2 : ${result}`);   // false
+
+        result = num1 == str1;
+        console.log(`num1 == str1 : ${result}`);    // 숫자 3과 문자열 3은 같다고 나온다(true)
+
+        result = num1 === str1;
+        console.log(`num1 === str1 : ${result}`);   // '===' 은 엄격하게 검사. 데이터형까지 비교한다.(false)
+
+        result = num1 != str1;
+        console.log(`num1 != str1 : ${result}`);    // 데이터형을 비교하지 않기 때문에 값은 같으므로 false가 나온다.
+
+        result = num1 !== str1;
+        console.log(`num1 !== str1 : ${result}`);   // 데이터형을 비교해보면 false이고 거기에 반대이므로 true가 나온다.
+
+    </script>
+</body>
+
+</html>

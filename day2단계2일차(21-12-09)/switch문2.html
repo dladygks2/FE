@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        // 성적 프로그램 switch 문으로 작성할 것
+        // 90점이상 = A학점
+        // 80점이상 = B학점
+        // 70점이상 = C학점
+        // 60점이상 = D학점
+        // 60점미만, 즉 나머지 = F학점
+
+        const name = prompt("이름을 입력해주세요");
+        const kor = Number(prompt("국어 점수를 입력해주세요"));
+        const eng = Number(prompt("영어 점수를 입력해주세요"));
+        const math = Number(prompt("수학 점수를 입력해주세요"));
+
+        const total = kor + eng + math;
+        const avg = total / 3;
+        let hakjum = "";
+
+        switch (parseInt(avg / 10)) {
+
+            case 10:
+
+            case 9:
+                hakjum = 'A'
+                // document.write(`학점은 ${hakjum}학점 입니다.`);
+                break;
+            case 8:
+                hakjum = 'B'
+                // document.write(`학점은 ${hakjum}학점 입니다.`);
+                break;
+            case 7:
+                hakjum = 'C'
+                // document.write(`학점은 ${hakjum}학점 입니다.`);
+                break;
+            case 6:
+                hakjum = 'D'
+                // document.write(`학점은 ${hakjum}학점 입니다.`);
+                break;
+            default:
+                hakjum = 'F'
+                // document.write(`학점은 ${hakjum}학점 입니다.`);
+                break;
+
+
+        }
+
+
+
+
+        document.write(`<h2> ${name} 님의 성적표</h2>`);
+        document.write(`<p>국어점수 : ${kor} 점</p>`);
+        document.write(`<p>영어점수 : ${eng} 점</p>`);
+        document.write(`<p>수학점수 : ${math} 점</p>`);
+        document.write("----------------------------");
+        document.write(`<p>총점수 : ${total} 점</p>`);
+        document.write(`<p>평균 : ${avg} 점</p>`);
+        document.write(`<p>평균 : ${parseInt(avg)} 점</p>`);
+        document.write("----------------------------<br>");
+        document.write(`${name}님의 최종 학점은 ${hakjum}학점 입니다.`);
+
+
+    </script>
+
+</body>
+
+</html>

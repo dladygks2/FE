@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>사용자 정의 오류</h3>
+    <script>
+        'use strict';
+       
+    // catch 해주지 않은 부분은 실행되지 않음
+    function f2() {
+        console.log('this is f2 start');
+        //throw new Error('에러'); // Error 객체 - 해당하는 콜스택 정보가 담겨있다.
+        console.log('this is f2 end'); // 실행되지 않음.
+    }
+
+    function f1() {
+        console.log('this is f1 start');
+        try {
+            f2();
+        } catch (e) {
+            console.log(e);
+        }
+        console.log('this is f1 end');
+    }
+
+f1();
+        
+        
+        
+
+        sum(1, 4);
+    </script>
+</body>
+</html>

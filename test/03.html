@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일에서 폰트에 대한 기본스타일</title>
+    <style type = "text/css">
+        
+       h1{font-family: "맑은 고딕"; color: #000000; font-size: 12px;}
+/* font-weight: 두께 */
+       p{font-size: 25px; color : darkmagenta;}
+       .txt01{font-weight: 200; font-style: italic;}
+       .txt02{font-weight: 400;}
+       .txt03{font-weight: 700;}
+       .txt04{font-weight: 900;}
+
+       /*  */
+       .name{font-variant: small-caps;}
+
+
+    </style>
+</head>
+<body>
+    <!-- 클래스 선택자의 사용법인듯 -->
+    <h1 class="title">제목 1입니다.</h1>
+    <h1 id ="txt">제목 2입니다.</h1>
+    <h1 id ="txt">제목 3입니다.</h1>
+    <!-- 원칙 : 클래스는 한군데만 사용 가능하고 여러번 사용가능하지만. 
+        id는 한 군데만 사용하기로 한다. 그렇다고 여러번 선언 안되는 것은 아니다. -->
+
+    <h2 class ="name">lim yo han</h2>
+    <h2>LIM YO HAN</h2>
+
+    <p class="txt01">문단태그1 입니다</p>
+    <p class="txt02">문단태그2 입니다</p>
+    <p class="txt03">문단태그3 입니다</p>
+    <p class="txt04">문단태그4 입니다</p>
+
+    <a href ="#">버튼1</a>
+    <a href ="#">버튼2</a>
+    <a href ="#">버튼3</a>
+
+
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+    <span>한단어를 묶어주는 태그</span>
+
+<p class = "txt05">
+    문단태그입니다<br>
+    문단태그입니다<br>
+    문단태그입니다<br>
+    문단태그입니다<br>
+    문단태그입니다
+
+</p>
+
+
+
+
+</body>
+</html>
+
+
+<!-- html 타자치고 밑에   'html :5' 선택하면 기본 형태 잡아준다. 위에꺼처럼
+'!' 이거 쳐도 나온단다. 
+내부(헤드와 헤드사이에 선언), 외부, 인라인 : 스타일시트에 적용하는 순서-->

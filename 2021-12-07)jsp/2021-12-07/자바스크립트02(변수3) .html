@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명시적 타입 변환</title>
+
+</head>
+
+<body>
+    <script>
+        'use strict'; // 자바스크립트를 엄격하게 하겠다는 선언
+
+        const num1 = "10";
+        const num2 = "5";
+
+        console.log(num1); // 문자열
+        console.log(Number(num1) + " + " + Number(num2) + " = " + (Number(num1) + Number(num2))); // 숫자형으로 변환됨
+        console.log(Number(num1) + " + " + Number(num2) + " = " + Number(num1) + Number(num2)); // 숫자형으로 변환됨
+        console.log(Number(num1) + " + " + Number(num2) + " = " + Number(num1 + num2)); // 숫자형으로 변환됨
+
+        console.log(`Number(num1 + num2) = ${Number(num1 + num2)}`)
+    </script>
+</body>
+
+</html>

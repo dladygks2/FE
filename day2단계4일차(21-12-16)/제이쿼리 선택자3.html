@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            //  next(), parent(), find(), children()
+            //  : 대상의 위치를 기준으로 다른 대상을 선택하는 것
+            // $(".list").children().css("color", "red");
+            // children()은 이 클래스의 밑에 있는 자식요소들을 말함
+
+            // next() : 대상의 다음에 오는 태그
+            // $(".li02").next().css("color", "red"); // 자신의 다음
+            // $(".li02").nextAll().css("color", "red"); // 자신 다음의 전부다
+
+            // prev() : 대상의 잊던에 오는 태그
+            // $(".li02").prev().css("color", "red"); // 자신의 이전꺼
+
+            // parent() : 부모를 의미한다.
+            // $("span").parent().css("color", "red"); // .parent()는 상위로 한단계올라가서 적용
+            // $("span").parent().parent().css("color", "red");
+            // $("span").parents().css("color", "red"); // 자신의 부모가 li이고 li와 같은 레벨의 모든 것에 적용한다.
+
+
+            // find() : 선택된 대상을 기준으로 안에 포함되는 자식, 자손요소를 의미
+            // $(".list").find(".li02").css("color", "red");
+            $(".list").find("span").css("color", "red");
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <ul class="list">
+        <li>1-1-1</li>
+        <li class="li02">1-1-2 <span>eieieiieiei</span></li>
+        <li id="li03">1-1-3</li>
+        <li>1-1-4</li>
+        <li>1-1-5</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반적인 슬라이딩갤러리</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #slide {
+            margin: 0 auto;
+            margin-top: 200px;
+            width: 600px;
+            height: 350px;
+            border: 2px solid #000;
+            position: relative;
+        }
+
+        #imgs_area {
+            display: block;
+            width: 600px;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        #imgs_area .imgs {
+            position: relative;
+            width: 600px;
+            height: 350px;
+        }
+
+
+        #imgs_area .imgs>li {
+            position: absolute;
+            left: 0;
+            float: left;
+            width: 600px;
+            height: 350px;
+        }
+
+        #imgs_area .imgs>li.img0 {
+            left: 0%;
+            background-color: red;
+        }
+
+        #imgs_area .imgs>li.img1 {
+            left: 100%;
+            background-color: orange;
+        }
+
+        #imgs_area .imgs>li.img2 {
+            left: 200%;
+            background-color: yellow;
+        }
+
+        #imgs_area .imgs>li.img3 {
+            left: 300%;
+            background-color: green;
+        }
+
+        #slide .btns {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+        }
+
+        #slide .btns li {
+            float: left;
+            margin-right: 10px;
+            font-size: 150px;
+        }
+
+        #slide .btns a {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: burlywood;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 16px;
+        }
+
+        #slide .btns li.on a {
+            background-color: darkblue;
+            color: whitesmoke;
+        }
+
+        #prev {
+            position: absolute;
+            bottom: -30px;
+            left: 10px;
+        }
+
+        #next {
+            position: absolute;
+            bottom: -30px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slide">
+        <div id="imgs_area">
+            <ul class="imgs">
+                <li class="img0">img0</li>
+                <li class="img1">img1</li>
+                <li class="img2">img2</li>
+                <li class="img3">img3</li>
+            </ul>
+        </div>
+        <ul class="btns">
+            <li class="on"><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var current = 0; // 현재 보이는 이미지의 idnex값
+
+            $(".btns > li").click(function () { // li에 index값을 이용
+                var i = $(this).index(); // 누를 때마다 버튼의 인덱스가 들어간다.
+                //console.log(i); // 클릭했을 때 인덱스값이 i에 들어가는지 확인하는 코드
+                $(".btns > li").removeClass("on");
+                $(this).addClass("on");
+                move(i);
+
+            });
+
+            $("#prev").click(function (e) { // 연산으로 3 2 1 0
+                e.preventDefault();
+                if (current > 0) {
+                    current--;
+                    move(current);
+                    console.log(current);
+
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+
+                } else {
+                    current = 3;
+                    move(current);
+
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                }
+            });
+
+            $("#next").click(function (e) { // 연산으로 0 1 2 3
+                e.preventDefault();
+                if (current < 3) {
+                    current++;
+                    move(current);
+                    console.log(current);
+
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                } else {
+                    current = 0;
+                    move(current);
+
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                }
+
+            });
+            // 이동 애니메이션 함수
+            function move(n) {
+                var posy = n * -350 + "px";
+                // console.log(n);
+                current = n;
+                $(".imgs").animate({ top: posy });// 왼쪽으로 600px이동
+            }
+
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>

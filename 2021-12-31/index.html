@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1 class="logo">로고</h1>
+            <ul class="main_mn">
+                <li><a href="#">menu1</a>
+                    <ul class="sub_mn">
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">menu</a>
+                    <ul class="sub_mn">
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">menu</a>
+                    <ul class="sub_mn">
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">menu</a>
+                    <ul class="sub_mn">
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">menu</a>
+                    <ul class="sub_mn">
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                        <li><a href="#">smenu</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    // 웬만하면 $(document).ready(function () 써라
+                    // $(".sub_mn").hide();
+                    $(".sub_mn").css({ display: "none" });
+
+                    $(".main_mn > li").hover(
+                        function () {
+                            $(this).find(".sub_mn").show(500);
+                            // $(this).find(".sub_mn").fadeIn(500);
+                        },
+                        function () {
+                            $(this).find(".sub_mn").hide();
+                        }
+                    );
+                });
+
+            </script>
+
+            <ul class="info_mn">
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+            </ul>
+
+
+        </div>
+        <div id="main_img">
+            <div class="img_area">
+                <ul class="imgs">
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                    <li>d</li>
+                </ul>
+            </div>
+            <ul class="btns">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <script>
+                $(function () {
+                    var current = 0;
+                    var setIntervalId;
+
+                    $(".btns li").click(function (e) {
+                        e.preventDefault(); // a태그 쓰면 e가 필요함
+                        var i = $(this).index();
+                        movi(i);
+                    })
+
+                    $("#main_img").hover(
+                        function () {
+                            clearInterval(setIntervalId)
+                        },
+                        function () {
+                            timer();
+                        }
+                    );
+
+                    //  함수호출 바로 해줘야한다.
+                    timer();
+                    function timer() {
+                        setIntervalId = setInterval(function () {
+                            var n = current + 1; //0 1 2 3
+                            if (n == 4) { // 0 1 2 3 제어하기
+                                n = 0;
+                            }
+                            movi(n);
+                        }, 3000);
+                    }
+
+
+                    // 슬라이드 계속 움직이는 것
+                    function movi(n) {
+                        if (current == n) return;
+
+                        var currentEl = $(".imgs > li").eq(current);
+                        var nextEl = $(".imgs > li").eq(n);
+
+                        currentEl.css({ left: "0%" }).animate({ left: "-100%" });
+                        nextEl.css({ left: "100%" }).animate({ left: "0%" });
+                        current = n;
+                    }
+                });
+            </script>
+        </div>
+        <div id="contents"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

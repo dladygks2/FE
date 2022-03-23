@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤메뉴</title>
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <!-- <script src="../스크롤메뉴/step1/js/jquery-1.9.1.min.js"></script> -->
+    <script src="../스크롤메뉴/step1/js/jquery.easing.1.3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap>div {
+            width: 100%;
+            height: 1000px;
+        }
+
+        #haeder {
+            width: 100%;
+            height: 120px;
+            background-color: #ccf;
+        }
+
+        #haeder_show {
+            width: 100%;
+            height: 120px;
+            background-color: rgb(132, 12, 141);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+        }
+
+        .box1-1 {
+
+            border: 1px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 1500px;
+        }
+
+        .box1-2 {
+            border: 1px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 800px;
+        }
+
+        .box1-3 {
+
+            border: 1px solid #000;
+            position: absolute;
+            top: 300px;
+            left: 500px;
+        }
+
+        .box2-1 {
+            width: 600px;
+            height: 500px;
+
+            position: absolute;
+            top: 400px;
+            left: 560px;
+            border: 2px solid #000;
+            opacity: 0;
+        }
+
+        .box2-2 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 300px;
+            left: 860px;
+            /* opacity: 0; */
+        }
+
+        .box2-3 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 1160px;
+            /* opacity: 0; */
+        }
+
+        .box3-1 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            /* opacity: 0; */
+        }
+
+        .box3-2 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            /* opacity: 0; */
+        }
+
+        .box3-3 {
+            width: 100px;
+            height: 400px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 200px;
+            left: 800px;
+            opacity: 0;
+        }
+    </style>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            var scene00Num = 1;
+            var scene01Num = 1;
+            var scene02Num = 1;
+            var scene03Num = 1;
+
+
+
+            $(window).scroll(function () {
+                var sct = $(document).scrollTop();
+                // 헤드를 숨기고, 헤드2를 나타나게 함
+                if (sct > 100 && scene01Num == 1) {
+                    // $("#header_show").css({ opacity: 0 }).animate({ opacity: 1 });
+                }
+
+
+
+
+
+
+                if (sct >= 500 && scene01Num == 1) {
+                    scene01Num = 0;
+                    $(".box1-1").dalay(0).stop()
+                        .animate({ opacity: 1, top: "800px" }, 1000,
+                            function () { $(".box1-1").dalay(200).stop().animate({ opacity: 0 }, 1000); });
+                    $(".box1-2").dalay(0).stop()
+                        .animate({ opacity: 1, top: "800px" }, 1000,
+                            function () { $(".box1-1").dalay(200).stop().animate({ opacity: 0 }, 1000); });
+                    $(".box1-3").dalay(0).stop()
+                        .animate({ opacity: 1, top: "800px" }, 1000,
+                            function () { $(".box1-1").dalay(200).stop().animate({ opacity: 0 }, 1000); });
+                }
+                else if (sct < 500 && scene01Num == 0) {
+                    scene01Num = 1;
+                    $(".box1-1").dalay(0)
+                        .css({ top: "800px" })
+                        .stop()
+                        .animate({ opacity: 1, top: "200px" }, 1000);
+                    $(".box1-2").dalay(0)
+                        .css({ top: "500px" })
+                        .stop()
+                        .animate({ opacity: 1, top: "800px" }, 1000);
+                    $(".box1-3").dalay(0)
+                        .css({ top: "800px" })
+                        .stop()
+                        .animate({ opacity: 1, top: "200px" }, 1000);
+                }
+
+                if (scrollTop > 700 && scene02Num == 1) {
+                    scene02Num = 0;
+                    $(".box2-1").dalay(100).stop().css({ top: "200px", left: "560px", opacity: 0 }).animate({ top: "400px", opacity: 1 }, 1500);
+                    $(".box2-2").dalay(200).stop().css({ top: "200px", opacity: 0 }).animate({ top: "400px", opacity: 1 }, 1000);
+                    $(".box2-3").dalay(600).stop().css({ top: "200px", left: "1160px", opacity: 0 }).animate({ top: "400px", opacity: 1 }, 1800);
+
+                } else if (scrollTop < 700 && scene02Num == 0) {
+                    scene02Num = 1;
+                    $(".box2-1").dalay(0).stop().css({ top: "400px", opacity: 1 }).animate({ top: "200px", left: "-200px", opacity: 0 }, 1500);
+                    $(".box2-2").dalay(0).stop().css({ top: "400px", opacity: 1 }).animate({ top: "200px", opacity: 0 }, 1500);
+                    $(".box2-3").dalay(0).stop().css({ top: "400px", opacity: 1 }).animate({ top: "200px", left: "100%", opacity: 0 }, 1500);
+                }
+
+
+
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+    <div id="wrap">
+        <div class="box1-1">con1</div>
+        <div class="box1-2">con2</div>
+        <div class="box1-3">con3</div>
+
+        <div class="box2-1">con2-1</div>
+        <div class="box2-2">con2-2</div>
+        <div class="box2-3">con2-3</div>
+
+        <div class="box3-1">con3-1</div>
+        <div class="box3-2">con3-2</div>
+        <div class="box3-3">con3-3</div>
+    </div>
+
+
+
+</body>
+
+</html>
