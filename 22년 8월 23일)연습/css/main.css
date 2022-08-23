@@ -2,7 +2,7 @@
     width: 100%;
     height: auto;
     padding: 0 auto;
-    margin: 0 auto;
+    margin: 20px;
 }
 
 #wrap > h5{
@@ -12,11 +12,13 @@
 
 #top_tab{
     float: left;  
-    height: 20px;
+    /* height: 40px; */
+    /* line-height: 20px; */
+    vertical-align: middle;
     width: 90%;
     margin: 10px auto;
-    padding: 10px;
-    background-color: antiquewhite;
+    padding: 0px 10px 10px;
+    background-color:rgb(184, 184, 189);
 }
 
 #top_tab > h5{
@@ -25,5 +27,32 @@
 }
 
 #top_tab > select{
-    margin-right: 30px;
+    margin-right: 40px;
 }
+
+#search{
+    
+    width: 200px;
+    height: 17px;
+    resize: none;
+    background-color: #fff;
+    margin: 10px 0px -5px;    
+}
+
+ #search-icon{
+    display: inline-block;
+    margin-left: 10px;
+    background-color: blueviolet;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
+} 
+
+#search-icon:hover{
+    cursor: pointer;
+}
+
+.pageNum{
+    display: inline-block;
+}
+
