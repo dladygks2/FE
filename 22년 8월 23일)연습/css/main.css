@@ -31,7 +31,6 @@
 }
 
 #search{
-    
     width: 200px;
     height: 17px;
     resize: none;
@@ -42,7 +41,6 @@
  #search-icon{
     display: inline-block;
     margin-left: 10px;
-    background-color: blueviolet;
     width: 20px;
     height: 20px;
     margin-bottom: -5px;
@@ -52,7 +50,65 @@
     cursor: pointer;
 }
 
+#search-icon > img {
+    height: 20px;
+    margin-bottom: -5px;
+}
+/*  
+    이미지 받은 곳인데 색이나 크기 조절가능 여기서
+    https://www.flaticon.com/free-icon/search_4250972?k=1661306942531&log-in=google 
+*/
+
 .pageNum{
     display: inline-block;
 }
 
+table{ 
+    width: 90%;
+    margin-top: 5px; 
+    background-color: #fff;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+
+}
+
+table tr{ 
+    height: 30px;
+    text-align: center;
+}
+ 
+.tableTop{
+    border-bottom: 2px solid rgb(200, 200, 200);
+    border-top: 2px solid rgb(200, 200, 200);
+    background-color: rgb(244, 241, 241);
+    /*
+    float: left;
+    height: 30px;
+    width: 90%;
+    margin-top: 5px;
+    line-height: 30px;
+    background-color: rgb(226, 226, 229);
+    */
+} 
+ 
+.button{
+    background-color: #fff;
+    color: #71b6df;
+    padding: 5px;
+    border: 1px solid #71b6df;
+    margin-top: 15px;
+}
+
+.button2{
+    background-color: #71b6df;
+    border: none;
+    color: #fff; 
+    margin-top: 15px;
+    margin-right: 10%;
+    padding: 5px 25px;
+    float: right;
+}
+ 
+
+
+ 
