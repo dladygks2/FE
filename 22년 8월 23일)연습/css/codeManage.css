@@ -1,0 +1,90 @@
+body{ 
+    padding: 20px;
+}
+
+h5 {
+    margin-bottom: 10px;
+}
+
+.wrap{
+    display: inline-flex;
+    margin: 0 auto;
+    padding: 0 auto;   
+}
+
+aside{
+    border: 1px solid rgb(223, 219, 219);
+    width: 170px;
+    padding: 20px 10px;
+    font-weight: 200;
+}
+
+aside > ul {
+    padding-left: 20px;
+    margin: 3px;
+}
+
+aside > ul > ul > li{
+    padding-left: 15px;
+    margin: 3px;
+}
+
+aside > ul > ul > ul{
+    padding-left: 30px;
+    margin: 3px;
+}
+
+main{
+    margin: 5px 5px 5px 10px;
+    width: 600px;
+    background-color: antiquewhite;
+}
+
+main > div{
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+.table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 30px;
+    border: none;
+    width: inherit;
+}
+
+.tableTab{
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(223, 219, 219);
+    border-left: none;
+    background-color: rgb(241, 240, 240);
+    padding: 0 5px;
+}
+
+.table2nd{
+    padding: 0 5px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(223, 219, 219);
+}
+
+.tableEnd{
+    padding: 0 5px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(223, 219, 219);
+    border-right: none;
+}
+
+.codePlus{
+    color: rgb(69, 93, 233);
+    margin: 20px 0px;
+    padding: 3px 20px;
+    width: 50px;
+    border: 1px solid  rgb(69, 93, 233);
+    cursor: pointer;
+}
+
+
+ 
+
