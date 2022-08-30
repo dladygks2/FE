@@ -12,3 +12,10 @@ a:link{text-decoration: none; color:#333}
 a:hover{text-decoration: underline; color:#666;}
 a:active{text-decoration: underline; color:#666;}
 a:visited{text-decoration: none; color:#333}
+
+#wrap{
+      width: 100%;
+      height: auto;
+      padding: 0 auto;
+      margin: 20px;
+  }
