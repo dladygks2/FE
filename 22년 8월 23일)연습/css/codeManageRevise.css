@@ -82,40 +82,34 @@ main > div{
 /* 하단부분 */
 .hadan{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
 
-.codePlus{
-    color: rgb(69, 93, 233);
-    margin: 20px 0px;
-    padding: 3px 20px;
+.cancelBtn{
+    margin: 20px 10px;
+    padding: 5px 15px;
+    text-align: center;
     width: 50px;
-    border: 1px solid  rgb(69, 93, 233);
     cursor: pointer;
-    
+    background-color: darkgray;
+    color: #fff;
+
 }
 
-.modifyBtn{
+.saveBtn{
     color: #fff;
     background-color: rgb(69, 93, 233);
-    margin: 20px 0px;
-    padding: 3px 20px;
-    width: 50px;  
+    margin: 20px 10px;
+    padding: 5px 15px;
+    width: 50px;
+    text-align: center;  
     cursor: pointer;
     text-align: center;
 }
 
 /* 하단 테이블 부분 */
 
-.table2{
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    line-height: 30px;
-    border: none;
-    text-align: center;
-    
-}
+
  
 .saveBtn{
     color: #fff;
@@ -127,42 +121,7 @@ main > div{
     text-align: center;
 }
 
-.table2 tr td {
-    border: 1px solid gray;
-}
-.table2 tr:first-child{
-    background-color: gainsboro;
-}
-
-.table2 tr td:first-child{
-    /* background-color: aquamarine; */
-}
-
-.table2 tr td:nth-child(2){
-    /* background-color: pink; */
-}
-
-.table2 tr td:nth-child(3){
-    /* background-color: yellow; */
-}
-
-.table2 tr td:nth-child(4){
-    /* background-color: coral; */
-}
-
-.table2 tr td:nth-child(5){
-    /* background-color: pink; */
-}
-
-.table2 tr td:nth-child(5) > select{
-    width: 90%;
-    padding: 3px 0;
-}
-
-.table2 tr td:nth-child(6){
-    /* background-color: greenyellow; */
-}
-
 .fa-solid {
     margin: 0 5px;
 }
+

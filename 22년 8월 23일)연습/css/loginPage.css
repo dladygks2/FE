@@ -1,0 +1,73 @@
+body{
+    background-color: gainsboro;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap{
+    margin: auto auto;
+    /* background-color: antiquewhite; */
+    width: fit-content;
+    height: fit-content;
+}
+
+.title{
+    font-weight: 900;
+    font-size: x-large;
+    margin-bottom: 30px;
+    margin-left: 5px;
+}
+
+.title > span{
+    font-weight: 700;
+    font-size: small;
+}
+
+.loginPage{
+    background-color: #fff;
+    display: flex;
+    border-top: 1px solid gray;
+}
+
+.leftImg{
+    height: inherit;
+    width: 200px;
+    background-color: aqua;
+}
+
+.rightTable{
+    width: 220px;
+    height: 200px; 
+    margin: 30px;
+    /* background-color: cornsilk; */
+}
+
+.rightTable :first-child{
+    margin: 3px 0;
+}
+
+.rightTable table tr td input{
+    width: 200px; 
+    padding: 3px;
+}
+
+.rightTable input {
+    width: 200px;
+    padding: 3px;
+}
+
+.boanImg{
+    width: 50%;
+    height: 40px;
+    background-color: aqua;
+    margin-bottom: 5px;
+}
+
+.loginBtn{
+    width: 210px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: dimgrey;
+    color: #fff;
+    border: none;
+}
