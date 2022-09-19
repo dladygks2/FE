@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인화면 상단탭</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <script src="js/jquery(2).js"></script>
+    <script src="js/top.js"></script>
+    <script src="https://kit.fontawesome.com/94de3890c6.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <div class="wrap">
+        <div class="topTab">
+            <div class="rightTopTab">
+                <i class="fa-light fa-user" id="user"></i>
+                <span>홍길동님 안녕하세요.</span>
+                <span>로그아웃</span>
+                <i class="fa-regular fa-envelope" id="envelope"></i>
+                <i class="fa-light fa-calendar-days" id="calendar"></i>
+                <i class="fa-regular fa-gear" id="setting"></i>
+            </div>
+
+            <div class="mainTab">
+                <img src="/22년 8월 23일)연습/images/eIPSES.png" alt="eIPSES 평가분석시스템">
+                <div class="firstMn"><a>정보시스템</a></div>
+                <div class=""><a>통계서비스</a></div>
+                <div class=""><a>사용안내</a></div>
+                <div class=""><a>관리자</a></div>
+                <i class="fa-regular fa-bars" id="menuBtn"></i>
+            </div>
+        </div>
+    </div>    
+    <!-- 내려오는 스크린?? 하위 레이어 노출 및 현재위치 표시 --> 
+    <div class="down_mn">
+        <!-- 메뉴 첫번째꺼 -->
+        <div class="down_mn_first">
+           <h3>정보서비스</h3>
+           <h4><a href="#">통합검색</a></h4>
+           <h4><a href="#">한 눈에 보기(가칭)</a></h4>
+           <!-- 평가정보 부분 -->
+           <h4><a href="#">평가 정보</a></h4>
+            <div class="evalInfo">
+                <h6><a>종합평가</a></h6>
+                <ul>
+                    <li><a href="#">&#183; 연도별 평가결과</a></li>
+                    <li><a href="#">&#183; 부처별 평가결과</a></li>
+                    <li><a href="#">&#183; 일반/기초 통계</a></li>
+                </ul>
+                <h6>국정과제평가</h6>
+                <ul>
+                    <li><a href="#">&#183; 국정과제 조회</a></li>
+                    <li><a href="#">&#183; 연도별 평가결과</a></li>
+                    <li><a href="#">&#183; 부처별 평가결과</a></li>
+                    <li><a href="#">&#183; 일반/기초 통계</a></li>
+                </ul>
+                <h6><a>기타과제평가</a></h6>
+                <ul>                    
+                    <li><a href="#">&#183; 규제혁신</a></li>
+                    <li><a href="#">&#183; 정부혁신</a></li>
+                    <li><a href="#">&#183; 정책소통</a></li>
+                </ul>
+           </div>
+           <!-- 성과지표 부분 -->
+           <h4>성과지표 정보</h4>
+           <div class="performInfo">
+                <h6><a href="#">성과지표 기본정보</a></h6>
+                <h6><a href="#">성과지표 비교</a></h6>
+           </div>
+           <!-- 평가위원 부분 -->
+           <h4>평가위원 정보</h4>
+           <div class="evalPerson">
+                <h6><a href="#">평가위원 기본정보</a></h6>
+                <h6><a href="#">평가위원별 평가결과 정보</a></h6>
+                <h6><a href="#">평가위원 일반/기초 통계</a></h6>
+           </div>
+        </div>
+
+        <!-- 테이블 2번째꺼 -->
+        <div class="down_mn_second">
+            <h3>통계서비스</h3>
+            <h4><a href="#">통계검색</a></h4>
+            <h4><a href="#">평가지표 이력 추적 시스템</a></h4>
+            <h4><a href="#">항목별 통계정보</a></h4>
+            <ul>
+                <li><a href="#">시계열 통계분석</a> </li>
+                <li><a href="#">횡단면 통계분석</a> </li>
+                <li><a href="#">패널 통계 생산</a> </li>
+            </ul>
+            <h4><a href="#">연관분석</a></h4>
+            <ul>
+                <li><a href="#">항목별 연관분석</a></li>
+                <li><a href="#">알고리즘 관리</a></li>
+            </ul>
+        </div>
+
+        <!-- 테이블 3번째꺼 -->
+        <div class="down_mn_third">
+            <h3><a href="#">사용안내</a></h3>
+            <h4><a href="#">평가분석시스템 소개</a></h4>
+            <ul>
+                <li><a href="#">평가분석시스템 개요 및 활용법</a></li>
+                <li><a href="#">정부변화 이력</a></li>
+                <li><a href="#">정부부처 변화이력</a></li>
+            </ul>
+            <h4><a href="#">자료실</a></h4>
+            <ul>
+                <li><a href="#">평가분석 메타데이터</a></li>
+                <li><a href="#">사용자 매뉴얼</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+            <h4><a href="#">공지사항</a></h4>
+            <h4><a href="#">FAQ</a></h4>
+            <h4><a href="#">Q&A</a></h4>
+            <h4><a href="#">이용안내</a></h4>
+            <h4><a href="#">사이트맵</a></h4>
+        </div>
+
+        <!-- 테이블 4번째꺼 -->
+        <div class="down_mn_forth">
+            <h3><a href="#">관리자</a></h3>
+            <h4><a href="#">기준관리</a></h4>
+            <ul>
+                <li><a href="#">메타데이터 관리</a></li>
+                <li><a href="#">공통코드 관리</a></li>
+            </ul>
+            <h4><a href="#">권한 및 메뉴 관리</a></h4>
+            <ul>
+                <li><a href="#">사용자관리</a></li>
+                <li><a href="#">메뉴관리</a></li>
+                <li><a href="#">온라인 매뉴얼 관리</a></li>
+            </ul>
+            <h4>설정관리</h4>
+            <ul>
+                <li><a href="#">시스템 설정 관리</a></li>
+                <li><a href="#">연계관리</a></li>
+                <li><a href="#">시스템사용 로그(감사증적) 관리</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="width: 1000px; height:500px; background-color:darkolivegreen"></div>
+</body> 
+<script>
+    $(document).ready(function(){
+        $(".down_mn").hide();
+
+        $(".mainTab > div").hover(function(){
+            $(".down_mn").stop(500).slideDown(300);
+            // $(this).find(".down_mn").slideDown(300);
+        }, function(){
+            $(".down_mn").slideUp(500);
+        });
+ 
+    });
+</script>
+</html>
