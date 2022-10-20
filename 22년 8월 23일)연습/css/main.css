@@ -1,8 +1,16 @@
+body{
+    margin: 0 auto;
+    padding: 0 auto;
+    width: fit-content;
+}
+
+#wrap{ 
+    margin: 0 auto;
+}
 
 #wrap > h5{
     color: green;
 }
-
 
 #top_tab{
     float: left;  
