@@ -4,8 +4,7 @@ $(document).ready(function(){
     
     $(".s_mn").hide(); //css({display:"none"})
 
-    $(".m_mn > li").hover(
-        function(){
+    $(".m_mn > li").hover(function(){
         // $(this).find(".s_mn").show();
         // $(this).find(".s_mn").fadeIn();
         // $(this).find(".s_mn").animate({속성:"속성값",속성:"속성값"},시간);
@@ -151,10 +150,5 @@ $(document).ready(function(){
      $('.con05 > h3').click(function(){
         $('.con05').animate({width:'640px'})
      });
-
-
-
-
-
 
 });

@@ -1,0 +1,271 @@
+body{
+    /* background-color: beige; */
+    width: 100%;
+}
+
+.wrap{
+    margin: 0 auto; 
+    width: 1300px;
+    /* background-color: pink; */
+    border-bottom: 1px solid rgb(231, 241, 247);
+}
+
+.topTab{
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.rightTopTab{
+    padding-left: 980px;
+    margin: 5px;
+    /* background-color: aqua; */
+}
+
+.rightTopTab > div{
+    margin-right: 20px;
+    
+}
+
+.rightTopTab > i{
+    margin-right: 5px;
+}
+
+.rightTopTab >span{
+    margin-right: 20px;
+}
+
+.rightTopTab :nth-child(3){
+    margin-right: 5px;
+    text-decoration-line: underline;
+}
+
+#user{
+    background-color: rgb(58, 76, 88);
+    color: #fff;
+    size: 7px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#envelope{
+    background-color: rgb(58, 76, 88);
+    color: #fff;
+    size: 5px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#calendar{
+    background-color: rgb(155, 197, 224);
+    color: #fff;
+    size: 5px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#setting{
+    background-color: rgb(71, 72, 73);
+    color: #fff;
+    size: 5px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.mainTab{
+    height: 60px;
+    width: inherit;
+    margin-top: 10px;
+    /* background-color: aquamarine; */
+    
+}
+
+.mainTab > img {
+    margin-top: 5px;
+    width: 250px;
+}
+
+.mainTab div{
+    display: inline;
+    font-weight: bolder;
+    font-size: larger;
+    background-color: #fff;
+    vertical-align: super;
+    /* margin-bottom: 10px; */
+}
+
+.mainTab div a{
+    margin: 0px 70px 0px; 
+    padding: 20px 20px 10px;
+    background-color: #fff;
+    text-decoration: none;
+    vertical-align: super;
+}
+
+.mainTab div a:hover{
+    color: rgb(103, 212, 219);
+    border-bottom: 5px solid rgb(103, 212, 219);
+}
+
+#menuBtn{
+    vertical-align: top;
+    margin-top: 20px;
+    background-color: rgb(103, 212, 219);
+    color: #fff;
+    size: 20px;
+    border-radius: 50%;
+    padding: 13px;
+}
+
+/* 내려오는 스크린?? 하위 레이어 노출 및 현재위치 표시 */
+.down_mn{
+    position: absolute;
+    top: 116px;
+    z-index: 1000;
+    width: 1300px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+
+/* 내려온 스크린에서 첫번째 목록 */
+.down_mn_first{
+    float: left;
+    width: 280px;
+    background-color: antiquewhite;
+}
+
+.down_mn_first h3{
+    padding: 7px; 
+}
+
+.down_mn_first h4{
+    padding: 7px;
+    background-color: aquamarine;
+}
+
+.evalInfo{
+    margin-left: 10px;
+}
+
+.evalInfo h7{
+    /* font-weight: bolder; */
+}
+
+.evalInfo ul{
+    margin-left: 10px;
+    margin: 5px 0;
+}
+
+.evalInfo ul li{
+    font-size: smaller;
+    margin: 7px 0;
+}
+
+.performInfo{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.performInfo a {
+    font-weight: 500;
+    /* background-color: aqua; */
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.evalPerson{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+}
+
+.evalPerson a{
+    font-weight: 500;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+/* 내려온 스크린에서 두번째 목록 */
+.down_mn_second{
+    float: left;
+    width: 280px;
+    background-color: gold;
+}
+
+.down_mn_second h3{
+    padding: 7px;
+    background-color: aquamarine;
+}
+
+.down_mn_second h4{
+    padding: 7px;
+}
+
+.down_mn_second ul{
+    /* background-color: antiquewhite; */
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+.down_mn_second ul li{
+    font-size: smaller;
+    margin: 7px 0;
+}
+
+/* 내려오는 스크린에서 세번째 목록 */
+.down_mn_third{
+    background-color: lightcyan;
+    float: left;
+    width: 280px;
+}
+
+.down_mn_third h3{
+    padding: 7px;
+    background-color: gold;
+}
+
+.down_mn_third h4{
+    padding: 7px;
+}
+
+.down_mn_third ul{
+    /* background-color: antiquewhite; */
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+.down_mn_third ul li{
+    font-size: smaller;
+    margin: 7px 0;
+}
+
+/* 내려오는 스크린에서 네번째 목록 */
+.down_mn_forth{
+    background-color: orangered;
+    float: left;
+    width: 280px;
+}
+
+.down_mn_forth h3{
+    padding: 7px;
+    background-color: steelblue;
+}
+
+.down_mn_forth h4{
+    padding: 7px;
+}
+
+.down_mn_forth ul{
+    padding-left: 15px;
+    margin: 5px 0;
+}
+.down_mn_forth ul li{
+    font-size: smaller;
+    margin: 7px 0;
+}
+
+
+
+
