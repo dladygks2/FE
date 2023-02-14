@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <style type="text/css"> 
+        /* 클래스 선택자 */
+        h1{
+            color: pink;
+            font-size: 60px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 1; /* 그 줄의 높이가 글자의 크기와 같다는 의미*/
+
+        }
+
+        address{
+            font-style: normal;
+        }
+
+        .title{
+            text-align: center;
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            color: red;
+        }
+
+        a:active{ /* 버튼을 누른 상태 */
+            text-decoration: overline;
+        }
+
+        a:visited{
+            text-decoration: line-through;
+        }
+
+        .transform01{
+            text-transform: capitalize;
+        }
+        .transform02{
+            text-transform: lowercase;
+        }
+        .transform03{
+            text-transform: uppercase;
+        }
+
+        
+
+    </style>
+    
+</head>
+<body>
+    <p>글자입니다</p>
+    test
+    <h1 class="title">제목1입니다</h1>
+    <h1>제목1입니다</h1>
+    <h2>제목1입니다</h2>
+    <p class="name" style="font-variant: small-caps;">kim sun jo</p>
+    <p>KIM SUN JO</p>
+    <p></p>
+    <a href="#">버튼입니다</a><br><br>
+    <span class="title">글자 두께 설정하기 태그?입니다.</span><br><br>
+    <span>글자 태그?입니다.</span><br><br>
+    <address>사이트주소를 알리는태그 기울기 기본값으로 들어감</address>
+
+    <p class="transform01">address</p>
+    <p class="transform02">address</p>
+    <p class="transform03">address</p>
+
+</body>
+</html>
