@@ -1,0 +1,16 @@
+.menu{
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 70%;
+    max-width: 1000px;
+    height: 700px;
+    max-height: 1000px;
+    background-color: azure;
+}
+
+.menu_float > div{
+    float: left;
+
+}
+

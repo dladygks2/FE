@@ -119,6 +119,8 @@ body{
 /* 내려오는 스크린?? 하위 레이어 노출 및 현재위치 표시 */
 .down_mn{
     position: absolute;
+    /* opacity: 0;
+    visibility: hidden; */
     top: 116px;
     z-index: 1000;
     width: 1300px;
@@ -126,21 +128,27 @@ body{
     /* background-color: aqua; */
 }
 
+/* 
+.mainTab > div:hover .down_mn{
+    opacity: 1;
+    visibility: visible;
+} */
 
 /* 내려온 스크린에서 첫번째 목록 */
 .down_mn_first{
     float: left;
     width: 280px;
-    background-color: antiquewhite;
+    background-color: azure;
 }
 
 .down_mn_first h3{
     padding: 7px; 
+    background-color: lightcyan;
 }
 
 .down_mn_first h4{
     padding: 7px;
-    background-color: aquamarine;
+    
 }
 
 .evalInfo{
@@ -191,12 +199,12 @@ body{
 .down_mn_second{
     float: left;
     width: 280px;
-    background-color: gold;
+    /* background-color: gold; */
 }
 
 .down_mn_second h3{
     padding: 7px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .down_mn_second h4{
@@ -216,14 +224,14 @@ body{
 
 /* 내려오는 스크린에서 세번째 목록 */
 .down_mn_third{
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
     float: left;
     width: 280px;
 }
 
 .down_mn_third h3{
     padding: 7px;
-    background-color: gold;
+    /* background-color: gold; */
 }
 
 .down_mn_third h4{
@@ -243,14 +251,14 @@ body{
 
 /* 내려오는 스크린에서 네번째 목록 */
 .down_mn_forth{
-    background-color: orangered;
+    /* background-color: orangered; */
     float: left;
     width: 280px;
 }
 
 .down_mn_forth h3{
     padding: 7px;
-    background-color: steelblue;
+    /* background-color: steelblue; */
 }
 
 .down_mn_forth h4{
@@ -265,7 +273,6 @@ body{
     font-size: smaller;
     margin: 7px 0;
 }
-
 
 
 
