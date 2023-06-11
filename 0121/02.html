@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 35px;
+        }
+        .container input[type='text'], .container select{
+            display: inline-block;
+            margin: 0 6px 18px 0;
+            padding: 10px;
+            width: 200px;
+            line-height: 1.2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px #ddd;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            var container = document.getElementsByClassName("container")[0];    // class니까 배열을 넣어줘야한다. 여러개면 for문 돌리고
+            
+            for(var i = 0; i < container.children.length; i++){
+                if(container.children[i].tagName == "FORM"){
+                    var formArea = container.children[i];
+                }else if(container.children[i].tagName == "DIV"){
+                    var triggerBtn = container.children[i];
+                }
+            }
+
+            for(var i = 0; i < formArea.length; i++){   // input 태그 두 개를 각각의 객체로 변환
+                if(formArea.children[i].className == "target1"){
+                    var target1 = formArea.children[i];
+                }else if(formArea.children[i].className == "target2"){
+                    var target2 = formArea.children[i];
+                }
+            }
+
+            target1.addEventListener("focus",function(e){
+                e.target.value = "target1 focus event!!!";
+                target2.value = "";
+            });
+            target1.addEventListener("blue",function(e){
+                e.target.value = "target1 blue event!!!";
+            });
+
+            triggerBtn.addEventListener("click", function(){
+                target2.focus();
+                target1.value = "";
+                target2.value = "target2 focus event";
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" placeholder="input1" class="target1">
+            <input type="text" placeholder="input2" class="target2">
+        </form>
+        <div class="trigger">Trigger the handler</div>
+    </div>
+</body>
+</html>

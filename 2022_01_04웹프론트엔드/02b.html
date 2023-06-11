@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .wrapper{
+            width: 100%;
+        }
+        /* header */
+        #header{
+            width: 100%;
+            height: 900px;
+            background-color: beige;
+        }
+        #header > div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 50px 20px;
+            border: 1px solid #000;
+            transform: translateY(100px);
+            transition: all 0.4s;
+            opacity: 0;
+        }
+        #header.active > div{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        #header .type1{
+            transition-delay: 0;
+        }
+        #header .type2{
+            transition-delay: 0.5s;
+        }
+        #header .type3{
+            transition-delay: 1s;
+        }
+
+        /* page1 */
+        #page1{
+            width: 100%;
+            height: 900px;
+            background-color: rgb(74, 163, 84);
+        }
+
+        #page1 > div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 50px 20px;
+            border: 1px solid #000;
+            transform: translateY(100px);
+            transition: all 0.4s;
+            opacity: 0; /* div가 안보이도록*/
+        }
+        #page1.active > div{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        #page1 .type1{
+            transition-delay: 0;
+        }
+        #page1 .type2{
+            transition-delay: 0.5s;
+        }
+        #page1 .type3{
+            transition-delay: 1s;
+        }
+        
+        /* page2 */
+        #page2{
+            width: 100%;
+            height: 900px;
+            background-color: rgb(157, 173, 236);
+        }
+        #page2 > div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 50px 20px;
+            border: 1px solid #000;
+            transform: translateY(100px);
+            transition: all 0.4s;
+            opacity: 0; /* div가 안보이도록*/
+        }
+        #page2.active > div{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        #page2 .type1{
+            transition-delay: 0;
+        }
+        #page2 .type2{
+            transition-delay: 0.5s;
+        }
+        #page2 .type3{
+            transition-delay: 1s;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="header">
+            <div class="type1">type1</div>
+            <div class="type2">type2</div>
+            <div class="type3">type3</div>
+        </header>
+        <section id="page1">
+            <div class="type1">type1</div>
+            <div class="type2">type2</div>
+            <div class="type3">type3</div>
+        </section>
+        <section id="page2">
+            <div class="type1">type1</div>
+            <div class="type2">type2</div>
+            <div class="type3">type3</div>
+        </section>
+    </div>
+</body>
+</html>

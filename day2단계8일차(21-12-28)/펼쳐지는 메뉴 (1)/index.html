@@ -15,8 +15,7 @@ div#container {
 	left:0px;
 	top:0px;
 	position:relative;
-}
-				
+}	
 div#home {
 	width:50px;
 	height:200px;
@@ -25,8 +24,7 @@ div#home {
 	top:0px;
 	position:absolute;
 	z-index:2;
-}
-		   
+}  
 ul { 
 	width:600px; 
 	height:200px;
@@ -35,38 +33,25 @@ ul {
 	top:0px;
 	position:absolute;
 	z-index:1;
-}
-	 
+} 
 ul li {
 	width:200px;
 	height:200px;
 	float:left;
 	opacity:0.7;
 }
-
-
 </style>
-
 </head>
-
 <body>
-
-
-
 <div id="container">
 	<div id = "home">HOME </div>
-  
 	<ul id ="menu">     
 		<li><img src="th_bg1.jpg" /></li>
 		<li><img src="th_bg2.jpg" /></li>
 		<li><img src="th_bg3.jpg" /></li>
 	</ul>
 </div>
-
-
-
 <script>
-   
 $('#home').toggle(
 	function() {
 		$('ul').stop().animate({left:"50px"} ,500 );

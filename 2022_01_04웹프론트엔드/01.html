@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .container{
+            margin: 35px;
+        }
+        nav > ul > li{
+            float: left;
+            position: relative;
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+            text-transform: uppercase;
+        }
+        nav > ul > li:last-child{
+            border: 0px;
+        }
+        nav > ul > li > a{
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            background-color: #eaeaea;
+            color: #666;
+            font-size: 13px;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        nav > ul > li:hover > a,
+        nav > ul > li > a.over{
+            font-weight: 600;
+            background: #8ac007;
+            color:#fff; 
+        }
+
+        nav .sub{  
+            display: none;
+            position: absolute;     /* 얘의 기준은 상위의 nav > ul > li태그이다 */
+            top: 40px;
+            left: 0;
+            width: 100%;
+        }
+        nav .sub li{
+            border-bottom: 1px solid #eaeaea;
+        }
+        nav .sub li a{
+            display: block;
+            padding: 10px;
+            color: #666;
+            background: #fff;
+        }
+        nav .sub li a:hover,
+        nav .sub li a:focus{
+            background: #f8f8f8;
+        }
+        
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+
+            var nav = document.getElementById("nav");
+            var depth1Li = nav.children[0].children;    // nav > ul > li --> nav의 첫번째 자식의 자식요소 ul의 자식으로 li태그들이 배열로 담기는 듯
+
+            for(var i = 0; i < depth1Li.length; i++){
+                depth1Li[i].addEventListener('mouseenter', function(e){
+                    var link = e.target.children[0];   // li의 자식요소 중 첫번째인 a 태그  --> addclass로 효과주고               
+                    link.classList.add('over');
+
+                    var sub = e.target.children[1];   // li의 자식요소 중 두번째인 ul 태그 --> display:none; 에서 display:block; 으로 줄 것임                   
+                    sub.style.display = "block";
+                });
+                depth1Li[i].addEventListener('mouseleave', function(e){
+                    var link = e.target.children[0];
+                    link.classList.remove('over');
+
+                    var sub = e.target.children[1];
+                    sub.style.display = "none";
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="">main1</a>
+                    <ul class="sub">
+                        <li><a href="">sub11</a></li>
+                        <li><a href="">sub12</a></li>
+                        <li><a href="">sub13</a></li>
+                        <li><a href="">sub14</a></li>
+                        <li><a href="">sub15</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">main2</a>
+                    <ul class="sub">
+                        <li><a href="">sub21</a></li>
+                        <li><a href="">sub22</a></li>
+                        <li><a href="">sub23</a></li>
+                        <li><a href="">sub24</a></li>
+                        <li><a href="">sub25</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">main3</a>
+                    <ul class="sub">
+                        <li><a href="">sub31</a></li>
+                        <li><a href="">sub32</a></li>
+                        <li><a href="">sub33</a></li>
+                        <li><a href="">sub34</a></li>
+                        <li><a href="">sub35</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">main4</a>
+                    <ul class="sub">
+                        <li><a href="">sub41</a></li>
+                        <li><a href="">sub42</a></li>
+                        <li><a href="">sub43</a></li>
+                        <li><a href="">sub44</a></li>
+                        <li><a href="">sub45</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+        
+
+    </div>
+</body>
+</html>

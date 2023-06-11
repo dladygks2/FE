@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        #wrap{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap > div{
+            width: 100%;
+            height: 1000px;
+            position: relative;
+        }
+        #con1{background-color: #c60;}
+        #con2{background-color: #F60;}
+        #con3{background-color: #F93;}
+        #con4{background-color: #ccf;}
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+        }
+
+        .box1-1{position: absolute; top: 200px; left: 500px;}
+        .box1-2{position: absolute; top: 500px; left: 100px;}
+        .box1-3{position: absolute; top: 700px; left: 1200px; opacity: 0;}
+
+        .box2-1{position: absolute; top: 200px; left: 500px;}
+        .box2-2{position: absolute; top: 500px; left: 100px;}
+        .box2-3{position: absolute; top: 700px; left: 1200px;}
+
+        .box3-1{position: absolute; top: 200px; left: 500px;}
+        .box3-1.act1{
+            transform: rotate(360deg);
+            transition: 0.7s;
+        }
+        .box3-2{position: absolute; top: 500px; left: 100px;}
+        .box3-2.act2{
+            transform: rotate(-360deg);
+            transition: 1s;
+        }
+        .box3-3{position: absolute; top: 700px; left: 900px;}
+        .box3-3.act3{
+            transform: scale(2);
+            transition: 1s;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="con1">
+            <div class="box box1-1">box1-1</div>
+            <div class="box box1-2">box1-2</div>
+            <div class="box box1-3">box1-3</div>
+        </div>
+        <div id="con2">
+            <div class="box box2-1">box2-1</div>
+            <div class="box box2-2">box2-2</div>
+            <div class="box box2-3">box2-3</div>
+        </div>
+        <div id="con3">
+            <div class="box box3-1">3-1</div>
+            <div class="box box3-2">3-2</div>
+            <div class="box box3-3">3-3</div>
+        </div>
+        <div id="con4"></div>
+    <script>
+        $(document).ready(function(){
+
+            var scene01Num = 1;
+            var scene02Num = 1;
+            var scene03Num = 1;
+            
+            $(window).scroll(function(){
+
+                var sct = $(document).scrollTop();
+                
+                if(sct > 200 && scene01Num == 1){
+
+                    scene01Num = 0;
+                    // .box1-1
+                    $(".box1-1").delay(300).stop().animate({
+                        opacity:1,
+                        top:"800px"
+                    },500, function(){
+                        $(".box1-1").delay(200).stop().animate({
+                            opacity:0
+                        },500);
+                    });
+                    // .box1-2
+                    $(".box1-2").delay(350).stop().animate({
+                        opacity: 1,     // 얘는 그냥 기본값으로 정해주어야 
+                        top:"700px", // top 500px 이었다
+                        left: "500px"// left 100px 이었다
+                    },300, function(){
+                        $(".box1-2").delay(200).stop().animate({
+                            opacity:0
+                        }, 300);
+                    });
+                    // .box1-3
+                    $(".box1-3").css({opacity:0}).delay(0).stop().animate({
+                        opacity:1,
+                        top:"300px",     //  top 700px 이었다
+                        left:"100px",     //  left 1200px 이었다 
+                        rotate:"720deg"
+                    },700, function(){
+                        $(".box1-3").delay(500).stop().animate({
+                            opacity:0
+                        }, 500);
+                    });
+                }else if(sct < 200 && scene01Num == 0){
+
+                    scene01Num = 1;
+                    // .box1-1
+                    $(".box1-1").delay(0).css({top:"800px"}).stop().animate({
+                        opacity:1,
+                        top: "200px"
+                    }, 1000);
+                    // .box1-2
+                    $(".box1-2").delay(200).css({top:"700px", left:"500px" }).stop().animate({
+                        // 얘는 이제 원래대로 돌려주는 느낌으로
+                        opacity:1,
+                        top:"500px",
+                        left:"100px"
+                    },700);
+                    // .box1-3
+                    $(".box1-3").delay(200).css({top:"300px", left:"100px"}).stop().animate({
+                        opacity:1,
+                        top:"700px",
+                        left:"1200px",
+                        rotate:"1080deg"
+                    })
+                }
+
+                if(sct > 1000 && scene02Num == 1){
+                    scene02Num = 0;
+                    // .box2-1
+                    $(".box2-1").delay(0).stop().animate({  // top: 200px; left: 500px;
+                        opacity:1,
+                        top:"800px"
+                    }, 1000, function(){
+                        $(".box2-1").delay(200).stop().animate({
+                            opacity:0
+                        }, 1000);
+                    });
+                    // .box2-2
+                    $(".box2-2").delay(400).stop().animate({    // top: 500px; left: 100px;
+                        opacity:1,
+                        top:"100px"
+                    },1000, function(){
+                        $(".box2-2").delay(200).stop().animate({
+                            opacity:0
+                        }, 1000);
+                    });
+                    // .box2-3
+                    $(".box2-3").delay(700).stop().animate({    // top: 700px; left: 1200px;
+                        opacity:1,
+                        top:"200px"
+                    }, 1000, function(){
+                        $(".box2-3").delay(200).stop().animate({
+                            opacity:0
+                        },1000);
+                    });
+                }else if(sct < 1000 && scene02Num == 0){
+                    scene02Num = 1;
+                    $(".box2-1").delay(0).stop().css({top:"800px"}).stop().animate({
+                        opacity:1,
+                        top: "200px"
+                    }, 1000); 
+
+                    $(".box2-2").delay(400).stop().css({top:"100px"}).animate({
+                        opacity: 1,
+                        top:"500px"
+                    }, 1000);
+                    
+                    $(".box2-3").delay(400).stop().css({top:"200px"}).animate({
+                        opacity: 1,
+                        top:"700px"
+                    }, 500);
+                    
+                }
+
+                if(sct > 2000 && scene03Num == 1){
+                    scene03Num = 0;
+                    $(".box3-1").addClass("act1");
+                    $(".box3-2").addClass("act2");
+                    $(".box3-3").addClass("act3");
+                }else if(sct < 2000 && scene03Num == 0){
+                    scene03Num = 1;
+                    $(".box3-1").removeClass("act1");
+                    $(".box3-2").removeClass("act2");
+                    $(".box3-3").removeClass("act3");
+
+                }
+            });
+        });
+    </script>
+    </div>
+</body>
+</html>

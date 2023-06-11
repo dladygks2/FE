@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #wrap{
+            width: 100%;
+        }
+        /* header */
+        #header{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+            width: 100%; 
+            height: 120px;
+            background-color: blueviolet;
+            opacity: 0.5;
+        }
+        #header ul{ 
+            margin: 0 auto;
+            margin-top: 45px;
+            width: 1000px;
+            height: 30px;
+        }
+        #header ul li{
+            float: left;
+            width: 200px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #header ul li a{
+            color: #fff;
+            font-size: 25px;
+        }
+        #header ul li.on a{
+            color: #000;
+            font-size: 30px;
+        }
+        /* contents (컨텐츠) */
+        #contents{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        #contents > div{
+            position: absolute;
+            top: 0;
+            padding-top: 120px;
+            width: 100%;
+            height: 800px;
+        }
+
+        #contents > div.con1{left: 0%; background-color: burlywood;}
+        #contents > div.con2{left: 100%; background-color: pink;}
+        #contents > div.con3{left: 200%; background-color: greenyellow;}
+        #contents > div.con4{left: 300%; background-color: aliceblue;}
+        #contents > div.con5{left: 400%; background-color: mediumblue;}
+        /* q_mn (퀵메뉴) */
+        #q_mn{
+            position: absolute;
+            top: 150px;
+            right: 50px;
+            z-index: 1000;
+            width: 60px;
+            height: 120px;
+            background-color: cornsilk;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 10px;
+        }
+        #q_mn ul.btns{
+            
+        }
+        #q_mn ul.btns li{ 
+            text-align: center;
+        }
+        #q_mn ul.btns li a{
+            color: #000;
+        }
+        #q_mn ul.btns li.on a{
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var menu = $(".btns li");
+            var section = $("#contents > div");
+
+            var w = $(window).width();
+            $("#contents > div").width(w);
+
+            // 화면의 크기가 바뀔 때 적용
+            $(window).resize(function(){
+                var w = $(window).width();
+                $("#contents > div").width(w);
+            });
+
+            menu.click(function(e){
+                e.preventDefault(); // 클릭된 요소가 가지고 있던 이벤트들을 초기화시킴
+                var tg = $(this);   // 클릭된 요소를 객체화 시킴
+                var i = tg.index();
+
+                // .offset().top -> 클릭된 요소의 scrollTop 위치로 이동시켜라
+                var tt = section.eq(i).offset().left;    // i는 위에 선언된 녀석으로 클릭된 녀석의 인덱스 값을 담음
+                // offset()은 스크롤로 화면을 이동을 할 때 주로 사용
+                // offset().top은 여기서 보면 section.eq(i)의 상단의 값을 말함
+                // scrollTop을 할때는 "html,body" (즉, 현재화면) 이게 공식이란다
+                $("html,body").stop().animate({scrollLeft:tt});
+            });
+
+            // 메뉴에 addClass로 주석처리
+            $(window).scroll(function(){
+                var sct = $(window).scrollLeft();    // 현재 화면의 scrollLeft을 변수 sct로 저장
+
+                $("#contents > div").each(function(){    // contents 안에 div를 순서대로 처리함
+                    var tg = $(this);
+                    var i = tg.index();
+
+                    if(tg.offset().left <= sct){ // tg는 해당되는 div들 중에서 현재 scrollLeft()의 위치와 동일하다면
+                        menu.removeClass("on"); // 모든 메뉴에서 class가 있다면 삭제
+                        menu.eq(i).addClass("on");
+                    }
+                });
+            });
+
+            // 퀵메뉴 작업
+            $(window).scroll(function(){
+                var winLeft = $(window).scrollLeft() + 1100;
+                $("#q_mn").stop().animate({left:winLeft + "px"},500);  
+            });
+
+
+        }); // $(document).ready() 이벤트 닫기
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="btns">
+                <li class="on"><a href="#con1">con1</a></li>
+                <li><a href="#con2">con2</a></li>
+                <li><a href="#con3">con3</a></li>
+                <li><a href="#con4">con4</a></li>
+                <li><a href="#con5">con5</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="con1" id="con1">con1</div>
+            <div class="con2" id="con2">con2</div>
+            <div class="con3" id="con3">con3</div> 
+            <div class="con4" id="con4">con4</div> 
+            <div class="con5" id="con5">con5</div> 
+        </div>
+    </div>
+    <!-- 퀵메뉴 -->
+    <div id="q_mn">
+        <ul class="btns">
+            <li><a href="#con1">con1</a></li>
+            <li><a href="#con2">con2</a></li>
+            <li><a href="#con3">con3</a></li>
+            <li><a href="#con4">con4</a></li>
+            <li><a href="#con5">con5</a></li>
+        </ul>
+    </div>
+</body>
+</html>

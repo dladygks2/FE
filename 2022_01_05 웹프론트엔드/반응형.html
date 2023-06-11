@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-size: 1em;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+        .container{
+            margin-top: 35px;
+        }
+        .container p{
+            margin-bottom: 30px;
+            line-height: 2;
+            font-size: 0.75em;
+            word-break: keep-all;
+        }
+        .container div{
+            margin-bottom: 50px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 0.875em;
+            background-color: #8ac007;
+            color: #000;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            // 화면의 크기 설정
+            var w1 = window.innerWidth;     // 실제 컨텐츠 부분만
+            var w2 = window.outerWidth;     // 마진같은거도 포함해서 고려
+
+            var container = document.getElementsByClassName('container');
+
+            for(var i = 0; i < container.children.length; i++){
+                if(container.children[i].className == "min800"){
+                    var min800 = container.children[i];
+                }else if(container.children[i].className == "min400"){
+                    var min400 = container.children[i];
+                }
+            }
+
+            // 화면의 크기에 변동이 생길 때(resize) -> resizeFN() 함수를 실행해라
+            window.addEventListener('resize', resizeFN);
+
+            // min400, min800을 보이게할지 안보이게할지 설정함
+            function resizeFN(){
+                
+                w1 = window.innerWidth;
+
+                if(w1 <= 400){
+                    min800.style.display = "none";
+                    min400.style.display = "block";
+                }else if(w1 <= 800){
+                    min800.style.display = "block";
+                    min400.style.display = "none";
+                }else{
+                    min800.style.display = "block";
+                    min400.style.display = "block";
+                }
+            }
+            resizeFN();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p class="info">800 이하의 해상도에서는 min800 클래스가 없어지고, 400 이하의 해상도에서는 min400 클래스가 없어지도록 JavaScript</p>
+        <div class="min800">min 800px</div>
+        <div class="min400">min 400px</div>
+    </div>
+
+</body>
+</html>

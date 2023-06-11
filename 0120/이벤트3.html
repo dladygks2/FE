@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body> 
+    <button id="call">event call</button>
+    <textarea name="" id="demo" cols="30" rows="10"></textarea>
+
+
+    <script>
+        // addEventListener(), attachment()
+        // 대상.addEventListener("이벤트", function(){
+        
+        if(window.addEventListener){        // addEventListener가 적용이 된다면 실행, 아니면 else문 실행
+        // document.ready(function(){}); // 이거랑 같다
+        // 현재 버전에서는 이렇게 사용
+            window.addEventListener("load", function(){
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("click", function(){
+                    note.innerHTML = "자바스크립트 TEST";
+                });
+        });
+        }else{
+            // 이전 버전에서 사용하던 방식
+            window.attachEvent("onload", function(){
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("onclick", function(){
+                    note.innerHTML = "자바스크립트 TEST2";
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

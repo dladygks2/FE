@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-size: 1em;
+            background-color: #555;
+            color: #000;
+        }
+        button{
+            padding: 5px 15px;
+            background-color: #666;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.5s;
+        }
+        button:hover{
+            background-color: #888;
+        }
+        .title{
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+        .container{
+            margin-top: 35px;
+        }
+        #photo{
+            margin-bottom: 16px;
+            width: 294px;
+            height: 324px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            var photo = document.getElementById("photo");
+            var photoImg = photo.children[0];
+            var imgH = photoImg.clientHeight;
+            // console.log("height : " + imgH);
+
+            
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

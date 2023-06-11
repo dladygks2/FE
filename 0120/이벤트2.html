@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">javascript</li>
+            <li class="jquery">jquery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        // addEventListener(), attachment()
+        // 대상.addEventListener("이벤트", function(){
+        //     실행문
+        // });
+
+        var liList = document.querySelectorAll("#tutorial li");
+
+        // for(var i = 0; i < liList.length; i++){
+        //     liList[i].addEventListener("click", function(e){
+        //         // e.target == 제이쿼리의 this와 같은 역할
+        //         var ul = e.target.parentNode;    // 부모 노드를 찾아감
+                
+        //         ul.style.backgroundColor = "#666";
+        //     });
+        // };
+
+        for(var i = 0; i < liList.length; i++){
+            liList[i].addEventListener("click", function(e){
+                // e.target == 제이쿼리의 this와 같은 역할
+                var ul = e.target.parentElement;    // 부모 요소를 찾아감
+                
+                ul.style.backgroundColor = "#666";
+            });
+        };
+        
+    </script>
+</body>
+</html>

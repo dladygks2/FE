@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">javascript</li>
+            <li class="jquery">jquery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        "use strict"
+        // id로 접근 -> Element object 1개 선택
+        // document.getElementById(ElementID)
+
+        var tutorial = document.getElementById("tutorial");
+
+        // tutorial.style.backgroundColor = "#666";
+
+        // 태그로 접근하는 방법 NodeList object -> 그룹으로 선택
+        // document.getElementsByTagName(tagname);
+        var li = document.getElementsByTagName("li");
+
+        console.log(li);
+        console.log(li[0]);
+        console.log(li.item(1));
+        console.log("li.length : " + li.length);
+
+        // 태그로 묶으면 list 니까 for문으로 순회해야 한다
+        for(var i = 0; i < li.length ; i++){
+            // li[i].style.color = "pink";
+        }
+
+        // 클래스명으로 접근 -> NodeList Object
+        // document.getElementByClassName(className);
+        var jquery = document.getElementsByClassName("jquery");
+        // class는 여러개를 선언할 수 있으니 하나만 있어도 배열로 담기나보다
+        jquery[0].style.backgroundColor = "#ccc";
+
+        // css 기법으로 첫번째 노드 선택
+        // document.querySelector("css selectors");
+        var li = document.querySelector("#tutorial > li");
+
+        li.style.backgroundColor = "skyblue";   // 얘도 하나만 적용이 되는데 for문을 돌려야한다
+
+        // css 기법으로 전체 노드 선택
+        // document.querySelectorAll(CSS Selectors);
+        var liAll = document.querySelectorAll("#tutorial > li");
+        
+        // 얘도 list 형식이므로 for문을 돌려야한다고
+
+        for(var i = 0 ; i < liAll.length; i++){
+            // 전체 노드리스트 모두 적용
+            liAll[i].style.backgroundColor = "green";
+
+            // HTML, CSS만 찾아서 스타일 적용 (nodeList에서 선호하는 대상만 스타일 적용)
+            // 노드의 텍스트 내용 읽고 쓰기 기능
+            // -> node.textContent
+            if(li[i].textContent == "css3" || li[i].textContent == "css"){
+                li[i].style.backgroundColor = "#666";
+            }
+        }
+
+        // 자바스크립트에서 노드 선택 방법
+        /*
+            상위 노드에 접근
+            node.parentnode
+            Return Value : A Node object
+
+            var html = document.querySelector(".html");
+            var contUI = html.parentNode;
+
+            console.log(contUI);
+
+        */
+
+        /*
+            상위 HTML 노드에 접근
+            node.parentElement
+            Return value : An Element Object
+            var html = document.querySelector(".html");
+            var contUI = html.parentElement;
+            console.log(contUI);
+        */
+
+        /*
+            하위 노드에 접근
+            element.childNodes
+            Return : A NodeList object
+            var cont = document.querySelector("#tutorial");
+            var contLi = cont.childNodes;
+            console.log(contLi);
+        */
+
+        /*
+            하위 HTML 노드에 접근
+            element.children
+            Return : A live HTMLCollection object
+            var cont = document.querySelector("#tutorial");
+            var contLi = cont.children;
+            console.log(contLi);
+            console.log(contLi[0]);
+
+            for(var i = 0; i < contLi.length; i++){
+                contLi[i].style.backgroundColor = "#666";
+            }
+        */
+    </script>
+</body>
+</html>

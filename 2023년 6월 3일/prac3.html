@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            /*
+                $(대상).html();
+                ex) $("#hidden").html(); -> 해당 태그 안에 모두를 의미
+            */
+        //    var tagbox = $("#hidden").html(); --> 특정요소를 html타입으로 변수에 대입
+        //    $("#wrapper").html(tagbox);  --> html 타입으로 적용
+            // $("#wrapper").html($("#hidden").html());
+            // $("#hidden").css("display", "none");
+
+            // var tagbox = $("#hidden").text();  // 특정요소를 text 타입으로 변수에 대입
+            // $("#wrapper").text(tagbox); // html타입으로 적용
+
+            $("#wrapper").text($("#hidden").text());
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper" style="border: 1px solid blue; padding: 20px; margin: 20px; font-size: 20px;">
+        <span>이곳의 내용을 바꿔주세요</span>
+    </div>
+    <div id="hidden">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>
