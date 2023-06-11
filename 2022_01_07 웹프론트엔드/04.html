@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .container{
+            margin: 35px;
+            height: 500px;
+        }
+        .ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+
+            var num = 0;        // 위치 이동에 관련된 변수
+            var currentx = 0;   // 현재 위치에 관련된 변수
+            var targetx = 0;    // 목표 위치에 관련된 변수
+            var moving = false; // 현재 움직임에 관련된 변수 (상태를 표시해주기위해서)
+            var body = document.body;
+            var ball = document.getElementById("ball");
+
+            body.addEventListener('wheel', function(e){
+                if(moving) return;  // true면 return, false면 실행
+
+                moving = true;
+
+                var delta = e.wheelDeltaY;  // 아마도 이게 올리면 1, 내리면 0 ?? 
+
+                if(delta > 0){
+                    consol.log("up");
+                    
+                    if(num > 0){
+                        num += 1;
+                    }
+                }
+
+                targetx = 100 * num; // 100 -> 마우스휠을 올리면 x축으로 움직이게 할거구나
+
+                var aniTimer = setInterval(function(){
+                    if(targetx > currentx){ // 마우스휠을 아래로 내렸을 때
+
+                        if(Math.abs(targetx - currentx) > 5){
+                            currentx += 5;
+                        }else{
+                            currentx = targetx; // 값이 같으므로 움직이지 않는다
+                            clearInterval(aniTimer);
+                            moving = false;
+                        }
+                    }else{  // 마우스휠을 위로 올렸을 때
+
+                        if(Math.abs(targetx - currentx) > 5){
+                            currentx -= 5;
+                        }else{
+                            currentx = targetx;
+                            clearInterval(aniTimer);
+                            moving = false;
+                        }
+                    }
+                    ball.style.marginLeft = currentx + "px";
+                }, 5);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="ball" id="ball"></div>
+    </div>
+</body>
+</html>

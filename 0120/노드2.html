@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #portfolio{
+            font-size: 20px;
+            background-color: blueviolet;
+        } 
+        #new_portfolio{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">javascript</li>
+            <li class="jquery">jquery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+
+    <script>
+        "use strict"
+        // 노드의 태그 이름 속성
+        // element.tagName
+        var html = document.querySelector(".html");
+        var tagName = html.tagName; // li 이겠네
+        console.log("tagName : " + tagName);
+
+        // 노드의 Id 속성
+        // element.id
+        var ul = document.querySelector("#tutorial");
+        var idName = ul.id;
+
+        console.log("idName : " + idName);
+
+        // 노드의 클래스 이름 속성
+        var li = document.querySelectorAll("#tutorial li"); // 얘는 nodeList 이겠네
+        for(var i = 0 ; i <li.length ; i++){
+            // 노드의 클래스 이름
+            // element.className
+
+            if(li[i].className == "html"){  // 클래스명이 html인 애만 선택
+                li[i].style.backgroundColor = "pink";
+            }
+        }
+
+        // 노드의 속성읽기
+        // element.getAttribute(attribute);
+        var li = document.querySelectorAll("#tutorial li")
+
+        for(var i = 0; i < li.length ; i++){
+            var className = li[i].getAttribute("class");
+            console.log("className : " + className);
+        }
+
+        // 노드의 속성제거
+        // element.removeAttribute(attributename)
+        // var p = document.querySelectorAll("p");
+ 
+        // for( var i = 0 ; i < p.length ; i++){
+        //     if(p[i].textContent == "portfolio"){    // querySelectorAll을 했기 때문에 nodelist로 저장이 되었고
+        //                                             // for문으로 값들을 뽑아내고
+        //                                             // textContent는 입력된 문자 portfolio이고
+        //         p[i].removeAttribute("id");            // 그 놈에게 지정된 id 태그를 없앤다. 
+        //     } 
+        // } 
+
+        // 노드의 속성 변경
+        // element.setAttribute(attributename(속성명), attributevalue(변경할 속성값))
+
+        var p = document.querySelectorAll("p");
+        
+        for( var i = 0; i < p.length; i++){
+            if(p[i].textContent == "portfolio"){
+                p[i].setAttribute("id", "new_portfolio");
+            }
+        }
+        console.log(p);
+    </script>
+</body>
+</html>

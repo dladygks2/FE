@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 35px;
+            left: 0;
+            top: 0;
+            position: relative;
+            width: 600px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        button{
+            padding: 5px 15px;
+            background-color: #666;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: aliceblue;
+            color: #666;
+        }
+        .gallery{
+            position: absolute;
+            z-index: 1;
+            left: -640px;
+            top: 40px;
+            width: 600px;
+            height: 200px;
+            list-style: none;
+            transition: left 0.5s ease-out;
+        }
+        .gallery li{
+            float: left;
+            width: 200px;
+            height: 200px;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+        .gallery img{
+            width: 200px;
+
+        }        
+        .gallery.active{
+            left: 0;
+        } 
+        .gallery li.over{
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+
+            var status = "closed";
+            var tab = document.querySelector("#tab");
+            var slider = document.querySelector(".gallery");
+            var slideList = document.querySelectorAll(".gallery li");
+
+            tab.addEventListener("click",function(e){
+                if(status == "closed"){
+                    status = "open";
+                    e.target.innerText = "gallery close";
+                    // 대상.innerText(텍스트) -> 선택된 대상에 p태그가 있다면 <p>텍스트</p> 안에 입력
+                    slider.classList.add("active");
+                    // classList.add("active"); -> 클래스를 추가
+                }
+                else if(status == "open"){
+                    status = "close";   // 반대기능을 위해서 실행 후 변수의 값을 다르게 변환
+                    e.target.innerText = "gallery open";
+                    slider.classList.remove("active");
+                    // classList.remove("active"); -> 클래스를 제거
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button id="tab">gallery open</button>
+        
+        <ul class="gallery">
+            <li><img src="images/31.JPG" alt="31"></li>
+            <li><img src="images/54.JPG" alt="54"></li>
+            <li><img src="images/68.JPG" alt="68"></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -75,42 +75,59 @@
 			1. 소스가 들어있는 속성값을 담는 변수
 			2. 이미지 또는 텍스트를 구분하는 변수
 		*/
-		var tempTitle;	// 해당되는 a태그의 title 속성값을 임시 저장하는 변수. 이미지거나 문자열
-		var type;		// 클래스명의 속성값이 저장되는 변수이며 나중에 속성이 있나 없나에 따라서
-						// 이미지 형식 또는 텍스트 형식으로 선택함
-		$("a").hover(
+		var tempTitle; 
+		/*
+			해당되는 a 태그의 title 속성값을 임시 저장하는 변수.
+			이미지이거나 문자열
+		*/
+		var type; 
+		/*
+			클래스명의 속성값(여기서는 class의 값)이 저장되는 변수이며
+			나중에 속성이 있나없나에 따라서 
+			이미지 형식 또는 텍스트 형식으로 선택한다
+		*/
+		$("a").hover(	// hover로 마우스를 올리면 이미지나 글자가 ToolTip으로 나오게 할거다
 			function(){
-				// hover로 마우스를 올리면 이미지나 글자가 ToolTip으로 나오게 할거다
-				tempTitle = $(this).attr('title');	// 위에 해당부분에 class="img"가 있는데 해당 a태그가 이미지인지 글자인지 구분하기위해 사용
-				type = $(this).attr("class");		// type 변수에는 class가 선언되어 있는지 없는지를 구분해서 담길 것이다
-														// class가 있으면 이미지고 없으면 글자인 것으로 판단할 수 있도록 한다
+				tempTitle = $(this).attr('title');	// 글자나 이미지 경로가 담길것이다
+				/* 
+					위에 해당부분에 class="img"가 있는데 
+					해당 a 태그가 이미지인지 글자인지 구분하기위해서 사용
+				*/	
+				type = $(this).attr("class");
+				/*
+					type 변수에는 class가 선언되어 있는지 없는지를 구분해서 담길 것이다
+					class가 있으면 이미지이고 없으면 글자인 것으로 판단할 수 있다
+					이미지에는 class를 지정했고, 글자에는 class를 지정하지 않았다
+				*/
+				if(type == "img"){	
+					// 클래스명이 존재한다면 tempImg 변수에 이미지태그 형식을 갖춘다
+					tempImg = "<img src=' " + tempTitle + "'width : '100px' height:'100px' />"
+				}
 
-				if(type == "img"){	// 클래스명이 존재한다면 tempImg 변수에 이미지태그형식을 갖춘다
-					tempImg = "<img src='" + tempTitle + "' width : '100px' height :'100px'/>"
-				} 
-				// 툴팁을 적용하기위해 태그를 추가
+				// 툴팁을 적용하기위해서 태그를 추가
+				// #tip는 그러면 div태그 아래에 위치한다고 볼 수 있네
 				$("body").append("<div id='tip'></div>");
 
-				if(type == "img"){		// 툴팁에 들어갈 내용을 이미지라면 html로 적용하고 아니라면 text로 적용
-					$("#tip").html(tempImg);
+				// ToolTip에 들어갈 내용이 img라면 html로 적용하고 아니라면 text로 적용
+				if(type == "img"){
+					$("#tip").html(tempImg);	// div#tip 안에 tempImg가 들어간다
 					$("#tip").css("width","100px");
-				}else{
+				}else{		// 그렇지 않은 경우에는 그냥 text
 					$("#tip").text(tempTitle);
 				}
 
 				// 툴팁의 위치를 설정
-				var pageX =	$(this).offset().left - 20;
-				var pageY =	$(this).offset().top - $("#tip").innerHeight();
+				var pageX = $(this).offset().left - 20;
+				var pageY = $(this).offset().top - $("#tip").innerHeight();
 
-				// 툴팁의 위치 설정 애니메이션
 				$("#tip").css({left:pageX + "px", top:pageY + "px"}).fadeIn(500);
-				
 			},
 			function(){
 				// remove()
 				$("#tip").remove();
 			}
 		);
+
 	</script>
 
 </body>

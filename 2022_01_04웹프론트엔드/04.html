@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .container{
+            margin: 35px;
+            height: 500px;
+        }
+        .ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var num = 0;        // 위치 이동에 관련된 변수
+            var currentx = 0;   // 현재 위치에 관련된 변수
+            var targetx = 0;    // 목표 위치에 관련된 변수
+            var moving = false; // 현재 움직임에 관련된 변수
+            var body = document.body;
+            var ball = document.getElementById("ball");
+
+            body.addEventListener('wheel', function(e){
+                var delta = e.wheelDeltaY;  // mouseUp = 1, mouseDown = 0
+                
+                // mouse up과 down을 구분함
+                if(delta > 0){
+                    if(num > 0){        // 초기값이 0이고, wheelDeltaY 이벤트로 1이 되면 이 if문을 들어가서 다시 1을 빼서 0으로 만드네
+                        console.log("up");
+                        num -= 1;
+                    }
+                }else{  // mouse이벤트가 발생했는데 1이 아니면 여기로 오는거구나(즉, 마우스 다운). 계속 휠을 내리면 num값이 계속 추가되고 20이 되는 순간 여기서도 멈추는구나
+                    if(num < 20){
+                        console.log("down");  
+                        num += 1; 
+                    }
+                }
+
+                moving = true;
+                targetx = 100 * num;    /* num은 0 ~ 20이려나 targetx는 0 ~ 2000px 인건가 (휠을 내리는 경우에 숫자가 올라가겠네*/
+
+                var aniTimer = setInterval(function(){
+                    if(targetx > currentx){     // 목표로하는 x값이 현재 x값보다 큰 경우
+                                                // 마우스휠을 아래로 내렸을 때
+                        if(Math.abs(targetx - currentx) > 5){   //  abs는 뭐 절대값이겠지
+                            currentx += 5;
+                        }
+                    }else{                      // 마우스휠을 위로 올렸을 때
+                        if(Math.abs(targetx - currentx) > 5){
+                            currentx -= 5;
+                        }else{
+                            currentx = targetx;
+                            clearInterval(aniTimer);    // 지금 이 aniTimer 변수에 저장된 setInterval 함수를 clear. 즉, 종료한다
+                            moving = false;
+                        }                        
+                    }
+                    ball.style.marginLeft = currentx + "px";
+                }, 5); 
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="ball" id="ball"></div>
+        
+    </div>
+</body>
+</html>

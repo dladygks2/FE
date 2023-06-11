@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            background-color: #f1f1f1;
+            color:#555;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        } 
+        .container{
+            margin-top: 35px;
+        }
+        .check input{
+            margin-left: 20px;
+            margin-top: 40px;
+            vertical-align: middle;
+        }
+        .check input#check1{
+            margin-top: 0;
+        }
+        .check_box1{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background: url(images/spr_form.png) no-repeat 0 0; /* 이거 이미지 안에 여러 아이콘들이 들어있는거라 위치를 찾아서 그 부분만 보이는 형식으로 하는 듯 */
+            background-color: pink;
+        }
+        .check_box1.checked{
+            background-position: -36px 0;
+        } 
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var checkArea = document.getElementsByClassName("check")[0];
+            for(var i= 0; i < checkArea.children.length; i++){
+                if(checkArea.children[i].tagName == "A"){
+                    var checkBox = checkArea.children[i];
+                }
+            }
+
+            checkBox.addEventListener('click', function(e){
+                e.preventDefault();
+
+                if(e.target.classList.contains("checked") == false){    // check가 안되어있을 때 실행   
+                    e.target.classList.add("checked");
+                    e.target.nextElementSibling.setAttribute("checked", "true");    // .check의 다음 요소의 "checked" 부분을 "true"로 선언하겠다
+                }else{
+                    e.target.classList.remove("checked");
+                    e.target.nextElementSibling.removeAttribute("checked");
+                    // e.target.nextElementSibling.setAttribute("checked", "false");
+                }
+
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="">
+            <div class="check">
+                <a href="" class="check_box1" title="check box1"></a>
+                <input type="checkbox" id="check1">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

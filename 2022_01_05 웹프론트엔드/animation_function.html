@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-size: 1em;
+            background-color: #555;
+            color: #000;
+        }
+        button{
+            padding: 5px 15px;
+            background-color: #666;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.5s;
+        }
+        button:hover{
+            background-color: #888;
+        }
+        .title{
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+        .container{
+            margin-top: 35px;
+        }
+        #photo{
+            margin-bottom: 16px;
+            width: 294px;
+            height: 324px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var photo = document.getElementById("photo");
+            var photoImg = photo.children[0];
+            var imgH = photoImg.clientHeight;
+            
+            var fadeto1 = document.getElementById("fadeto1");
+            var fadeto2 = document.getElementById("fadeto2");
+            var fadein = document.getElementById("fadein");
+            var fadeout = document.getElementById("fadeout");
+            var slidedown = document.getElementById("slidedown");
+            var slideup = document.getElementById("slideup");
+            var reset = document.getElementById("reset");
+
+            fadeto1.addEventListener('click', function(){
+                fadeToFunction(photo, 0.5);   // 함수를 호출하는 방식
+                
+            });
+
+            fadeto2.addEventListener('click', function(){
+                fadeToFunction(photo, 1);   // 함수를 호출하는 방식
+                
+            });
+
+            fadein.addEventListener('click', function(){
+                fadeInFunction(photo);
+            });
+
+            fadeout.addEventListener('click', function(){
+                fadeOutFunction(photo);
+            });
+
+            slidedown.addEventListener('click', function(){
+
+            });
+
+            slideup.addEventListener('click', function(){
+
+            });
+
+            reset.addEventListener('click', function(){
+                photo.removeAttribute("style");
+            });
+
+            // fadeOutFunction 시작
+            function fadeOutFunction(element){
+                if(element.style.display == "none") return;
+
+                var current = element.style.opacity;
+
+                if(current == ""){
+                    current = 1;
+                }else{
+                    current = Number(current);
+                }
+
+                // 아래의 10(1000 = 1초)의 시간 간격마다 해당 함수가 실행되겠네
+                var timer = setInterval(function(){
+                    if(current > 0){
+                        current -= 0.02;
+                    }else{
+                        current = 0;
+                        element.display = "none";
+                        clearInterval(timer);
+                    }
+                    element.style.opacity = current;
+                },10);
+            }
+            // fadeOutFunction 끝
+
+            // fadeInFunction 시작  
+            function fadeInFunction(element){
+                if(element.style.display == "" || element.style.display == "block") return; 
+                // fadeIn은 화면이 보인다는 거니까. 
+                // 기존에 보이는 상태면 그냥 return
+
+                var current = 0;    // 보이는 상태가 아니니까 current는 0
+                element.style.display = "block";
+                element.style.opacity = current; // 즉, 0
+
+                var timer = setInterval(function(){
+                    if(current < 1){
+                        current += 0.02;
+                    }else{
+                        current = 1;
+                        clearInterval(timer);
+                    }
+                    
+                },10);
+            }   // fadeInFunction 끝
+
+
+            // fadeToFunction 시작
+            function fadeToFunction(element, target){       // opacity를 선언한게 없는데 그냥 ""이라고 보는건가
+                var current = element.style.opacity;        // current는 현재 투명도 - target은 목표로 하는 투명도
+                if(current == ""){
+                    current = 1;
+                }else{
+                    current = Number(current);
+                }
+
+                var timer = setInterval(function(){
+                    if(current == target){
+                        clearInterval(timer);
+                    }
+
+                    if(current > target){
+                        if(Math.abs(current - target) > 0.02){
+                            current -= 0.02;
+                        }else{
+                            current = target;
+                            clearInterval(timer);
+                        }
+                    }else{
+                        if(Math.abs(current - target) > 0.02){  // Math.abs는 어차피 절대값이니까 별로 상관은 없겠네
+                            current += 0.02;
+                        }else{
+                            current = target;
+                            clearInterval(timer);
+                        }
+
+                    }
+                    element.style.opacity = current;
+
+
+                }, 10);
+            }   // fadeToFunction 끝
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="photo"><img src="images/bg3.JPG" alt="bg3"></div>
+        <button id="fadeto1">fadeto1</button>
+        <button id="fadeto2">fadeto2</button>
+        <button id="fadein">fadeIn</button>
+        <button id="fadeout">fadeOut</button>
+        <button id="slidedown">slideDown</button>
+        <button id="slideup">slideUp</button>
+        <button id="reset">reset</button>
+    </div>
+</body>
+</html>

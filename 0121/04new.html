@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 35px;
+        }
+
+        button{
+            padding: 5px 15px;
+            background-color: #666;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: aliceblue;
+            color: #666;
+        }
+        .gallery{
+            margin-top: 60px;
+
+        }
+        .gallery img{
+            width: 200px;
+
+        }         
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            // 버튼을 클릭으로 이미지 불러오기
+            var n = 0; // 이미지의 인덱스 역할
+            var prependbtn = document.getElementById("prepend");
+            var appendbtn = document.getElementById("append");
+            var gallery = document.getElementsByClassName("gallery")[0];
+
+            prependbtn.addEventListener("click", function(){
+                
+                var lastChild = gallery.lastElementChild;
+                console.log(lastChild); // images/70.JPG 를 담아오네
+
+                // 노드의 속성 읽기
+                // element.getAttribute(attributename);
+                var preSrc = lastChild.getAttribute("src");
+                var preAlt = lastChild.getAttribute("alt");
+                
+                // 노드 삭제
+                // node.removeChild(node);
+                gallery.removeChild(lastChild);
+
+                var newNode = document.createElement("img");
+                newNode.setAttribute("src", preSrc);
+                newNode.setAttribute("alt", preAlt);
+
+                // 
+                gallery.insertBefore(newNode, gallery.firstElementChild);
+            });
+            
+            appendbtn.addEventListener("click", function(){
+                /*
+                var firstChild = gallery.firstElementChild; // gallery 클래스의 첫째
+                console.log(firstChild);
+                // 노드의 속성 읽기
+                var lastSrc = firstChild.getAttribute("src");
+                var lastAlt = firstChild.getAttribute("alt");
+
+                gallery.removeChild(firstChild);
+
+                var newNode2 = document.createElement("img");
+                newNode2.setAttribute("src", lastSrc);
+                newNode2.setAttribute("alt", lastAlt);
+
+                // gallery.appendChild(newNode2, gallery.lastElementChild);
+                gallery.appendChild(newNode2);
+                */
+
+                var firstChild = gallery.firstElementChild;
+                var newNode = firstChild.cloneNode(true)  // firstChild를 복사함
+                // 위의 src노드와 alt노드를 둘 다 복사한것이 위의 줄이다
+                gallery.removeChild(firstChild);
+                gallery.appendChild(newNode);
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button id="prepend" title="prepend">prepend</button>
+        <button id="append" title="append">append</button>
+        <div class="gallery">
+            <img src="images/31.JPG" alt="31">
+            <img src="images/54.JPG" alt="54">
+            <img src="images/68.JPG" alt="68">
+            <img src="images/70.JPG" alt="70"> 
+        </div>
+    </div>
+</body>
+</html>

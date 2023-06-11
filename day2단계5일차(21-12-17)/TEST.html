@@ -54,17 +54,29 @@
 <body>
   <!-- em 태그 글자 강조하는 것 -->
   <div class="thumbs">
-    <a href="images/pic1.jpg" title="image1"><img src="images/th_pic1.jpg" /></a>
-    <em>Lorem Ipsum is simply dummy text of the pdrinting and typesetting
-      industry.</em>
-    <a href="images/pic2.jpg" title="image2"><img src="images/th_pic2.jpg" /></a>
-    <em>Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+    <a href="images/pic1.jpg" title="image1">
+      <img src="images/th_pic1.jpg" />
+    </a>
+    <em>
+      Lorem Ipsum is simply dummy text of the pdrinting and typesetting
+      industry.
+    </em>
+    <a href="images/pic2.jpg" title="image2">
+      <img src="images/th_pic2.jpg" />
+    </a>
+    <em>
+      Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
       Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis
-      tempor magna sem vel justo. Etiam eget ipsum ante.</em>
-    <a href="images/pic3.jpg" title="image3"><img src="images/th_pic3.jpg" /></a>
+      tempor magna sem vel justo. Etiam eget ipsum ante.
+    </em>
+    <a href="images/pic3.jpg" title="image3">
+      <img src="images/th_pic3.jpg" />
+    </a>
     <em>Lorem Ipsum is simply dummy.</em>
   </div>
-  <div id="largeImg"><img src="images/pic1.jpg" alt="image1" /></div>
+  <div id="largeImg">
+    <img src="images/pic1.jpg" alt="image1" />
+  </div>
   <!-- 이미지에 대한 설명태그 추가 -->
 
 
@@ -89,11 +101,12 @@
     $(".thumbs a").click(function (e) {
       e.preventDefault(); // a태그에 href이벤트를 초기화
 
-      // if 괄호안에 얘가 있느냐? 없느냐?를 물어보는거
-      if ($("#caption")) {      // 기존에 캠션이 있다면
+      // if 괄호 안에 얘가 있느냐? 없느냐?를 물어보는거
+      if ($("#caption")) {      // 기존에 캡션이 있다면
         $("#caption").remove(); // 캡션을 삭제해라 .append()에 반대기능
       }
 
+      // 큰 이미지 교체되는 애니메이션
       var path = $(this).attr("href");
       // console.log(path);
 
@@ -113,6 +126,7 @@
       $("#largeImg #caption").text(msg);
       // 추가된 태그에 msg를 텍스트로 적용
 
+      // caption 애니메이션
       var posy = $("#largeImg #caption").height() + 27;
       $("#largeImg #caption").animate({ top: "-=" + posy + "px" });
       // 문자열과 숫자의 합은 문자열이 된다. 뒤에"px"를 붙이면 숫자가 된다.

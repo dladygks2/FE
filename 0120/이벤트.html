@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function writeTxt1(){
+            var area = document.querySelector(".note");
+            area.innerHTML = "자바스크립트!!";
+        }
+
+        function writeTxt2(str){
+            var area = document.querySelector(".note1");
+            area.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <!-- 인라인 방식 -->
+    <button onclick="writeTxt1()">event1</button>
+    <textarea class="note" name="" id="" cols="30" rows="10">
+
+    </textarea>
+    
+    <textarea class="note1" name="" id="" cols="30" rows="10">
+
+    </textarea>
+    <button onclick="writeTxt2('자바스크립트test')">event2</button>
+
+</body>
+</html>

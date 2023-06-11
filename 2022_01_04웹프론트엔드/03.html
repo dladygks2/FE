@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .container{
+            margin: 35px;
+            height: 500px;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: lightsalmon;
+        }
+        .bottom_group{
+            margin-top: 30px;
+        }
+        .bottom_group a{
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 0.895em;
+            padding: 5px 20px;
+            background-color: #666;
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var box = document.getElementById("box1");
+            box.style.opacity = 1;
+
+            var btn1 = document.getElementById("size_big");
+            var btn2 = document.getElementById("opacity");
+            var reset = document.getElementById("reset");
+
+            var currentW = 50;  // 초기의 크기
+            var targetW = 400;  // 이벤트에 의한 크기
+            var op = 1;         // 투명도
+
+            btn1.addEventListener('click', function(e){
+                e.preventDefault();
+                var timer = setInterval(function(){
+                    if((targetW - currentW) > 10){
+                        currentW += 10;
+                    }else{
+                        currentW = targetW;
+                        clearInterval(timer);
+                    }
+                    box.style.width = currentW + "px";
+                    box.style.height = currentW + "px";
+                }, 10); // 10초
+            });
+
+            btn2.addEventListener('click', function(e){
+                e.preventDefault();
+                var timer = setInterval(function(){
+                    if(op > 0.1){
+                        op -= 0.1;
+                    }else{
+                        op = 0;
+                        clearInterval(timer);
+                    }
+                    box.style.opacity = op;
+                }, 10);
+            });
+        });
+
+        reset.addEventListener('click', function(e){
+            e.preventDefault();
+            box.removeAttribute("style");
+            currentW = 50;
+            op = 1;
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="bottom_group">
+            <a href="" id="size_big">size big</a>
+            <a href="" id="opacity">opacity 0</a>
+            <a href="" id="reset">reset</a>
+        </div>
+    </div>
+</body>
+</html>

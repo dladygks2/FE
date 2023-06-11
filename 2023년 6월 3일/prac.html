@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var el = $(".list");
+            // el 자식들 중에서 앞 부분에 태그를 추가
+            el.prepend('<li style="color:blue">3-0</li>');
+
+            // el 자식들 중에서 마지막 부분에 태그를 추가
+            el.append('<li style="color:red">3-5</li>');
+
+            // el 요소를 기준으로 해서 이전에 태그를 추가
+            el.before('<h2>el을 기준으로 이전 위치에 추가된 태그</h2>');
+            
+            // el 요소를 기준으로 해서 다음에 태그를 추가
+            el.after('<h2>el을 기준으로 다음 위치에 추가된 태그</h2>');
+
+            // 추가된 태그 삭제
+            $("input").click(function(){
+                $("h2").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <!-- <li>3-0</li> 추가 -->
+        <li>3-1</li>
+        <li>3-2</li>
+        <li>3-3</li>
+        <li>3-4 (아래에 3-5를 채워주세요)</li>
+        <!-- <li>3-5 추가</li> -->
+    </ul>
+
+    <input type="button" value="태그삭제">
+</body>
+</html>

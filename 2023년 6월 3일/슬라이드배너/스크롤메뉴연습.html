@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #wrap{
+            width: 100%;
+        }
+        /* header */
+        #header{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+            width: 100%;
+            height: 120px;
+            background-color: blueviolet;
+            opacity: 0.5;
+        }
+        #header ul{
+            margin: 0 auto;
+            margin-top: 45px;
+            width: 1000px;
+            height: 30px;
+        }
+        #header ul li{
+            float: left;
+            width: 200px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #header ul li a{
+            color: #fff;
+            font-size: 25px;
+        }
+        #header ul li.on a{
+            color: #000;
+            font-size: 30px;
+        }
+        /* contents 영역 */
+        #contents{
+            width: 100%;
+        }
+        #contents > div{
+            padding-top: 120px; /* header 높이가 120px 이어서*/
+            width: 100%;
+            height: 800px;
+        }
+        #contents > div.con1{background-color: burlywood;}
+        #contents > div.con2{background-color: pink;}
+        #contents > div.con3{background-color: grey;}
+
+        #q_mn{
+            position: absolute;
+            top: 150px;
+            right: 50px;
+            z-index: 1000;
+            width: 60px;
+            height: 120px;
+            line-height: 24px;
+            background-color: cornsilk;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #q_mn ul.btns li{
+            text-align: center;
+        }
+        #q_mn ul.btns li a{
+            color: #000;
+        }
+        #q_mn ul.btns li.on a{
+            color: red;
+        }
+    </style>
+    <script>
+        // 제이쿼리 문법은 이 안에 작성해야한다.
+        $(document).ready(function(){
+            var menu = $(".btns li");
+            var section = $("#contents > div");
+
+            var h = $(window).height();
+            $("#contents > div").height(h);
+            // 위에꺼는 해당 div의 높이를 h의 값으로 넣어준다는 거 
+            
+            // 화면의 크기가 바뀔 때(.resize()) 적용
+            $(window).resize(function(){
+                // 화면의 크기가 바뀌면, 바뀐 현재의 높이를 h에 넣어준다
+                // JS는 변수 재선언 가능하고 지역변수니까 똑같은 변수명으로 선언가능
+                var h = $(window).height(); 
+                $("#contents > div").height(h);
+            });
+
+            menu.click(function(e){ // e == .btns li 중에서 클릭된 요소
+                e.preventDefault(); // 클릭된 요소가 가지고 있던 이벤트를 초기화시킴
+                var tg = $(this);   // 클릭된 요소(즉, e)를 객체화시킴
+                var i = tg.index(); 
+                /*
+                    menu 변수는 .btns li 들을 의미. 그럼 list형식으로 5개가 저장되어 있겠네
+                    그 menu들 중에서 클릭된 객체를 e로 지정하고,
+                    e = this 와 같다 이 함수 안에서는
+                    tg.index(); 는 클릭된 요소의 인덱스 값을 의미
+                */
+
+                /* 
+                    .offset().top
+                    -> 클릭된 요소의 scrollTop 위치로 이동시켜라
+                */
+               var tt = section.eq(i).offset().top; 
+               /*
+                    section은 .contents > div를 의미
+                    i는 위에 선언된 녀석 == 클릭된 요소의 index 값을 담음
+                    offset()은 스크롤로 화면을 이동을 할 때 주로 사용한다
+                    offset().top은 여기서보면 section.eq(i) 영역의 상단의 값을 말함
+                    scrollTop을 할 때는 "html, body"(즉, 현재화면)을 기준으로 -> 이게 공식이란다
+               */ 
+               $("html, body").stop().animate({scrollTop:tt});
+            });
+
+            // 메뉴에 addClass로 주석처리
+            $(window).scroll(function(){
+                var sct = $(window).scrollTop();    // 현재 화면의 scrollTop을 변수 sct에 담음
+
+                $("#contents > div").each(function(){   // .each() -> contents 안에 div를 순서대로 처리함
+                    var tg = $(this);   // 클릭된 #contents > div 인데...
+                    var i = tg.index(); 
+ 
+                    if(tg.offset().top <= sct){ 
+                    // tg는 해당되는 div들 중에서 현재 scrollTop()의 위치와 동일하거나 작다면
+                        menu.removeClass("on"); // 모든 메뉴에서 class가 있다면 삭제해라
+                        menu.eq(i).addClass("on");
+                    }
+                });
+            });
+
+            // 퀵메뉴 작업
+            $(window).scroll(function(){
+                var winTop = $(window).scrollTop() + 250; // 앞부분이 px이므로 250 뒤에 px 안붙여도 된다
+                $("#q_mn").stop().animate({top:winTop + "px"},500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="btns">
+                <li><a href="#con1">btn con1</a></li>
+                <li><a href="#con2">btn con2</a></li>
+                <li><a href="#con3">btn con3</a></li>
+                <li><a href="#con4">btn con4</a></li>
+                <li><a href="#con5">btn con5</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="con1" id="con1">con1</div>
+            <div class="con2" id="con2">con2</div>
+            <div class="con3" id="con3">con3</div>
+            <div class="con1" id="con4">con4</div>
+            <div class="con2" id="con5">con5</div>
+        </div>
+    </div>
+    <!-- 퀵메뉴 : 어차피 position: absolute;라서 선언은 뭐 아무데나 해도 될듯 -->
+    <div id="q_mn">
+        <ul class="btns">
+            <li><a href="#con1">q_con1</a></li>
+            <li><a href="#con2">q_con2</a></li>
+            <li><a href="#con3">q_con3</a></li>
+            <li><a href="#con4">q_con4</a></li>
+            <li><a href="#con5">q_con5</a></li>
+        </ul>
+    </div>
+</body>
+</html>

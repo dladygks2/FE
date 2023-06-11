@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            background-color: #f1f1f1;
+            color:#555;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title{
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+
+        }
+        .container{
+            margin-top: 35px;
+        }
+        .check input{
+            margin-left: 20px;
+            margin-top: 40px;
+            vertical-align: middle;
+        }
+        .check input#check1{
+            margin-top: 0;
+        }
+        .check_box1{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 0; */
+            background-color: pink;
+        }
+        .check_box1.checked{
+            /* background-position: -36px 0; */
+            background-color: lightblue;
+        }
+        .check_box2{
+            display: inline-block;
+            margin-top: 40px;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat -80px 0; */
+            background-color: pink;
+        }
+        .check_box2.checked{
+            /* background-position: -107px 0; */
+            background-color: lightblue;
+        }
+        .check_box3{
+            display: inline-block;
+            margin-top: 40px;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 -30px; */
+            background-color: pink;
+        }
+        .check_box3.checked{
+            /* background-position: -36px -30px; */
+            background-color: lightblue;
+        }
+        .check_box4{
+            display: inline-block;
+            margin-top: 40px;
+            width: 56px;
+            height: 33px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 -66px; */
+            background-color: pink;
+        }
+        .check_box4.checked{
+            /* background-position: -72px -66px; */
+            background-color: lightblue;
+        }
+        .select{
+            margin-top: 40px;
+        }
+        .select dl{
+            display: inline-block;
+            position: relative;
+            line-height: 27px;
+            vertical-align: middle;
+        }
+        .select dl dt a{
+            display: block;
+            position: relative;
+            padding-left: 10px;
+            width: 180px;
+            height: 27px;
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 0.75em;
+            color: #666;
+            border: 1px solid #dedede;
+        }
+        .select dl dt a span{
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+            width: 10px;
+            height: 6px;
+            /* background: url(images/spr_btns.png) no-repeat -127px -73px; */
+        }
+        .select dl dt a.active span{
+            background-position: -127px -93px;
+        }
+        .select dl dd{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 28px;
+            z-index: 10;
+            margin: 0;
+            padding: 0;
+            width: 190px;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #dedede;
+        }
+        .select dl dd li{
+            border-top: 1px solid #eaefe3;
+        }
+        .select dl dd li:first-child{
+            border-top: none;
+        }
+        .select dl dd li a{
+            display: block;
+            position: relative;
+            padding-left: 31px;
+            line-height: 32px;
+            text-decoration: none;
+            font-size: 0.75em;
+            background-color: #fff;
+            color: #888;
+            transition: background-color 0.3s;
+        }
+        .select dl dd li a.active{
+            background-color: #f1f1f1;
+        }
+        .select dl dd li a::after{
+            content:"";
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            width: 21px;
+            height: 21px;
+            /* background: url(images/spr_btns.png) no-repeat 0 0; */
+        }
+        .select dl dd li .kr::after{
+            background-position: -392px -326px;
+        }
+        .select dl dd li .eng::after{
+            background-position: -392px -360px;
+        }
+        
+        .select dl dd li .cn::after,
+        .select dl dd ul li .glo::after{
+            background-position: -392px -395px;
+        }
+        .select select{
+            margin-left: 20px;
+            vertical-align: middle;
+            
+        }
+
+        
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var checkArea = document.getElementsByClassName("check")[0];
+            for(var i= 0; i < checkArea.children.length; i++){
+                if(checkArea.children[i].tagName == "A"){
+                    var checkBox = checkArea.children[i];
+                }
+            }
+
+            checkBox.addEventListener('click', function(e){
+                e.preventDefault();
+
+                if(e.target.classList.contains("checked") == false){    // check가 안되어있을 때 실행   
+                    e.target.classList.add("checked");
+                    e.target.nextElementSibling.setAttribute("checked", "true");    // .check의 다음 요소의 "checked" 부분을 "true"로 선언하겠다
+                }else{
+                    e.target.classList.remove("checked");
+                    e.target.nextElementSibling.removeAttribute("checked");
+                    // e.target.nextElementSibling.setAttribute("checked", "false");
+                }
+
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="">
+            <div class="check">
+                <a href="" class="check_box1" title="check box1"></a>
+                <input type="checkbox" class="check1">
+            </div>
+            <div class="check">
+                <a href="" class="check_box2" title="check box2"></a>
+                <input type="checkbox" class="check2">
+            </div>
+            <div class="check">
+                <a href="" class="check_box3" title="check box3"></a>
+                <input type="radio" class="check3">
+            </div>
+            <div class="check">
+                <a href="" class="check_box4" title="check box4"></a>
+                <input type="radio" class="check4">
+            </div>
+            <div class="select">
+                <dl>
+                    <dt><a href="">GLOBAL SITE <span></span></a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="/global/en/index" class="eng">Global / English</a></li>
+                            <li><a href="/global/cn/index" class="glo">Global / 중국어</a></li>
+                            <li><a href="http://www.naturerepublic.cn/index" class="cn">중국어 / 간체</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <select name="" id="">
+                    <option value="">GLOBAL SITE</option>
+                    <option value="">Global / English</option>
+                    <option value="">Global / 중국어</option>
+                    <option value="">China / 중국어(간체)</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
