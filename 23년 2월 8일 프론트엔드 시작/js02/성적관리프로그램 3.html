@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적관리 프로그램</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const name = prompt('이름을 입력하세요');
+        const kor = Number(prompt('국어점수를 입력하세요'));
+        const eng = Number(prompt('영어점수를 입력하세요'));
+        const math = Number(prompt('수학점수를 입력하세요'));
+
+        const total = kor + eng + math;
+        const average = total / 3;
+
+        let hakjum = ""; // A , B, C, D, F
+
+        // 학점의 기준 90 80 70 60 나머지는 F
+        switch(parseInt(average / 10)){     // parseInt는 입력받은 수를 정수로 출력. 아마도 버림으로 계산?
+            case 10:
+            case 9:
+                hakjum = "A학점";
+                break;
+            case 8:
+                hakjum = "B학점";
+                break;
+            case 7:
+                hakjum = "C학점";
+                break;
+            case 6:
+                hakjum = "D학점";
+                break;
+            default:
+                hakjum = "F학점"; 
+        }
+
+        // ${name} -> name을 하나의 객체로 가져옴
+        document.write(`<h2>"${name}" 님의 성적표</h2>`);
+        document.write(`<h4>국어점수 : ${kor} 점</h4>`);
+        document.write(`<h4>영어점수 : ${eng} 점</h4>`);
+        document.write(`<h4>수학점수 : ${math} 점</h4>`);
+        document.write('------------------------------------------');
+        document.write(`<h3>총 점수 : ${total} 점</h3>`);
+        document.write(`<h3>평균 점수 : ${average} 점</h3>`);
+        document.write(`<h3>학점 : ${hakjum}</h3>`);
+    </script>
+</body>
+</html>

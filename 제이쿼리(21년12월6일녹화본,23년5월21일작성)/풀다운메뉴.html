@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+    <style>
+        /* 기본스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:#555;
+        }
+        /* 메뉴 레이아웃 */
+        #header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 150px;
+            background-color: cadetblue;
+        }
+        .main_mn{
+            width: 800px;
+            height: 30px;
+            border: 2px solid #555;
+        }
+        .main_mn > li{
+            float: left;
+            width: 25%;
+            border-bottom: 2px solid #555;
+        }
+        .main_mn > li > div{
+            /* 기본적으로 보여지는 부분 // 높이 설정은 얘한테만 한다 */
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .main_mn > li > div:hover{
+            background-color: blueviolet;
+        }
+        #sub_mn_area{
+            /* 풀다운 메뉴는 position을 absolute 걸어야한다 */
+            position: absolute;
+            top: 150px;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 250px;
+            background-color: cornflowerblue;
+            overflow: hidden;
+        }
+        #sub_mn_area .inbox{
+            margin: 0 auto;
+            width: 1300px;
+            height: 250px;
+            background-color: antiquewhite;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+           $("#sub_mn_area").hide();
+           // $("#sub_mn_area").css({display:"none"}); // 위에 대신 이거 해도됨
+
+            $(".main_mn").mouseenter(function(){
+                // $("#sub_mn_area").css({display:"block"});
+                $("#sub_mn_area").stop().show().css({height:"0px"}).animate({height:"250px"},1000);
+            });
+            $("#sub_mn_area").mouseleave(function(){
+                // $(this).css({display:"none"});
+                /*
+                $("#sub_mn_area").css({height:"250px"}).animate({height:"0px"},300,function(){
+                    $(this).hide();
+                });
+                */
+                $("#sub_mn_area").css({height:"250px"}).animate({height:"0px"},500);
+            }); 
+
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        <ul class="main_mn"> 
+            <li class="mn1">
+                <div>menu</div> 
+            </li>
+            <li class="mn2">
+                <div>menu</div> 
+            </li>
+            <li class="mn3">
+                <div>menu</div> 
+            </li>
+            <li class="mn4">
+                <div>menu</div> 
+            </li>
+        </ul> 
+    </div>
+    <div id="sub_mn_area">
+        <div class="inbox">
+            <ul>
+                <li><a href="">menu</a></li>
+                <li><a href="">menu</a></li>
+                <li><a href="">menu</a></li>
+                <li><a href="">menu</a></li>
+                <li><a href="">menu</a></li>
+                <li><a href="">menu</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

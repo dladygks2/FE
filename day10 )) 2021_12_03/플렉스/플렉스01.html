@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      *{margin: 0; padding: 0;} 
+        *{margin: 0; padding: 0;} 
 
-      #container{ width: 500px; height: 300px;
-                 margin: 0 auto;
-                 border: 3px solid red; 
-                 display: flex; flex-wrap:wrap-reverse;}
-      #container div{ width: 200px; border: 1px solid #000;
-                      background-color: blueviolet;}                 
+        #container{ 
+            width: 500px; height: 300px;
+            margin: 0 auto;
+            border: 3px solid red; 
+            display: flex; 
+            flex-wrap:wrap-reverse;
+            flex-wrap: wrap;
+            flex-wrap: nowrap;
+        }
+
+        #container div{ 
+            width: 200px; 
+            border: 1px solid #000;
+            background-color: blueviolet;
+        }                 
+        h2{
+            font-size: 40px;
+            font-weight: 900;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>

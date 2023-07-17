@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+    <style>
+        /* 기본스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:#555;
+        }
+        /* 메뉴 레이아웃 */
+        .main_mn{
+            margin: 50px;
+            width: 125px;
+            border: 2px solid #555;
+        }
+        .main_mn > li{
+            border-bottom: 2px solid #555;
+        }
+        .main_mn > li > div{
+            /* 기본적으로 보여지는 부분 // 높이 설정은 얘한테만 한다 */
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .main_mn > li > div:hover{
+            background-color: blueviolet;
+        }
+
+        .main_mn .sub_mn{
+            border-top: 1px solid #ccc;
+        }
+        .main_mn .sub_mn li{
+            border-top: 1px solid #ccc;
+        }
+        .main_mn .sub_mn li a{
+             font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul class="main_mn">
+
+        <li class="mn1">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li class="mn2">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li class="mn3">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <li class="mn4">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            $(".sub_mn").hide(); // 첫화면을 열었을 때 모든 서브를 숨김
+            $(".main_mn > li > div").click(function(){
+                // $(".main_mn > li > div").next(".sub_mn").show(); 
+                // next()는 해당하는놈 다음꺼 즉 ul 부분을 의미
+                // $(this)  -> 상대적인 선택 이 위에 것이 아래것과 같다. 클릭 되는 당사자가 this인거지
+                $(".sub_mn").hide(); // 현재 버튼 외의 서브들을 숨김
+                $(".sub_mn").each(  // 대상 모두를 순서대로 처리 ex) 첫번째 .sub_mn를 불러옴. 두번째 .sub_mn를 불러옴
+                    function(){        // each가 원칙이란다 
+                        if($(this).show()){ // ".sub_mn" 중에서 사용자가 클릭한 ".sub_mn"를 this라고함 
+                            $(this).hide();
+                        }          
+                    }       
+                );    
+                // $(this).next(".sub_mn").show();
+                // $(this).next(".sub_mn").slideDown();
+                $(this).next(".sub_mn").fadeIn();
+            });
+        });
+    </script>
+</body>
+</html>

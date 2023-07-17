@@ -1,0 +1,20 @@
+animation 애니메이션을 지정함
+
+animation-name : 애니메이션 이름을 지정함
+animation-delay : 애니메이션의 지연시간을 지정함
+animation-direction : 애니메이션의 진행방향 지정함
+    alternate : 반대방향으로 진행
+    normal : 원래방향으로 진행
+animation-duration : 애니메이션의 실행시간을 지정함
+animation-iteration-count : 애니메이션의 반복 횟수를 지정함
+animation-play-state : 애니메이션의 재생상태를 지정함
+    paused, animation-play-state:paused;
+animation-timing-function : 애니메이션의 속도 형태를 지정함
+    linear : 시작에서 끝까지 똑같은 속도로 진행
+    ease : 처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝남
+    ease-in : 시작은 느리게
+    ease-out : 느리게 끝냄
+    ease-in-out : 느리게 시작하고 느리게 끝냄
+    cubic-bezier : 직접 베이직 함수를 정의해서 사용
+                    n에서 사용할 수 있는 값은 0~1 사이입니다
+    

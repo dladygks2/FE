@@ -66,16 +66,16 @@
 		}
 	</style>
 	<script src="js/jquery-1.8.3.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>		<!-- 부드러운 모션이 필요할 때 사용 -->>
 	<script src="js/jquery.kwicks-1.5.1.pack.js"></script>
 	<script>
 		$(function () {
 			$(".kwicks").kwicks({
-				max: 300,
-				spacing: 5,
+				max: 300,		/* 최대값 */
+				spacing: 5,		/* 간격 */
 				isVertical: true,
 				behavior: "menu",
-				easing: "easeOutBounce"
+				easing: "easeOutBounce"	/* 가속도 */
 			});
 		});
 	</script>
@@ -117,42 +117,44 @@ horizontal navigation2
 	<!-- 
 	max|min:(필수)
 
-완전히 확장 된 축소 패널의 너비 또는 높이 (픽셀 단위)입니다. if isVertical가 true이면 크기가 지정된 차원이 높이를 참조합니다. 그렇지 않으면 너비입니다.
+		완전히 확장 된 축소 패널의 너비 또는 높이 (픽셀 단위)입니다. 
+		if isVertical가 true이면 
+		크기가 지정된 차원이 높이를 참조합니다. 그렇지 않으면 너비입니다.
 
-max OR min을 지정해야하며 둘 다 지정할 수는 없습니다.
+		max OR min을 지정해야하며 둘 다 지정할 수는 없습니다.
 
-isVertical:(기본값 : false)
+	isVertical:(기본값 : false)
 
-패널을 세로로 배열할지 어떨지를 나타냅니다.
+		패널을 세로로 배열할지 어떨지를 나타냅니다.
 
-sticky:(기본값 : false)
+	sticky:(기본값 : false)
 
-사실이라면 하나의 패널이 항상 확장됩니다.
+		사실(true)이라면 하나의 패널이 항상 확장됩니다.
 
-defaultKwick:(기본값 : 0)
+	defaultKwick:(기본값 : 0)
 
-처음에 확장 된 패널의 색인입니다 (고정 점이 true 인 경우에만 해당).
+		처음에 확장된 패널의 색인입니다 (고정 점이 true 인 경우에만 해당).
 
-event:(기본값 : 'mouseover')
+	event:(기본값 : 'mouseover')
 
-확장 효과를 트리거하는 이벤트입니다. 다른 후보자는 'click'및 'dblclick'입니다.
+		확장 효과를 트리거하는 이벤트입니다. 
+		다른 후보자는 'click'및 'dblclick'입니다.
 
-duration:(기본값 : 200)
+	duration:(기본값 : 200)
 
-각 애니메이션을 완료하는 데 필요한 밀리 초 수입니다.
+		각 애니메이션을 완료하는 데 필요한 밀리 초 수입니다.
 
-easing:(기본값 : none)
+	easing:(기본값 : none)
 
-애니메이션을위한 커스텀 easing 함수 (easing plugin 필요).
+		애니메이션을위한 커스텀 easing 함수 (easing plugin 필요).
 
-spacing:(기본값 : 0)
+	spacing:(기본값 : 0)
 
-각 패널을 분리하는 폭 (픽셀 단위)입니다.
+		각 패널을 분리하는 폭 (픽셀 단위)입니다.
 
-참고사이트:http://mottie.github.io/Kwicks/
+	참고사이트:http://mottie.github.io/Kwicks/
+	-->
 
-
- -->
 </body>
 
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+</head>
+<body>
+    <script>
+        
+        $(document).ready(function(){
+            // $("p").click(function(){
+            //     alert("텍스트가 선택되었습니다.")
+            // });
+            // $(".btn2").dblclick(function(){
+            //     alert("텍스트가 선택되었습니다.")
+            // });
+
+            // $(this) 예약어 : 현재 마우스 이벤트가 적용된 대상을 의미
+
+            // $(".btn3").hover(
+            //     function(){ // 마우스 호버했을 때
+            //         $(this).css("background-color", "yellow");
+            //     },  
+            //     function(){ // 마우스 호버했다가 나갈 때
+            //         $(this).css("background-color", "pink");
+            //     }
+            // );
+
+            // $(".btn3").mouseover(function(){
+            //     $(this).css("background-color", "pink");
+            // });
+            // $(".btn3").mouseout(function(){
+            //     $(this).css("background-color", "brown");
+            //     $(this).css("color", "#fff");
+            // });
+
+            // $(".btn4").mouseenter(function(){
+            //     $(this).css("background-color", "pink");
+            // });
+            // $(".btn4").mouseleave(function(){
+            //     $(this).css("background-color", "lightblue");
+            // });
+
+                $(document).mousemove(function(e){  // e, event : 이 함수의 매개변수
+                    // e에 mousemove 함수를 담아두었다고 보면 된다
+                    $("span").text("x 좌표 : " + e.pageX +","+" y 좌표 : " +  e.pageY)    // span태그 안에 있는 글자를 의미
+                    // 보통 text() 괄호안에 텍스트를 넣어주면 된다고
+                    // $("span").html()  
+                }); 
+                $("div").focusin(function(){
+                    $(this).css("background-color", "#ccc");
+                });
+                $("div").focusout(function(){
+                    $(this).css("background-color", "pink");
+                }); 
+                $(".btn5").mouseup(function(){
+                    $(this).after("<p style='color:green'>마우스 UP</p>");
+                });
+                $(".btn5").mousedown(function(){
+                    $(this).after("<p style='color:red'>마우스 UP</p>");
+                });
+                $(".btn5").mouseenter(function(){
+
+                });
+
+                // 하나의 대상에 여러가지 이벤트를 적용할 때 on()메서드를 사용
+                // $(".btn6").click(function(){
+                //     $(this).css("background-color", "blue");
+                // });
+                // $(".btn6").mouseover(function(){
+                //     $(this).css("background-color", "red");
+                // });
+
+                $(".btn6").on({
+                    click:function(){
+                        $(this).css("background-color", "blue");
+                    },
+                    mouseover:function(){
+                        $(this).css("background-color", "red");
+                    }
+                });
+        });            
+    </script> 
+    <p class="btn2"><b>여기를 클릭해보세요</b></p>
+    <p class="btn3"><b>이곳에 마우스를 가져다 대 보세요</b></p>
+    <p class="btn4"><b>마우스 포인터를 이곳에 대보세요</b></p>
+    <br><br><br><br><br><br>
+    <p>마우스 좌표 : <span></span>.</p>
+    <div style="border: 1px solid #eee; padding: 10px;width: fit-content;">
+        이름 : <input type="text">  <br>
+        주소 : <input type="text">  <br>
+    </div> 
+    <br><br><br><br><br><br>
+    <p class="btn5"><b>여기를 클릭해보세요</b></p>
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    
+    <p class="btn6"><b>여기를 클릭하거나 마우스를 오버했을 때</b></p>
+</body>
+</html>

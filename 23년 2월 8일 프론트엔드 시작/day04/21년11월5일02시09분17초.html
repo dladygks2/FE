@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            [웹접두사]
+            ->  웹브라우저 별로 접두사를 제공한다. 웹브라우저별로 다르게 표현이 될 수 있어서
+                하나의 속성을 선언하기 위해서 여러번 동일하게 선언을 지정한다.
+
+            파이어폭스      -moz-
+            크롬, 사파리    -webkit-
+            오페라          -o-
+            익스플로러      -ms-
+        */
+
+        .box01{
+            width: 300px;
+            height: 200px;
+            border: 2px solid #ccc;
+            box-shadow: 10px 10px 5px 5px red;  /* 그림자 효과*/
+            /* 밑에꺼 쓰는 이유 : 브라우저마다 안먹히는 것이 있다*/
+            -webkit-box-shadow: 10px 10px 5px 5px red;
+            -ms-box-shadow: 10px 10px 5px 5px red;
+        }  
+
+        .box02{
+            margin-top: 50px;
+            width: 300px;
+            height: 200px;
+            border: 2px solid #ccc;
+            background-color: #ff0000;
+            opacity: 0.5; /* 투명도 50% -> 이 투명도는 배경색과 글자색 모두 투명하게 한다.
+                            배경색만 투명하게 하고 글자는 진하게 하고 싶으면 
+                            background-color에서 rgba를 사용한다.
+                            opacity:1; 로 해야겠지 
+                            
+                            글자색도 rgba를 사용해서 할 수 있다
+
+                            HSLA 형식 --> color: hsla(0, 0%, 100%, 0.5);
+                            color:hsla(색상, 채도, 명도, 투명도);
+                            */
+        } 
+        /*
+            box-shadow : [dx] [dy] [blur] [spread] [set]
+            지정된 요소의 그림자를 설정함
+
+            dx : 그림자의 가로방향 위치
+            dy : 그림자의 세로방향 위치+-
+            blur : 흐려짐 정도
+            spread : 번짐 정도
+            set : 그림자의 형태
+            - outset : 요소 바깥쪽으로 그림자가 떨어짐 (기본값)
+            - inset : 요소 안쪽으로 그림자가 떨어짐
+
+        */
+
+        /*
+            rgba 방식 --> color : rgba(255,255,255,0.8);
+        */
+
+        .box03{
+            width: 100%;
+            height: 500px;
+            background: url(../마운티아/images/main_img.jpg) no-repeat 50% 0;
+            background-size: 100%;
+            background-size: auto;
+        }
+        /*
+            background-size : [x], [y]
+            백그라운드 이미지의 크기를 지정한다
+
+            [x]% [y]% : 적용되는 요소의 크기에 비레하여 배경 이미지 적용
+            [x]px [y]px : 절대 크기로 배경이미지 적용
+
+            100% : 배경이미지가 적용된 요소의 크기에 맞춤(크기의 변화가 생기면 배경의 사이즈도 변화가 생김)
+            auto : 배경이미지의 원래 크기를 그대로 유지
+            cover : 배경 이미지를 늘려 적용되는 요소 전체에 표시
+                    배경이미지 영역의 사이즈가 바뀔 때 -> 이미지의 가로, 세로 크기 중 작은크기를 기준으로
+                    배경이미지의 사이즈 변화가 생긴다
+            contain : 배경 이미지의 가로 세로 비율을 맞춰 요소에 표시할 수 있는 최대 크기로 표시 
+                    배경이미지 영역의 사이즈가 바뀔 때 -> 이미지의 가로, 세로 크기 중 큰 크기를 기준으로 
+                    배경이미지의 사이즈 변화가 생긴다
+        */
+
+        .box04{
+            margin-top: 50px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            /* border-radius: 30px; */
+            border-radius: 80px 50px 10px 100px;
+            overflow: hidden;
+        }
+
+        /*
+            border-radius: [length];
+            Box Model 외각선의 곡률 지정
+            length : 곡률의 크기
+            border-top-left-radius / border-top-right-radius
+            border-bottom-left-radius / border-bottom-right-radius
+            으로 각각 지정 가능
+
+            border-radius : top-left top-right bottom-right bottom-left;
+        */
+
+        .box04_1{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            
+            overflow: hidden;
+            /* overflow: scroll; */
+            /* overflow: auto; */
+            /* overflow: visible;   */
+            /* 기본값은 overflow:visible; 이다*/
+        }
+
+        .box05{
+            margin-top: 50px;
+            width: 500px;
+            height: 200px;
+            border: 2px solid #000;
+            /* background: -webkit-linear-gradient(left, red, blue, pink, yellow); */
+            /* background: -webkit-linear-gradient(left, red 25%, blue 20%, pink 30%, yellow); */
+            background: -webkit-linear-gradient(45deg, red, blue, pink, yellow);
+        }
+        .box06{
+            margin-top: 50px;
+            width: 500px;
+            height: 200px;
+            border: 2px solid #000;
+            /* background: -webkit-linear-gradient(left, red, blue, pink, yellow); */
+            /* background: -webkit-linear-gradient(left, red 25%, blue 20%, pink 30%, yellow); */
+            background: -webkit-radial-gradient(red 5%, blue 25%, pink);
+
+
+        }
+        /*
+            ---- 숨기는 기능 ----
+            opacity : 투명도, 0~1
+            display:none;       요소자체를 삭세한다. 그러므로 밑에 있는애들이 올라온다
+            visibility:hidden;  화면에서 숨김
+            visibility:visible; 화면에서 보여줌
+
+            overflow: ; 지정된 영역 밖으로 나간요소를 보이거나 숨김
+
+
+            overflow: ; 지정된 영역 밖으로 나간 요소를 보이거나 숨기는 속성
+            overflow:hidden;    숨김
+            overflos:scroll;    스크롤을 생성
+            overflow:auto;      원래 그대로 크기대로 보임
+            overflow:visible;   기본값으로 생략가능 
+
+        */
+
+        h1{
+            color: cornflowerblue;
+            text-shadow: 
+                0 0 4px #ccc,
+                0 -3px 4px #ff3,
+                1px -6px 6px #fd3,
+                -1px -9px 11px #f80,
+                1px -12px 18px #f20;
+            ;
+            /*
+                text-shadow: [dx] [dy] [blur] [color];
+                텍스트에 그림자를 지정
+
+                dx : 본체와 그림자의 가로방향 거리 + 값이면 오른쪽으로 - 값이면 왼쪽으로
+                dy : 본체와 그림자의 세로방향 거리 + 값이면 아래쪽으로 - 값이면 위쪽으로
+                blur : 그림자의 흐려짐 정도
+                color : 그림자의 색상 rgba 방식도 사용가능 
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+
+    <div class="box03">배경이미지사이즈</div>
+    <div class="box04">모서리 부분을 둥글게</div>
+    <div class="box04_1">
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br>
+        모서리를 둥글게<br> 
+        모서리를 둥글게<br> 
+        모서리를 둥글게<br> 
+    </div>
+
+    <div class="box05">직선그라디언트</div>
+    <div class="box06">원그라디언트</div>
+    <div class="box07-1" style="border: 1px solid #000; ">숨기기박스1</div>
+    <div class="box07-2" style="border: 1px solid #000; visibility: hidden;">숨기기박스2</div>
+    <div class="box07-3" style="border: 1px solid #000; ">숨기기박스3</div>
+</body>
+</html>

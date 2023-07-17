@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본적인 갤러리의 시작을 카피</title>
+  <style>
+    body {
+      margin: 20px auto;
+      padding: 0;
+      width: 620px;
+      background: #192829;
+    }
+
+    .thumbs {
+      float: left;
+      width: 100px;
+      background: wheat;
+    }
+
+    .thumbs img {
+      margin-bottom: 3px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .thumbs img:hover {
+      border-color: tomato;
+    }
+
+    #largeImg {
+      margin-left: 110px;
+      padding: 5px;
+      width: 500px;
+      height: 280px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    #caption {
+      position: relative;
+      padding: 10px;
+      font-family: "나눔고딕", "맑은 고딕";
+      font-size: 12px;
+      background-color: wheat;
+      color: tomato;
+      border: 1px solid #ccc;
+    }
+
+  </style>
+  <script src="js/jQuery.js"></script> <!-- 이걸 써줘야 제이쿼리 사용-->
+</head>
+
+<body>
+
+  <div class="thumbs">
+    <a href="images/pic1.jpg" title="img1"><img src="images/th_pic1.jpg" alt=""></a>
+    <em> 
+      Lorem Ipsum is simply dummy text of the pdrinting and typesetting
+      industry.
+    </em>
+    <a href="images/pic2.jpg" title="img2"><img src="images/th_pic2.jpg" alt=""></a>
+    <em>
+      Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+      Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis
+      tempor magna sem vel justo. Etiam eget ipsum ante.
+      </em>
+    <a href="images/pic3.jpg" title="img3"><img src="images/th_pic3.jpg" alt=""></a>
+    <em>Lorem Ipsum is simply dummy.</em>
+
+  </div>
+
+  <div id="largeImg">
+    <img src="images/pic1.jpg" alt="image1">
+  </div>
+
+  <script>
+    /*
+      제이쿼리에서 태그의 속성을 갖고 오거나 새로이 적용할 때 attr()메서드를 사용
+      속성을 갖고오는 방법은 var 변수 = $(대상).attr(갖고 오고자하는 속성을 지정);
+      속성을 적용하는 방법은 $(대상을 지정하고).attr({속성객체:속성값을 저장한 변수});
+      메서드()
+    */
+    $(".thumbs em").hide();
+
+    $(".thumbs a").click(function(e){
+      e.preventDefault();
+
+      var msg = $(this).next("em").text();
+      console.log(msg);
+
+      $("#largeImg").append("<div id='caption'></div>");  // 태그를 추가한 것
+      $("#largeImg #caption").text(msg);
+
+      // var 변수명 = $(".thumbs a").attr("href"); 특정태그의 속성을 추출
+      // $(속성을 지정할 대상).attr(변수명); 특정태그의 속성을 적용
+      var path = $(this).attr("href"); // 각 a 태그의 경로의 값을 담고있다
+      // this는 .thumbs a 중에서 클릭된 당사자를 의미하는 듯
+      console.log(path);
+
+      if(path != $("#largeImg img").attr("src")){
+        $("#largeImg img").attr({src:path});
+        $("#largeImg img").css({opacity:0}).animate({opacity:1});
+      }
+      // caption부분의 애니메이션
+      var posy = $("#largeImg #caption").height() + 27; // 여기 숫자는 기본단위가 px
+      $("#largeImg #caption").animate({top: "-=" + posy + "px"}); // -= posy
+    });
+
+  </script>
+</body>
+
+</html>

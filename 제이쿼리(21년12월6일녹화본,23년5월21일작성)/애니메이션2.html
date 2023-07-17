@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+    <style>
+        /* 기본스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:#555;
+        }
+        /* 메뉴 레이아웃 */
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000 ;
+        }
+           
+        .box01{
+            position: absolute;
+            top: 500px;
+            left: 0px;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+             $(".box01").delay(500).css({width:"100px"}).animate({width:"500px"},1000);
+             $(".box01").delay(500).css({width:"500px"}).animate({width:"100px"},1000);
+             $(".box01").delay(1000).css({left:"0px"}).animate({left:"500px"},1000);
+             $(".box01").delay(100).css({top:"0px"}).animate({top:"500px"},1000);
+             $(".box01").delay(100).css({left:"500px"}).animate({left:"0px"},1000);
+             $(".box01").delay(100).css({top:"500px"}).animate({top:"0px"},1000);
+
+             $(".box01").delay(500).css({width:"100px"}).animate({width:"500px"},1000,function(){
+                $(".box01").delay(500).css({width:"500px"}).animate({width:"100px"},1000),function(){
+                    $(".box01").delay(1000).css({left:"0px"}).animate({left:"500px"},1000),function(){
+                        $(".box01").delay(100).css({top:"0px"}).animate({top:"500px"},1000),function(){
+                            $(".box01").delay(100).css({left:"500px"}).animate({left:"0px"},1000),function(){
+                                $(".box01").delay(100).css({top:"500px"}).animate({top:"0px"},1000);                   
+                            };
+                        };
+                    };
+                };
+             });
+
+        });
+    </script>
+</head>
+<body>
+   <div class="box01">box01</div>
+  
+</body>
+</html>
