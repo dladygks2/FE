@@ -89,10 +89,12 @@
     <script>
         // 제이쿼리 문법은 이 안에 작성해야한다.
         $(document).ready(function(){
+
             var menu = $(".btns li");
             var section = $("#contents > div");
 
             var h = $(window).height();
+
             $("#contents > div").height(h);
             // 위에꺼는 해당 div의 높이를 h의 값으로 넣어준다는 거 
             
@@ -106,8 +108,10 @@
 
             menu.click(function(e){ // e == .btns li 중에서 클릭된 요소
                 e.preventDefault(); // 클릭된 요소가 가지고 있던 이벤트를 초기화시킴
+                
                 var tg = $(this);   // 클릭된 요소(즉, e)를 객체화시킴
                 var i = tg.index(); 
+                
                 /*
                     menu 변수는 .btns li 들을 의미. 그럼 list형식으로 5개가 저장되어 있겠네
                     그 menu들 중에서 클릭된 객체를 e로 지정하고,
@@ -121,7 +125,7 @@
                 */
                var tt = section.eq(i).offset().top; 
                /*
-                    section은 .contents > div를 의미
+                    section은 #contents > div를 의미
                     i는 위에 선언된 녀석 == 클릭된 요소의 index 값을 담음
                     offset()은 스크롤로 화면을 이동을 할 때 주로 사용한다
                     offset().top은 여기서보면 section.eq(i) 영역의 상단의 값을 말함
