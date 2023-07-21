@@ -19,21 +19,21 @@
         color: "black",
         start: function () {
           return "시동을 켭니다";
-        },
+        }
       };
 
       console.log(Car.name);
       console.log(Car.color);
       console.log(Car.start());
 
-
+// 생성자를 이용한 객체생성 -> 여러 개를 같은 템플릿 형식으로 만들어낼 수 있다
       function Dog(name, color){
           this.name = name;
           this.color = color;
           this.sleep = function(){
-              return `${this.name}가 잠을 잡니다.`
+              return `${this.name}가 잠을 잡니다.`;
           }
-      }
+      };
 
       //생성자를 이용한 객체 생성
       //장점: 객체를 여러개 만들기 편함
@@ -42,7 +42,7 @@
       console.log(Rucy.color);
       console.log(Rucy.sleep());
       
-      const PPomi = new Dog('뽀니', '흰색');
+      const PPomi = new Dog('뽀미', '흰색');
       console.log(PPomi.name);
       console.log(PPomi.color);
       console.log(PPomi.sleep());

@@ -10,7 +10,7 @@
     <h1>변수의 범위</h1>
     <script>
         'use strict';
-        var num1 = 10 //전역변수
+        var num1 = 10; //전역변수
 
         function func1(){
             //console.log(num1);
@@ -23,10 +23,10 @@
 
         var num2 = 30;//전역변수
         function func2(){
-            var num2 = 40;
+            var num2 = 40;// 지역변수
             //console.log(`num2:${num2}`);// 지역변수 출력 40
         }
-        func2()
+        func2();
         //console.log(num2)//전역변수
 
          
