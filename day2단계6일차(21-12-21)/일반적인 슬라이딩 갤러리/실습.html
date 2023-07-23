@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: 0;
+        }
+        ul, li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #slider{
+            margin: 0 auto;
+            width: 600px;
+            height: 350px;
+            border: 3px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #viewer{
+            height: 350px;
+            position: relative;
+            /* opacity: 0.3; */
+        
+        }
+        #viewer > img{
+            position: absolute;
+            top: 0px;
+        }
+        #viewer > img:nth-child(1){
+            left: 0;
+        }
+        #viewer > img:nth-child(2){
+            left: 600px;    /* 이미지의 가로길이가 600px 이란다*/
+        }
+        #viewer > img:nth-child(3){
+            left: 1200px;
+        }
+        #viewer > img:nth-child(4){
+            left: 1800px;
+        }
+
+        .btns{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        .btns li{
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-left: 6px;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 16px;
+        }
+        .btns li a{
+            display: block;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .btns li.on a{
+            color:#000;
+            background-color: #fff;
+        }
+        #btn_g{
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 600px;
+        }
+
+        button{
+            border: none;
+            background-color: #000;
+            color: #fff;
+            padding: 5px 12px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var current = 0;    // 현재 보이는 이미지 인덱스 값
+            var $current=$("#btn"+ current).find("a");
+            $current.addClass("act");
+
+            $(".btns > li").click(function(e){
+                e.preventDefault(); // 클릭된 e에 적용된 이벤트들을 막는 설정
+
+                var n = $(this).index();    // 지금 아래에 4개가 있고, 각각 0~3 까지 인덱스가 정해져있다
+               
+                $(".btns > li").removeClass("on");
+                $(this).addClass("on");
+
+                slide_ani(n);
+            });
+
+            // var pos = 600 *
+            // next
+            $("#next").click(function(e){
+                e.preventDefault();
+                if(current < 3){
+                    current ++; // 0, 1, 2, 3 ...
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slide_ani(current); 
+                }else{
+                    current = 0;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slide_ani(current); 
+                }
+            });
+
+            // prev 
+            $("#prev").click(function(e){
+                e.preventDefault();
+                if(current > 0){
+                    current--;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+
+                    slide_ani(current); 
+                }else{
+                    current = 3;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slide_ani(current); 
+                }
+            });
+
+            // viewer 이미지 그룹의 애니메이션
+            function slide_ani(n){  // n에는 index 값이 들어간다
+                // $("#viewer").animate({left:"-600px"},1000);
+                // 보통 이미지 움직이기 할 때 position을 주로 사용한다고
+                var pos = (-600) * n + "px"; // 0,1,2,3
+                current = n;
+                $("#viewer").animate({left:pos},1000); // 가로값을 변수로 둬서 사용할 것이다
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <div id="viewer">
+            <img src="images/slide1.jpg" alt="">    <!-- 인덱스는 0, 가로길이 600px -->        
+            <img src="images/slide2.jpg" alt="">    <!-- 인덱스는 1, 가로길이 600px -->    
+            <img src="images/slide3.jpg" alt="">    <!-- 인덱스는 2, 가로길이 600px -->    
+            <img src="images/slide4.jpg" alt="">    <!-- 인덱스는 3, 가로길이 600px -->    
+        </div>
+        <ul class="btns">
+            <li class="on"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+    </div>
+    <div id="btn_g">
+        <button id="prev">previous</button>
+        <button id="next">next</button>
+    </div>
+</body>
+</html>

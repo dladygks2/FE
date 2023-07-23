@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            transform : 요소의 형태를 변경함
+            translate([dx], [dy]) : 지정한 크기만큼 이동시킴
+            scale([ds]) : 지정한 배율만큼 확대함        ==> 1이라하면 원래크기 배율 1
+            rotate([deg]) : 지정한 각도만큼 회전시킴
+            skew([degx], [degy]) : 지정한 경사로 기울임
+
+        */
+
+        div{
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        /* transform : 상대값이동 현재의 위치를 기준으로 괄호안의 위치만큼 이동한다*/
+/* 
+        .box01{
+            transform: translate(100px, 100px);  
+        } 
+*/
+/*
+        .box02{
+            transform: scale(1.5);
+            margin: 200px;
+        }
+*/
+
+        .box03{
+            transform: rotate(200deg);
+        }
+
+        .box04{
+            transform: skew(-40deg, 30deg);
+        }
+    </style>
+</head>
+<body style="height: 5000px;">
+    
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+</body>
+</html>

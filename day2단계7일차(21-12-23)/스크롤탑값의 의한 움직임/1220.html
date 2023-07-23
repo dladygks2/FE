@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script src="js/jquery-1.7.2.min.js"></script>  
+<style>
+*{ margin:0; padding:0;}
+
+#wrap{ margin:0; padding:0;}
+#wrap > div{ width:100%; height:1000px; 
+             position:relative;}
+#con1{ background-color:#C60;}
+#con2{ background-color:#F60;}
+#con3{ background-color:#F93;}
+#con4{ background-color:#CCF;}
+
+.box{width:100px; height:100px;
+     border:2px solid #000;
+	}
+
+.box1-1{ position:absolute; top:200px; left:500px;}
+.box1-2{ position:absolute; top:500px; left:100px;}
+.box1-3{ position:absolute; top:700px; left:1200px; opacity: 0;}
+
+.box2-1{ position:absolute; top:200px; left:500px;}
+.box2-2{ position:absolute; top:500px; left:100px;}
+.box2-3{ position:absolute; top:700px; left:1200px;}
+
+.box3-1{ position:absolute; top:200px; left:500px;}
+.box3-2{ position:absolute; top:500px; left:100px;}
+.box3-3{ position:absolute; top:700px; left:1200px;}
+</style>
+
+
+</head>
+
+<body>
+<div id="wrap">
+
+<div id="con1">
+  <div class="box1-1 box">box1-1</div>
+  <div class="box1-2 box">box1-2</div>
+  <div class="box1-3 box">box1-3</div>
+</div>
+<div id="con2">
+  <div class="box2-1 box">box1-1</div>
+  <div class="box2-2 box">box1-2</div>
+  <div class="box2-3 box">box1-3</div>
+</div>
+<div id="con3">
+  <div class="box3-1 box">box1-1</div>
+  <div class="box3-2 box">box1-2</div>
+  <div class="box3-3 box">box1-3</div>
+</div>
+<div id="con4"></div>
+<script>
+    $(document).ready(function() {
+
+        $(window).scroll(function(){
+            // scroll 기능을 화면이 내려가는 것만 인식을 한다고 함
+            // 그래서 추가적인 방법이 필요하다 
+            var scene01Num = 1;
+            var scene02Num = 1;
+            var scene03Num = 1;
+
+            // 스크롤 탑의 값을 기준으로 이벤트를 적용할 것이다
+            var sct = $(document).scrollTop();
+            
+            if(sct > 200 && scene01Num == 1){
+                scene01Num = 0;
+                // .box1-1 의 애니메이션
+                $(".box1-1").delay(300).stop().animate({
+                    opacity:1,
+                    top:"800px" // 기존 top:"200px"
+                }, 100, function(){
+                    $(".box1-1").delay(200).stop().animate({
+                        opacity:0
+                    },500);
+                });
+                // .box1-2 의 애니메이션
+                $(".box1-2").delay(200).stop()
+                .css({opacity:1})
+                .animate({
+                    top:"800px",
+                    opacity:0
+                },300,function(){
+                    $(".box1-2").delay(300).stop()
+                    .animate({
+                         
+                    },200);
+                });
+                $(".box1-3").css({opacity:0}).animate({
+                    opacity:1,
+                    left:"200px"
+                });
+            }else if(sct < 200 && scene01Num == 0){
+                scene01Num = 1;
+                // .box1-1 의 애니메이션
+                $(".box1-1").delay(0)
+                .css({top:"800px"}).stop()
+                .animate({
+                    opacity:1,
+                    top:"400px"
+                }, 100);
+                // .box1-2 의 애니메이션
+                $(".box1-2").delay(200).stop()
+                .animate({
+                    opacity:1,
+                    top:"300px"
+                }, 200, function(){
+
+                });
+                $(".box1-3").css({opacity:1}).animate({
+                    opacity:0,
+                    left:"1200px"
+                });
+            }
+        });
+
+        if(sct > 1200 && scene02Num == 1){
+            scene02Num = 0;
+            // box2-1
+            $(".box2-1").delay(0).stop().animate({
+                opacity:1,
+                top:"800px"
+            }, 400, function(){
+                $(".box2-1").delay(200).stop().animate({
+                    opacity:0
+                }, 300);
+            });
+            // box2-2
+            $(".box2-2").delay(100).stop().animate({
+                opacity:1,
+                top:"800px"
+            }, 500,function(){
+                $(".box2-2").delay(200).stop().animate({
+                    opacity:0
+                }, 400);
+            });
+            // box2-3
+            $(".box2-3").delay(800).stop().animate({
+                opacity:1,
+                top:"500px"
+            }, 1000, function(){
+                $(".box2-3").delay(500).stop().animate({
+                    opacity:0
+                },1000);
+            });
+
+        }else if(){
+
+        }
+    });
+</script>
+</div>
+
+</body>
+</html>

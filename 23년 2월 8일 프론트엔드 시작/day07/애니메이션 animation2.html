@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 애니메이션</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+        }
+
+        .box1{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            margin: 50px;
+            /* 애니메이션 자동으로 실행하도록 하는 방법*/
+            animation-name: ani01;    
+            animation-delay: 2s;
+            animation-duration: 5s;  /* 애니메이션이 5초동안 실행이 된다*/
+            animation-timing-function: ease-in-out;
+            /*애니메이션의 반복횟수를 설정*/
+            animation-iteration-count: infinite;    /* infinite = 무한한*/
+            animation-direction: alternate;         /* 애니메이션이 왕복하도록*/
+        }
+        
+        /* @keyframes 사용하기*/
+        @keyframes ani01{
+            from{}      /*시작*/
+            to{}        /*끝*/
+/* 0%~100%사이의 값을 아무거나 일단 넣을 수 있는데. %의 기준은 위의 animation-duration 기간이다*/
+            0%{
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                transform: scale(1); /* <- 아래의 scale의 기준을 선언해주는 거다 */
+            }        /*시작*/
+
+            30%{
+                transform: scale(1.5);
+            }
+
+            50%{
+                position: absolute;
+                top: 700px;
+                left: 300px;
+                transform: rotate(0deg);
+            }
+            100%{
+                position: absolute;
+                top: 500px;
+                left: 1500px;
+                transform: rotate(360deg);
+            }      /*끝*/
+            /* 
+                보통 이런 애니메이션은 움직임을 주려는 객체에 position:absolute;를 해준다
+                그리고 그 시작 부분을 위의 from이나 0%에 맞춰준다
+            */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    
+</body>
+</html>

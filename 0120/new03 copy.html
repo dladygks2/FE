@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    프로토타입(prototype)
+    : 자바스크립트의 모든 객체는 프로토타입이라는 객체를 포함하고 있습니다. 
+    모든 객체는 프로토타입으로부터 프로퍼티와 메소드를 상속받습니다. 
+    이처럼 자바스크립트의 모든 객체는 최소한 하나 이상의 다른 객체로부터 상속을 받으며 
+    상속되는 정보를 제공하는 객체를 프로토타입이라고 합니다.
+ -->
+    <script>
+        "use strict";
+
+        function Dog(name, age, color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+
+        const Rucy = new Dog("루시", 10, "흰색");
+        
+        console.log(`이름 : ${Rucy.name}`);
+        console.log(`색상 : ${Rucy.color}`);
+        console.log(`나이 : ${Rucy.age}`);
+    </script>
+</body>
+</html>

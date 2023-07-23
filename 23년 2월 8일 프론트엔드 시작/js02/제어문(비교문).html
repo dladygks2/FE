@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    
+    <!-- 
+        제어문
+
+        if(조건식){
+            조건식이 참일 때, 실행문;
+        }
+
+        if(조건식){
+            조건식이 참일 때, 실행문;
+        }else{
+            조건식이 거짓일 때, 실행문;
+        }
+
+
+        if(조건1){
+            조건1이 참일 때, 실행문;
+        }else if(조건2){
+            조건2가 참일 때, 실행문;
+        }else if(조건3){
+            조건3이 참일 때, 실행문;
+        }else{
+            조건식이 모두 거짓일 때, 실행문;
+        } 
+     -->
+     <script>
+        
+        // var a = 10;
+        // var b = 20;
+
+        // if(a > b){
+        //     document.write(a + " 값이 더 큽니다.")
+        // }else{
+        //     document.write(b + " 값이 더 큽니다.")
+        // }
+
+        var score = prompt("점수를 입력하세요");
+        // 90 80 70 60 
+        if(score >= 90){
+            document.write("A학점입니다.");
+        }else if(score >= 80){
+            document.write(`${score}점으로 B학점입니다.`);
+        }else if(score >= 70){
+            document.write("C학점입니다.");
+        }else if(score >= 60){
+            document.write("D학점입니다.");
+        }else{
+            document.write("F학점입니다.");
+        }
+     </script>
+</body>
+</html>

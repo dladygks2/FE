@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+    <style>
+        /* 기본스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:#555;
+        }
+        /* 메뉴 레이아웃 */
+        ul.menu{
+            margin: 50px;
+            width: 500px;
+            height: 100px;
+        }
+        ul.menu > li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            position: relative;
+            line-height: 100px;
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .inbox{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+             $("ul.menu > li").hover(
+                function(){
+                    $(this).find(".inbox")  // this는 li인 애들 중에 선택된 당사자만
+                        .css({top:"100px", left:"100px"})
+                        .animate({top:"0px", left: "0px"});
+                },
+                function(){
+                    $(this).find(".inbox")
+                        .css({top:"0px", left:"0px"})
+                        .animate({top:"100px", left: "100px"});
+                }
+             );
+        });
+    </script>
+</head>
+<body>
+   <ul class="menu">
+       <li>line
+            <div class="inbox">inbox</div>
+       </li>
+       <li>line
+            <div class="inbox">inbox</div>
+       </li>
+       <li>line
+            <div class="inbox">inbox</div>
+       </li>
+       <li>line
+            <div class="inbox">inbox</div>
+       </li>
+       <li>line
+            <div class="inbox">inbox</div>
+       </li>
+   </ul>
+</body>
+</html>

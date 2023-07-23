@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <!-- 
+       continue 문
+       반복중인 문장 내에서 사용하며 해당 문장의 나머지 부분을 건너뛰고 
+       다음 조건식의 판단으로 넘어가게 합니다
+     -->
+     <script>
+        'use strict';
+        
+        const num = 3;
+        for(let i=1; i<=100; i++){
+            if(i%num ==0){
+                document.write(`짝!<br>`);
+                continue;
+            }
+            document.write(`${i}<br>`);
+        }
+     </script>
+</body>
+</html>

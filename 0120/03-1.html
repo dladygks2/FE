@@ -7,25 +7,42 @@
     <title>내장함수_Math 객체</title>
 </head>
 <body>
+    <!--
+        Math 객체
+
+        Math 객체는 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 내장 객체
+
+        min() : 최소값을 리턴, 매개변수가 전달되지 않으면 -Infinity를 리턴, 비교할 수 없는 값이 포함되어 있으면 NaN을 리턴
+        max() : 최대값을 리턴, 매개변수가 전달되지 않으면 Infinity를 리턴, 비교할 수 없는 값이 포함되어 있으면 NaN을 리턴
+        round() : 소수점 첫번째 자리에서 반올림하여 리턴
+        floor() : 소수점 첫번째 자리에서 내림
+        ceil() : 소수점 첫번째 자리에서 올림
+        random() : 0보다 크거나 같고, 1보다 작은 무작위 소수를 리턴
+
+        
+        -->
    <script>
        'use strict';
        
        console.log(Math.min()); //Infinity 무한
-       console.log(Math.max()); //Infinity
+       console.log(Math.max()); //-Infinity
        console.log(Math.min(1,10,-10,1000,0)); //-10
        console.log(Math.min(1,10,'-10',1000,0));//-10
        console.log(Math.min(1,10,-10,'천',0)); //NaN, Not-A-Number(숫자가 아님)
-  
+    
+       // 반올림
        console.log(Math.round(10.49)); //10
        console.log(Math.round(10.5));  //11
        console.log(Math.round(-10.5)); //-10
        console.log(Math.round(-10.51)); //-11
 
+       // 내림
        console.log(Math.floor(10.49)); // 10
        console.log(Math.floor(10.5));  // 10
        console.log(Math.floor(-10.5)); // -11
        console.log(Math.floor(-10.51));// -11
 
+       // 올림
        console.log(Math.ceil(10.49));
        console.log(Math.ceil(10.5));
        console.log(Math.ceil(-10.5));

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const hi = function(){
+            console.log('테스트 입력');
+        };
+
+        const clearInter = function(){
+            console.log('hi함수가 중지 되었습니다')
+            clearInterval(st);
+        }
+
+        const st = window.setInterval(hi, 2000);    // 2초마다 hi함수를 호출
+        // setInterval(실행문, 3000) -> 3초 간격으로 실행
+
+
+    </script>
+    <button onclick="clearInter()">자동실행중지</button>
+</body>
+</html>

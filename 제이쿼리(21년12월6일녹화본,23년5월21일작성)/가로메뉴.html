@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+    <script>
+        // 페이지의 이벤트는 보통 이 위치에서 작성
+        $(document).ready(function(){
+           // 자동으로 팝업창이 뜨는 등의 이벤트
+        });            
+    </script> 
+    <style>
+        /* 기본 스타일 */
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+        /* 레이아웃 스타일 */
+        #menu{
+            width: 500px;
+            height: 25px;
+            border: 1px solid #ccc;
+        }
+        #menu > ul{
+             
+        }
+        #menu > ul > li{
+            float: left;
+            width: 100px; 
+            text-align: center;
+            line-height: 25px;
+            
+        }
+
+        #menu li > div{
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #menu .sub{ 
+            /* 
+                width: 400px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+             */
+             position: absolute;
+             top: 30px;
+             left: 0px;
+             width: 400px;
+             height: 30px;
+        }
+        #menu .sub li{ 
+            float: left;
+            width: 25%;
+            border-bottom: 1px solid #ccc; 
+        }
+
+        .main_mn > li > div.active{
+            background-color: #eee;
+            color: #fff;
+            transition: 0.7s;
+        }
+    </style>
+</head>
+<body style="height: 5000px;">
+
+    <script>
+        // 마우스 이벤트 같은 경우는 이 위치에서 작성. 어디에 작성하던지 적용은 되겠지만
+        $(document).ready(function(){
+           
+        });            
+    </script> 
+
+    <nav id="menu">
+        <ul class="main_mn">
+            <li class="mn1">
+                <div>menu</div>
+                <ul class="sub">
+                    <li>s_mn1</li>
+                    <li>s_mn1</li>
+                    <li>s_mn1</li>
+                    <li>s_mn1</li>
+                </ul>
+            </li>
+            <li class="mn2">
+                <div>menu</div>
+                <ul class="sub">
+                    <li>s_mn2</li>
+                    <li>s_mn2</li>
+                    <li>s_mn2</li>
+                    <li>s_mn2</li>
+                </ul>
+            </li>
+            <li class="mn3">
+                <div>menu</div>
+                <ul class="sub">
+                    <li>s_mn3</li>
+                    <li>s_mn3</li>
+                    <li>s_mn3</li>
+                    <li>s_mn3</li>
+                </ul>
+            </li>
+            <li class="mn4">
+                <div>menu</div>
+                <ul class="sub">
+                    <li>s_mn4</li>
+                    <li>s_mn4</li>
+                    <li>s_mn4</li>
+                    <li>s_mn4</li>
+                </ul>
+            </li>
+            <li class="mn5">
+                <div>menu</div>
+                <ul class="sub">
+                    <li>s_mn5</li>
+                    <li>s_mn5</li>
+                    <li>s_mn5</li>
+                    <li>s_mn5</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $(document).ready(function(){
+            // $(".sub").css({display:"none"});
+            // $(".sub").hide();
+
+            /*
+                .addClass(); 미리 선언된 스타일 시트를 선택된 대상에 적용
+                .removeClass(); 적용된 스타일시트 적용을 해제
+
+            */
+            $(".sub").css({opacity:"0"});
+            
+            $("#menu > ul > li").hover(
+                function(){
+                    // $(this).find(".sub").show(1000);
+                    // $(".sub").css({display:"block"});
+                    // 제이쿼리에서 애니메이션 기간 1000 = 1초
+                    // $(this).find(".sub").fadeIn(1000);
+                    // $(this).find(".sub").slideDown(1000);
+                    $(this).find(".sub").stop().css({opacity:"0"}).animate({opacity:"1"},1000);
+                },
+                function(){
+                    // $(this).find(".sub").hide(500);
+                    // $(".sub").css({display:"none"});
+                    // $(this).find(".sub").fadeOut(500);
+                    // $(this).find(".sub").slideUp(500);
+                    $(this).find(".sub").stop().css({opacity:"1"}).animate({opacity:"0"},500);
+                }
+            );
+            $(".main_mn > li > div").hover(
+                function(){
+                    $(this).addClass("active");
+                },
+                function(){
+                    $(this).removeClass("active");
+                }
+            )
+        });
+    </script>
+</body>
+</html>

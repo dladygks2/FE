@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적관리 프로그램</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        var name = prompt('이름을 입력하세요');
+        var kor = Number(prompt('국어점수를 입력하세요'));
+        var eng = Number(prompt('영어점수를 입력하세요'));
+        var math = Number(prompt('수학점수를 입력하세요'));
+
+        var total = kor + eng + math;
+        var average = total / 3;
+
+        // ${name} -> name을 하나의 객체로 가져옴
+        document.write(`<h2>"${name}" 님의 성적표</h2>`);
+        document.write(`<h4>국어점수 : ${kor} 점</h4>`);
+        document.write(`<h4>영어점수 : ${eng} 점</h4>`);
+        document.write(`<h4>수학점수 : ${math} 점</h4>`);
+        document.write('------------------------------------------');
+        document.write(`<h3>총 점수 : ${total} 점</h3>`);
+        document.write(`<h3>평균 점수 : ${average} 점</h3>`);
+    </script>
+</body>
+</html>

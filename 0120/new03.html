@@ -12,32 +12,39 @@
 
         // 이게 class 방식이라고 한다
         const Dog = class{
-
             // 생성자 아닌가?
-            constructor(name, age, color){
+            constructor(name='이거는 되는가?', age=15, color='초록'){
                 this.name = name;
                 this.age = age;
                 this.color = color;
-                this.family = "포메리안";
+                this.family = "포메라니안";
             }
             
             play(){
-                return `${this.name}이(가) 즐겁게 놉니다`;
+                return `${this.age}살인 ${this.name}은(는) ${this.color}색이고, 품종은 ${this.family} 입니다`;
             }
 
         }
 
-        const Rucy = new Dog("개 이름",10,"개 색깔");
-
+        const Rucy = new Dog("뽀삐",10,"갈");
+        
         console.log(Rucy.name);
         console.log(Rucy.age);
         console.log(Rucy.color);
         console.log(Rucy.family);
         console.log(Rucy.play());
-
+        console.log("-------------------------------");
         // 객체 수정
         Rucy.age = 11;
-        console.log(Rucy.age);
+        console.log(`수정된 개의 나이는 ${Rucy.age}살`);
+
+        console.log("-------------------------------");
+
+        const Default = new Dog();
+        
+        console.log(Default.name);
+        console.log(Default.age);
+        console.log(Default.color);
     </script>
 </body>
 </html>

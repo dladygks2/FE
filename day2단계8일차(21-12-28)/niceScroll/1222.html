@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.easing.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        #all{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        #all > div{
+            width: 100%;
+            height: 100vh;
+        }
+        #all > div.box1{position: absolute;top: 0px; left: 0; background-color: brown;}
+        #all > div.box2{position: absolute;top: 1000px; left: 0; background-color: pink;}
+        #all > div.box3{position: absolute;top: 2000px; left: 0; background-color: blueviolet;}
+        #all > div.box4{position: absolute;top: 3000px; left: 0; background-color: darkturquoise;}
+        #all > div.box4{position: absolute;top: 4000px; left: 0; background-color: aliceblue;}
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            
+            $("#all").niceScroll({
+                cursorcolor:"#777",
+                cursorwidth:5,
+                cursoropacitymin:1,
+                scrollspeed:100,
+                cursorborderradius:'0',
+                mousescrollstep:40,
+                horizrailenabled:true,
+                cursoropacitymin:0,
+                cursoropacitymax:1,
+                background:"#c1c1c1",
+                cursorborder:"none",
+                autohidemode:false,
+                boxzoom:true,
+                zindex:99999,
+                horizrailenabled:true
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>증감연산자</h1>
+    <!-- 
+        전위연산자 = 계산 후에 바로 값을 변수에 값을 적용
+
+        후위연산자 = 계산 후에 바로 값을 변수에 값을 적용하지않고, 
+                    변수를 다시 호출하거나 다시 계산할 때 이전에 연산된 후위 연산자값을 적용한다
+     -->
+    <script>
+
+        // a = 10;
+        // b = 20;
+        // c = 3;
+
+        // document.write(++a + "<br>"); // 11
+        // document.write(a++ + "<br>"); // 11
+        // document.write(a + "<br>"); // 12
+        // document.write(c++ + "<br>"); 
+        // document.write(c + "<br>"); 
+        
+        a = 10;
+        b = 5;
+        c = a > b;
+        str1 = "5";
+
+        document.write(c + "<br>");
+        document.write(a++ + "<br>");
+
+        c = a < b;
+
+        document.write(c + "<br>");
+
+        c = a !=b;
+        document.write(c + "<br>");
+
+        c= b == str1;
+        document.write(c + "<br>");
+        c= b === str1;
+        document.write(c + "<br>");
+
+    </script>
+</body>
+</html>

@@ -2,15 +2,23 @@
 
 #wrap{ width: 100%;}
 
-#main{ width: 100%; height:680px;
+#main{ 
+        width: 100%; 
+        height:680px;
         background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
-        background-size: 100%;}
+        /* background-size: 100%; */
+        background-size: 1920px;
+}
 #header{ width: 100%; height: 140px;
          background: rgba(0,0,0,0.4);}       
 #header_in{ margin: 0 auto;
                      width: 1300px; height: 140px;}
 #header_in .logo{float: left; margin-top: 50px;}
-    
+
+ /* 모바일 전체 메뉴 숨김 */
+ #header_in .all_btn{
+        display: none;
+}
                      
 #header_in .r_box{float: right; }
 #header_in .info_mn{float:left;  margin: 15px 0 0 490px; }
@@ -65,72 +73,477 @@
                            border-top: 1px solid #000;
                            padding-top: 10px;
                          }  
-#contents .group{margin:0 auto; 
-                 width: 1300px; height:485px;}                                         
-#contents .advice_area{float: left;
-                 margin-top:75px;
-                 width:860px; height:240px;
-                 background:url(../images/bg_app.jpg)no-repeat 0 0;
-                 background-size:100% 100%;}
-#contents .advice_area ul{float: left; margin: 75px 0 0 65px;}
-#contents .advice_area li{float: left; padding: 30px 80px 30px 30px;
-                          border:2px solid #fff;
-                          margin-right: 20px;}               
-#contents .advice_area li > img{ vertical-align:top;}
-#contents .advice_area li > span{font-size:30px;
-                                color:#fff; font-weight: 800;
-                                display: inline-block;
-                                height: 43px;
-                                line-height:43px;}
-
-#contents .notice{ float:right;
-                 margin-top:75px;
-                 width:400px; height:240px;}
-#contents .notice_h{width:400px; height: 50px; }
-#contents .notice_h > h3{ font-size:25px; line-height: 50px;}
-/* #contents .notice_b{} */
-#contents .notice_b li{width: 390px; height:20px;
-                       background:url(../images/ico_bullet.png)no-repeat 8px 8px;
-                       padding-left: 20px;
-                       font-size: 14px; line-height: 20px;
-                       margin-bottom: 15px;
-                }
+ 
 #footer{ width: 100%; height: 200px;
          border: 1px solid #000}
 #footer_in{margin:0 auto;
            width: 1300px; height: 200px;
-           background-color: aqua;}         
-#footer .info_mn{ float: left;}
+        }         
+#footer .info_mn{ 
+        float: left;
+        margin-top: 30px;
+}
 #footer .info_mn li{ float:left;}
 #footer .info_mn li:first-child::after{content:"|";
                   display: inline-block; padding:0 5px;
                   font-size:15px; position: relative; top:-2.5px;}
 #footer .info_mn li > a{font-size: 20px; color: #555;}
-#footer .address{}
+#footer .address{
+        clear: left;
+        padding-top: 30px;
+        width: 100%;
+        font-style: normal;
+}
+
+#footer .address h4{
+        font-size: 16px;
+        margin-bottom: 8px;
+}
+#footer .address .txt{
+        font-size: 15px;
+}
+#footer .address .sns{
+        font-size: 16px;
+        font-weight: 500;
+}
+
 
 
 @media screen and (max-width:1300px) {
-#main{ width: 100%; height:680px;
+        #main{ 
+                width: 100%; 
+                height:680px;
                 background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
-                background-size: auto;}
-#header{ width: 100%; height: 140px;
-                 background: rgba(0,0,0,0.4);}          
-#header_in{ margin: 0 auto;
-            width: 100%; height: 140px;
-            background-color: blue;}
-#header_in .logo{float: left; margin-top: 50px;}
+                /* background-size: auto; */
+                background-size: 1920px;
+        }
+        #header{ width: 100%; height: 140px;
+                         background: rgba(0,0,0,0.4);}          
+        #header_in{ margin: 0 auto;
+                    width: 100%; height: 140px;
+                    background-color: blue;}
+        #header_in .logo{
+                float: left; 
+                margin-top: 50px;
+                margin-left: 20px;
+        }
+        
+                        
+        #header_in .r_box{
+                float: right; 
+                margin-right: 20px;
+        }
+        #header_in .info_mn{float:left;  margin: 15px 0.8vw 0 490px; }
+        #header_in .info_mn li{ float: left; border-right: 1px solid #fff;
+                                margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
+        #header_in .info_mn li:last-child{border-right: 0;
+                                   margin-right: 0px; padding-right: 0px; }            
+        #header_in .info_mn a{ font-size: 14px; color: #fff;}
+        
+        .main_nav{clear:both; float: right; padding: 30px 0 0 0; }
+        .main_nav li{ float:left; margin-right: 7vw;} /*% 자신의 부모를 기준 vw 1300  */
+        .main_nav li:last-child{margin-right: 2vw;}
+        .main_nav a{ font-size: 20px; color: #fff;}   
+        
+        /* 1300px - 다시 찾는 인기 여행지 TOP3 -> %로 크기를 변경 */
+        #contents .top3_area{
+                width: 100%; 
+                height: 860px;
+                background: linear-gradient(#fff 35%,rgba(247, 238, 189,1) 35%);
+        }
+        #contents .top3_area_h{
+                margin: 0 auto;
+                width:100%;   /* 기존에 1300px 이었네 그래서 100% 주는듯*/ 
+                height:190px;
+        }
+        #contents .top3_area_h > h3{
+                font-size:48px;
+                text-align: center; 
+                line-height: 190px;
+        }                      
+        #contents .top3_area_b{
+                margin: 0 auto;
+                width:100%; 
+                height:670px;}
+        #contents .top3_area_b li{ 
+                float: left; 
+                margin-right: 1.5%; /* 20px*/
+                width:32%; /* 부모가 1300px 이었고, 이를 기준으로 420px 420/1300*100=32.3%*/
+                height:670px; }
+        #contents .top3_area_b li:last-child{
+                margin-right: 0;
+        } 
+        #contents .top3_area_b img{ 
+                width: 100%;
+        } 
+        #contents .top3_area_b h4{font-size: 25px; 
+                        color: #000;
+                        text-align: center;
+                        padding:35px 0 15px;}
+        #contents .top3_area_b p{ font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;}
+        #contents .top3_area_b a{  display: block;
+                        width:45px; margin: 0 auto;  
+                        margin-top:30px ;  
+                        font-size: 16px; text-align: center; 
+                        border-top: 1px solid #000;
+                        padding-top: 10px;
+        }  
+        #contents .group{
+                margin:0 auto; 
+                width: 100%; /* 1300px*/
+                height:485px;
+        }                                         
+        #contents .advice_area{
+                float: left;
+                margin-top:75px;
+                margin-left: 15px;
+                width:66%; /* width:860px; */
+                height:240px;
+                background:url(../images/bg_app.jpg)no-repeat 0 0;
+                background-size:100% 100%;}
+        #contents .advice_area ul{
+                float: left; 
+                margin: 75px 0 0 3.5%; /* 세로는 뭐 길어도 그닥 문제 안되는데 가로가 문제니까 가로만 %로*/
+                /* 65px을 부모의 크기와 비교해서 비율로 나타냄 65*8.6 */
+                width: 93%;     /* %를 기준으로 길이를 정할 때에는 부모요소의 길이가 선언되어 있어야한다 */
+        }
+        #contents .advice_area li{/* 현재 ul의 값을 기준으로 크기를 정해줘야한다*/
+                float: left;            /* 355px 인듯. 860-130=710-> 710/2 = 355*/
+                /* padding: 30px 80px 30px 30px; */   
+                /* 30/355*100 이랑 80/355*100을 해줘야 */
+                width: 47.5%;
+                padding: 30px 10% 30px 4%;
+                border:2px solid #fff;
+                margin-right: 5%;
+                box-sizing: border-box;
+        }               
+        #contents .advice_area li:last-child{
+                margin-right: 0px;
+        }
+        #contents .advice_area li > img{ vertical-align:top;}
+        #contents .advice_area li > span{
+                font-size:20px;
+                color:#fff; 
+                font-weight: 800;
+                display: inline-block;
+                height: 43px;
+                line-height:43px;
+        }
 
-                
-#header_in .r_box{float: right; }
-#header_in .info_mn{float:left;  margin: 15px 0.8vw 0 490px; }
-#header_in .info_mn li{ float: left; border-right: 1px solid #fff;
-                        margin-right: 0.8vw; padding-right: 0.8vw; line-height: 14px;}
-#header_in .info_mn li:last-child{border-right: 0;
-                           margin-right: 0px; padding-right: 0px; }            
-#header_in .info_mn a{ font-size: 14px; color: #fff;}
+        #contents .notice{ 
+                float:right;
+                margin-top:75px;
+                /* width:400px; */    /* 부모 : 1300px 인듯 기존에 400px 이니까 */ 
+                width: 30.8%;
+                height:240px;
+        }
+        #contents .notice_h{
+                width:100%; 
+                height: 50px; 
+        }
+        #contents .notice_h > h3{ font-size:25px; line-height: 50px;}
+        #contents .notice_b{
+                width: 100%;    /* 부모 : width: 400px;*/
+        }
+        #contents .notice_b li{
+                width: 97.5%;   /* 390/400 * 100 = 97.5%*/
+                height:20px;
+                background:url(../images/ico_bullet.png)no-repeat 8px 8px;
+                padding-left: 20px;
+                font-size: 14px; line-height: 20px;
+                margin-bottom: 15px;
+        }
 
-.main_nav{clear:both; float: right; padding: 30px 0 0 0; }
-.main_nav li{ float:left; margin-right: 7vw;} /*% 자신의 부모를 기준 vw 1300  */
-.main_nav li:last-child{margin-right: 2vw;}
-.main_nav a{ font-size: 20px; color: #fff;}   
+        #footer{ 
+                width: 100%; 
+                height: 250px;
+                border: 1px solid #000}
+       #footer_in{
+                margin:0 auto;
+                width: 1300px; 
+                height: 200px; 
+                }         
+       #footer .info_mn{ 
+               float: left;
+               margin-top: 30px;
+               margin-left: 20px;
+       }
+       #footer .info_mn li{ float:left;}
+       #footer .info_mn li:first-child::after{content:"|";
+                         display: inline-block; padding:0 5px;
+                         font-size:15px; position: relative; top:-2.5px;}
+       #footer .info_mn li > a{font-size: 20px; color: #555;}
+       #footer .address{
+               clear: left;
+               padding-top: 30px;
+               width: 100%;
+               font-style: normal;
+               margin-left: 20px;
+       }
+       
+       #footer .address h4{
+               font-size: 16px;
+               margin-bottom: 8px;
+       }
+       #footer .address .txt{
+               font-size: 15px;
+       }
+       #footer .address .sns{
+               font-size: 16px;
+               font-weight: 500;
+       }
+
+
+}
+
+@media screen and (max-width:960px) {
+        #main{ 
+                width: 100%; 
+                height:680px;
+                background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
+                /* background-size: auto; */
+                background-size: 1920px;
+        }
+        #header{ width: 100%; height: 140px;
+                                background: rgba(0,0,0,0.4);}          
+        #header_in{ 
+                margin: 0 auto;        
+                width: 100%; 
+                height: 140px;
+                background-color: green;}
+        #header_in .logo{
+                float: left; 
+                margin-top: 50px; 
+                margin-left: 20px;
+        }
+        
+                        
+        #header_in .r_box{
+                float: right; 
+                margin-right: 20px;
+        }
+        #header_in .info_mn{
+                float:left;  
+                margin: 15px 0.8vw 0 44vw; 
+                /* 490px 을 현재화면 960px을 기준으로 크기를 정하는 vw로 해보자 490/960=*/
+        } 
+        #header_in .info_mn li{
+                float: left; 
+                border-right: 1px solid #fff;
+                margin-right: 0.8vw; 
+                padding-right: 0.8vw; 
+                line-height: 14px;
+        }
+        #header_in .info_mn li:last-child{border-right: 0;
+                                        margin-right: 0px; padding-right: 0px; }            
+        #header_in .info_mn a{ font-size: 14px; color: #fff;}
+        
+        .main_nav{clear:both; float: right; padding: 30px 0 0 0; }
+        .main_nav li{ float:left; margin-right: 4vw;} /*% 자신의 부모를 기준 vw 1300  */
+        .main_nav li:last-child{margin-right: 2vw;}
+        .main_nav a{ font-size: 20px; color: #fff;}   
+        }
+
+@media screen and (max-width:800px) {
+        #main{ 
+                width: 100%; 
+                height:680px;
+                background:url(../images/mainslide01.jpg) no-repeat 50% -200px;
+                /* background-size: auto; */
+                background-size: 1920px;
+        }
+        #header{ width: 100%; height: 140px;
+                                background: rgba(0,0,0,0.4);}          
+        #header_in{ 
+                float: left;
+                margin: 0 0;        
+                width: 100%; 
+                height: 140px;
+                background-color: darkturquoise;
+        }
+        #header_in .logo{
+                float: left; 
+                width: 100%;
+                margin-top: 50px; 
+                /* margin-left: 20px; */
+                margin-left: 0px;
+                text-align: center;
+        }
+        
+        #header_in .logo img{
+                width: 200px;        /* 적용될 이미지 파일을 찾아서 크기를 보면 254px*/
+                /* 얘도 비율 계산이 필요하다 일단은 임의로 200px*/
+        }
+        /* 모바일 전체 메뉴 보이게함 */
+        #header_in .all_btn{
+                display: block;
+                margin: 50px 0 0 50px;
+        }
+        #header_in .all_btn span{
+                display: block;
+                background-color: #fff;
+                width: 30px;
+                height: 5px;
+                margin-bottom: 5px;
+        }
+
+        #header_in .all_btn span:nth-child(2){
+                width: 20px;
+        }
+                        
+        #header_in .r_box{
+                display: none;
+                float: right; 
+                margin-right: 20px;
+        }
+        #header_in .info_mn{
+                float:left;  
+                margin: 15px 0.8vw 0 44vw; 
+                /* 490px 을 현재화면 960px을 기준으로 크기를 정하는 vw로 해보자 490/960=*/
+        } 
+        #header_in .info_mn li{
+                float: left; 
+                border-right: 1px solid #fff;
+                margin-right: 0.8vw; 
+                padding-right: 0.8vw; 
+                line-height: 14px;
+        }
+        #header_in .info_mn li:last-child{border-right: 0;
+                                        margin-right: 0px; padding-right: 0px; }            
+        #header_in .info_mn a{ font-size: 14px; color: #fff;}
+        
+        .main_nav{clear:both; float: right; padding: 30px 0 0 0; }
+        .main_nav li{ float:left; margin-right: 4vw;} /*% 자신의 부모를 기준 vw 1300  */
+        .main_nav li:last-child{margin-right: 2vw;}
+        .main_nav a{ font-size: 20px; color: #fff;}   
+        }
+
+@media screen and (max-width:480px) {
+         /* 1300px - 다시 찾는 인기 여행지 TOP3 -> %로 크기를 변경 */
+         #contents .top3_area{
+                width: 100%; 
+                height: auto;
+                background: linear-gradient(#fff 35%,rgba(247, 238, 189,1) 35%);
+                background: none;
+        }
+        #contents .top3_area_h{
+                margin: 0 0;
+                width:100%;   /* 기존에 1300px 이었네 그래서 100% 주는듯*/ 
+                height:190px;
+        }
+        #contents .top3_area_h > h3{
+                font-size:10px;
+                text-align: center; 
+                line-height: 190px;
+        }                      
+        #contents .top3_area_b{
+                margin: 0 0;
+                width:100%; 
+                height:auto;
+        }
+        #contents .top3_area_b li{ 
+                float: none; 
+                margin-right: 0; /* 20px*/
+                margin-left: 5%;
+                margin-bottom: 20px;
+                width:90%; /* 부모가 1300px 이었고, 이를 기준으로 420px 420/1300*100=32.3%*/
+                height:670px; 
+        }
+        #contents .top3_area_b li:last-child{
+                margin-right: 0;
+        } 
+        #contents .top3_area_b img{ 
+                width: 100%;
+        } 
+        #contents .top3_area_b h4{
+                font-size: 25px; 
+                color: #000;
+                text-align: center;
+                padding:35px 0 15px;
+        }
+        #contents .top3_area_b p{ 
+                font-size: 20px;
+                text-align: center;
+                line-height: 40px;
+        }
+        #contents .top3_area_b a{  
+                display: block;
+                width:45px; margin: 0 auto;  
+                margin-top:30px ;  
+                font-size: 16px; text-align: center; 
+                border-top: 1px solid #000;
+                padding-top: 10px;
+        }  
+        
+        #contents .group{
+                margin:0 0; 
+                width: 100%; /* 1300px*/
+                height:485px;
+        }                                         
+        #contents .advice_area{
+                float: none;
+                display: none;
+                margin-top:75px;
+                margin-left: 15px;
+                width:66%; /* width:860px; */
+                height:240px;
+                background:url(../images/bg_app.jpg)no-repeat 0 0;
+                background-size:100% 100%;}
+        #contents .advice_area ul{
+                float: left; 
+                margin: 75px 0 0 3.5%; /* 세로는 뭐 길어도 그닥 문제 안되는데 가로가 문제니까 가로만 %로*/
+                /* 65px을 부모의 크기와 비교해서 비율로 나타냄 65*8.6 */
+                width: 93%;     /* %를 기준으로 길이를 정할 때에는 부모요소의 길이가 선언되어 있어야한다 */
+        }
+        #contents .advice_area li{/* 현재 ul의 값을 기준으로 크기를 정해줘야한다*/
+                float: left;            /* 355px 인듯. 860-130=710-> 710/2 = 355*/
+                /* padding: 30px 80px 30px 30px; */   
+                /* 30/355*100 이랑 80/355*100을 해줘야 */
+                width: 47.5%;
+                padding: 30px 0 30px 4%;
+                border:2px solid #fff;
+                margin-right: 5%;
+                box-sizing: border-box;
+        }               
+        #contents .advice_area li:last-child{
+                margin-right: 0px;
+        }
+        #contents .advice_area li > img{ vertical-align:top;}
+        #contents .advice_area li > span{
+                font-size:20px;
+                color:#fff; 
+                font-weight: 800;
+                display: inline-block;
+                height: 43px;
+                line-height:43px;
+        }
+
+        #contents .notice{ 
+                float:none;
+                margin-top:75px;
+                /* width:400px; */    /* 부모 : 1300px 인듯 기존에 400px 이니까 */ 
+                margin-left: 5%;
+                width: 90%;
+                height:240px;
+                border-top: 1px solid #333;
+                border-bottom: 1px solid #333;
+        }
+        #contents .notice_h{
+                width:100%; 
+                height: 50px; 
+        }
+        #contents .notice_h > h3{ font-size:25px; line-height: 50px;}
+        #contents .notice_b{
+                width: 100%;    /* 부모 : width: 400px;*/
+        }
+        #contents .notice_b li{
+                width: 97.5%;   /* 390/400 * 100 = 97.5%*/
+                height:20px;
+                background:url(../images/ico_bullet.png)no-repeat 8px 8px;
+                padding-left: 20px;
+                font-size: 14px; line-height: 20px;
+                margin-bottom: 15px;
+        }
 }

@@ -82,7 +82,7 @@
    .event_h{width:1200px; height:50px;
             font-size: 18px;}
    .event_b{width:1200px; }
-   .event_b > li{float: left; margin-right: 40px;
+   .event_b > li{float: left; margin-right: 38px;
     /*float: left; == display:inline-block 블록태그인 li는 세로기준인데 가로기준으로 다시배치*/                 
     width:370px; height:520px;
     border: 1px solid #ccc;}

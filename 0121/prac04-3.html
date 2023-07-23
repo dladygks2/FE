@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동기와 비동기_api 비동기식 처리</title>
+</head>
+<body>
+    
+     <h2>동기와 비동기_api 비동기식 처리</h2> 
+     
+    <script> 
+        'use strict';
+        
+        console.log(0);
+
+        setTimeout(() => {
+            console.log('hello');
+        }, 0);  // 0이란 숫자값은 0초이지만 대기시간을 의미하기때문에 다음에 실행함
+        
+        console.log(1);
+
+        // setTimeout(실행함수, 대기시간) -> 웹브라우저에서 제공하는 API 중 하나이다
+        /*
+            위에꺼 
+            0 -> 1 -> hello
+            이렇게 뜨네
+            
+        */
+    </script> 
+</body>
+</html>

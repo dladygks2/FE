@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jqeury.js"></script>
+</head>
+<body>
+    <script>
+        // jqeury each문
+        $(document).ready(function(){
+            $("#list li").each(function(){      
+                // each() 메서드를 사용하여 ul엘리먼트의 자식엘리먼트를 순환하여 모두 색을 적용
+                $(this).css({color:"pink"});    // this는 상위의 #list li를 의미
+
+            });
+
+            $(".li02").each(function(){      
+                // each() 메서드를 사용하여 ul엘리먼트의 자식엘리먼트를 순환하여 모두 색을 적용
+                $(this).css({ fontSize:"20px", color:"blue"});    // this는 상위의 #list li를 의미
+
+            });
+        });
+            
+        
+    </script>
+
+    <ul id="list">
+        <li>1-1-1</li>
+        <li class="li02">1-1-2</li>
+        <li id="li03">1-1-3</li>
+        <li class="li02">1-1-4</li>
+        <li>1-1-5</li>
+    </ul>
+</body>
+</html>

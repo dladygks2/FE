@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위</title>
+    <style>
+      /*
+        출력장치에 따라 다르게 표현하는 방법 중에서 Media Queries를 사용할 것이다
+        스타일시트를 화면의 크기에 따라서 다르게 선언해주는 거
+      */
+      @media screen and (orientation:portrait){
+            body{
+                background-color: skyblue;
+            }
+        }
+        
+        @media screen and (orientation:landscape){
+            body{
+                background-color: brown;
+            }
+        }
+       /*
+            orientation:portrait는 height값 > width값 일 때, 초상화 모양
+            orientation:landscape는 height값 < width값 일 때, 지도 모양
+            폰으로 치면 세로모드 - 가로모드
+            (요즘에 잘 안쓴다고)
+       */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

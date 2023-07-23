@@ -1,0 +1,214 @@
+#wrap{
+    width: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 700px;
+    background-color: pink;
+}
+
+#header{
+    width: 100%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header_in{
+    width: 1300px;
+    height: 150px;
+    background-color: silver;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header_in .logo{
+    font-size: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hotpink;
+}
+
+#header_in .gorup{
+    width: 500px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#header_in .info_mn{
+    display: flex;
+    margin: 10px 10px 0 0;
+    width: 60px;
+    height: 50px;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: palegreen;
+}
+
+#header_in .info_mn a{
+    font-size: 13px;
+}
+
+#header_in .info_mn li{
+    background-color: chocolate;
+}
+
+#header_in .main_nav{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+#header_in .main_nav ul{
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+}
+#header_in .main_nav ul li{
+
+}
+
+
+/* 부모 container - 자식 items */
+/*
+.txt_box{
+    width: 400px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column; 
+    flex-direction: row; 
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+.txt_box li{
+    font-size: 15px;
+    border: 1px solid blue;
+} 
+*/
+
+#contents{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+#travel{
+    /* width: 100%; */
+    width: 1300px;
+    height: 860px;
+    background-color: wheat;
+    /* display: flex; */
+    /* justify-content: center;   */
+    /* align-items: center; */
+} 
+
+
+#travel > header{
+    /* width: 1300px; */
+    width: 100%;
+    height: 160px;
+    background-color: thistle; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#travel > header > h3{
+    font-size: 30px;
+    color: #000;
+}
+
+#travel > section{
+/* 
+    display: flex;
+    justify-content: center;
+     */
+    width: 100%;
+    height: 700px;
+    background-color: sandybrown; 
+}
+
+#travel > section > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#travel > section > ul > li{
+    width: 420px;
+    height: 650px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contents .group{ 
+    width: 1300px;
+    height: 480px;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#sns{
+    width: 860px;
+    height: 250px;
+    background-color: pink;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+} 
+#sns > ul{
+    width: 790px;
+    height: 130px;
+    background-color: rosybrown; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+#sns ul li{  
+    background-color: cadetblue; 
+    width: 390px;
+    height: 130px;
+    border: 2px solid #fff;
+    box-sizing: border-box; 
+}
+#notice{
+    width: 350px;
+    height: 250px;
+    background-color: oldlace;
+    display: flex;
+    flex-direction: column;
+}
+
+#notice > header{
+    width: 100%;
+    height: 30px;
+    background-color: darksalmon;
+    display: flex;
+    align-items: center;
+}
+
+#notice > section{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#notice > section li{
+    margin-bottom: 5px;
+}

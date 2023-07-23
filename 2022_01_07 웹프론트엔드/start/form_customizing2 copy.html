@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            background-color: #f1f1f1;
+            color:#555;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title{
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+        .container{
+            margin-top: 35px;
+        }
+        .check input{
+            margin-left: 20px;
+            margin-top: 40px;
+            vertical-align: middle;
+        }
+        .check input#check1{
+            margin-top: 0;
+        }
+        .check_box1{
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 0; */
+            background-color: pink;
+        }
+        .check_box1.checked{
+            /* background-position: -36px 0; */
+            background-color: lightblue;
+        }
+        .check_box2{
+            display: inline-block;
+            margin-top: 40px;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat -80px 0; */
+            background-color: pink;
+        }
+        .check_box2.checked{
+            /* background-position: -107px 0; */
+            background-color: lightblue;
+        }
+        .check_box3{
+            display: inline-block;
+            margin-top: 40px;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 -30px; */
+            background-color: pink;
+        }
+        .check_box3.checked{
+            /* background-position: -36px -30px; */
+            background-color: lightblue;
+        }
+        .check_box4{
+            display: inline-block;
+            margin-top: 40px;
+            width: 56px;
+            height: 33px;
+            vertical-align: middle;
+            /* background: url(images/spr_form.png) no-repeat 0 -66px; */
+            background-color: pink;
+        }
+        .check_box4.checked{
+            /* background-position: -72px -66px; */
+            background-color: lightblue;
+        }
+        .select{
+            margin-top: 40px;
+        }
+        .select dl{
+            display: inline-block;
+            position: relative;
+            line-height: 27px;
+            vertical-align: middle;
+        }
+        .select dl dt a{
+            display: block;
+            position: relative;
+            padding-left: 10px;
+            width: 180px;
+            height: 27px;
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 0.75em;
+            color: #666;
+            border: 1px solid #dedede;
+        }
+        .select dl dt a span{
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+            width: 10px;
+            height: 6px;
+            /* background: url(images/spr_btns.png) no-repeat -127px -73px; */
+        }
+        .select dl dt a.active span{
+            background-position: -127px -93px;
+        }
+        .select dl dd{
+            /* display: none; */
+            position: absolute;
+            left: 0;
+            top: 28px;
+            z-index: 10;
+            margin: 0;
+            padding: 0;
+            width: 190px;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #dedede;
+        }
+        .select dl dd li{
+            border-top: 1px solid #eaefe3;
+        }
+        .select dl dd li:first-child{
+            border-top: none;
+        }
+        .select dl dd li a{
+            display: block;
+            position: relative;
+            padding-left: 31px;
+            line-height: 32px;
+            text-decoration: none;
+            font-size: 0.75em;
+            background-color: #fff;
+            color: #888;
+            transition: background-color 0.3s;
+        }
+        .select dl dd li a.active{
+            background-color: #f1f1f1;
+        }
+        .select dl dd li a::after{
+            content:"";
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            width: 21px;
+            height: 21px;
+            /* background: url(images/spr_btns.png) no-repeat 0 0; */
+        }
+        .select dl dd li .kr::after{
+            background-position: -392px -326px;
+        }
+        .select dl dd li .eng::after{
+            background-position: -392px -360px;
+        }
+        
+        .select dl dd li .cn::after,
+        .select dl dd ul li .glo::after{
+            background-position: -392px -395px;
+        }
+        .select select{
+            margin-left: 20px;
+            vertical-align: middle; 
+        } 
+    </style>
+    <script>
+        window.addEventListener('load', function(){
+            var container = document.getElementsByClassName('container')[0];
+
+            for(var i = 0; i < container.children.length; i++){
+                var formArea = container.children[i];   // container클래스 자식이 form태그 하나밖에 없긴한데 class로 선언하면 그냥 무조건 list형식으로 값을 받아와서 그런건가?   
+            }
+
+            for(i = 0; i < formArea.children.length; i++){      // form 태그의 자식은 5개
+                    /* input */
+                var checkBox = formArea.children[i].children[0];    // 얘는 그 자식인 a태그네
+                
+                checkBox.addEventListener('click', function(e){
+                    e.preventDefault();
+
+                    if(e.target.classList.contains("checked") == false){    // 해당 클릭한 a태그에 .checked 가 없으면
+                        console.log(e.target.classList);
+                        e.target.classList.add("checked");
+                        console.log(e.target.classList);
+                        e.target.nextElementSibling.setAttribute("checked", "true"); 
+                    }else{
+                        e.target.classList.remove("checked");
+                        e.target.nextElementSibling.removeAttribute("checked");
+                    } 
+                }); 
+            }
+
+            var selectArea = document.getElementsByClassName("select")[0];
+
+            console.log("select class : " + selectArea);
+            console.log(selectArea);
+            console.log(selectArea.children.length);    // 2 나오네
+
+            for(var i = 0; i < selectArea.children.length; i++){
+
+                // 이거 밑에 for문처럼 반복문 돌려야하는데 2개 밖에 없고, 코드 길어지니 얘는 그냥 직접지정함 원래는 밑에처럼 해야함
+                var selectDl = selectArea.children[0];  // <dl>
+                var select = selectArea.children[1];    // <select>
+
+                for(var j = 0; j < selectDl.children.length; j++){
+                    if(selectDl.children[j].tagName == "DT"){
+                        var selectDt = selectDl.children[j];
+                    }else if(selectDl.children[j].tagName == "DD"){
+                        var selectDd = selectDl.children[j];
+                        var selectUl = selectDd.children[0];
+                        var selectLi = selectUl.children;   // 얘는 3개를 다 담아놓으려고 그러나
+                    }
+                }
+            }
+
+            var selectH = 100;
+            selectDd.style.display = "none";
+
+            selectDt.addEventListener('click', function(e){
+                e.preventDefault();
+                var link = e.currentTarget.children[0];     // 하위의 a 태그인듯?
+                // 클릭받은애는 selectDt인데 이벤트 줄애는 그 아래의 a태그이므로 위와 같이 씀
+
+                if(link.classList.contains("active") == false){
+                    link.classList.add('active');
+                    // selectDd.style.display = "block";
+                    slideDownFunction(selectDd, selectH);
+                }else{
+                    link.classList.remove('active');
+                    // selectDd.style.display = "none";
+                    slideUpFunction(selectDd, selectH);
+                }
+            });
+
+            function slideDownFunction(element, h){ // h = selectH = 100 위에 선언함
+                if(element.style == "" || element.style.display == 'block') return;
+
+                var current = 0;
+
+                element.style.display = "block";
+                element.style.height = current + "px";  // 초기값 0이고, 100까지 4씩 증가 
+
+                var timer = setInterval(function(){
+                    if(current < h){
+                        current += 4;
+                    }else{
+                        current = h;
+                        setInterval(timer);
+                    }
+
+                    element.style.height = current + "px";
+                }, 10);
+
+            };
+            function slideUpFunction(element, h){   // 이때면 아마도 h = 100px
+                if(element.style.display == 'none') return;
+
+                var current = h;
+                var timer = setInterval(function(){
+                    if(current > 0){
+                        current -= 4;
+                    }else{
+                        current = 0;
+                        element.style.display = "none";
+                        clearInterval(timer);
+                    }
+                    element.style.height = current + "px";
+                }, 10);
+            };
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="">
+            <div class="check">
+                <a href="" class="check_box1" title="check box1"></a>
+                <input type="checkbox" class="check1">
+            </div>
+            <div class="check">
+                <a href="" class="check_box2" title="check box2"></a>
+                <input type="checkbox" class="check2">
+            </div>
+            <div class="check">
+                <a href="" class="check_box3" title="check box3"></a>
+                <input type="radio" class="check3">
+            </div>
+            <div class="check">
+                <a href="" class="check_box4" title="check box4"></a>
+                <input type="radio" class="check4">
+            </div>
+            <div class="select">
+                <dl>
+                    <dt><a href="">GLOBAL SITE <span></span></a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="/global/en/index" class="eng">Global / English</a></li>
+                            <li><a href="/global/cn/index" class="glo">Global / 중국어</a></li>
+                            <li><a href="http://www.naturerepublic.cn/index" class="cn">중국어 / 간체</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <select name="" id="">
+                    <option value="">GLOBAL SITE</option>
+                    <option value="">Global / English</option>
+                    <option value="">Global / 중국어</option>
+                    <option value="">China / 중국어(간체)</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -7,10 +7,21 @@
     <title>내장함수_window 객체</title>
 </head>
 <body>
+    <!-- 
+        [window 객체]
+
+        현재 웹브라우저의 창이나 탭을 표현하기 위한 객체들이며, 
+        웹 브라우저는 window객체를 이용하여 브라우저 창을 표현하거나 다룰 수 있습니다.
+
+        
+
+     -->
    <script>
        'use strict';
     for(let win in window){
         console.log(`${win}: ${window}`);//객체확인
+        console.log(`${win}: ${window[win]}`);//객체확인
+        console.log('--------------------');
     }     
    
    </script>

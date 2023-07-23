@@ -8,26 +8,47 @@
 </head>
 <body>
    <script>
+    /*
+        [String 객체]
+        String 객체는 문자열을 손쉽게 만들고 다룰 수 있도록 합니다
+
+        const str = 'javascript';
+        const str = new String('javascript');
+
+        length : 문자열의 길이를 저장
+
+        indexOf()   : 매개변수로 전달된 문자열이 처음 등장하는 위치를 리턴
+        charAt()    : 매개변수로 전달된 인덱스에 위치한 문자를 리턴
+        includes()  : 매개변수로 전달된 문자열이 포함되어 있는지 여부를 리턴
+        substring() : 매개변수로 전달된 시작 인덱스부터 종료 인덱스 바로 앞까지 문자열을 추출하여 리턴
+        substr()    : 매개변수로 전달된 시작 인덱스부터 매개변수로 전달된 개수만큼 문자열을 추출하여 리턴
+        split()     : 매개변수로 전달된 구분자를 기준으로 문자열을 나눈 후 하나의 배열에 저장
+        replace()   : 원본 문자열을 배개변수로 전달된 문자열로 치환
+        trim()      : 문자열의 앞뒤 공백을 제거
+        toUpperCase()   : 문자열의 영문자 중 소문자를 모두 대문자로 변환
+        toLowerCase()   : 문자열의 영문자 중 대문자를 모두 소문자로 변환
+    */
        'use strict';
-       const str1 = "안녕하세요. JavaScript";
-       console.log(str1.length);//글자의 갯수
+       const str1 = "안녕하세요. JavaScript";  
+       console.log("str1의 글자 수 : " + str1.length);    //글자의 갯수. 띄어쓰기도 글자수로 포함시키는 듯하다
      
-       console.log(str1.indexOf('J')); //7
-       console.log(str1.indexOf('Java')); //7
-       console.log(str1.indexOf('java')); //-1  대소문자를 구별 -> 찾지 못했을 경우 -1을 리턴
-       console.log(str1.indexOf('a')); //8 앞에서 탐색
-       console.log(str1.lastIndexOf('a')); //10 뒤에서 탐색
+       console.log("처음 등장하는 위치(인덱스) : " + str1.indexOf('J'));      //7
+       console.log("처음 등장하는 위치(인덱스) : " + str1.indexOf('Java'));   //7
+       console.log("처음 등장하는 위치(인덱스) : " + str1.indexOf('java'));   //-1  대소문자를 구별 -> 찾지 못했을 경우 -1을 리턴
+       console.log("처음 등장하는 위치(인덱스) : " + str1.indexOf('a'));      //8 앞에서 탐색
+       console.log("뒤에서부터 처음 등장하는 위치(인덱스) : " + str1.lastIndexOf('a'));  //10 뒤에서 탐색
 
-       console.log(str1.charAt(7)); //J 전달된 매개변수값 7에 있는 문자를 출력
+       console.log("7번째에 있는 문자 : " + str1.charAt(7));         //J. 전달된 매개변수값 7에 있는 문자를 출력
 
-       console.log(str1.includes('Java'));//객체에 이글자가 포함이 되었는지 여부 확인 지금 true.
-       console.log(str1.includes('java'));//flase  대소문자 구분을 함
+       console.log(str1.includes('Java'));  //객체에 이 글자가 포함이 되었는지 여부 확인 지금 true.
+       console.log(str1.includes('java'));  //false  대소문자 구분을 함
 
-       console.log(str1.substring(7));// JavaScript 매개변수가 1개일 경우 해당 인덱스부터 끝까지 문자열을 추출
-       console.log(str1.substring(7,11));// 7번위치부터 11번위치까지 글자 추출(범위)
+       console.log("str1.substring(7) : " + str1.substring(7));      // JavaScript. 매개변수가 1개일 경우 해당 인덱스부터 끝까지 문자열을 추출. 7~
+       console.log("str1.substring(7,11) : " + str1.substring(7,11));   // 7번위치부터 11번위치까지 글자 추출(범위). 7이상 11미만
 
-       console.log(str1.substr(7,4));//7번째 글자의 위치에서 4개의 글자만 추출(숫자)
+       console.log(str1.substr(7,4));       // 7번째 글자의 위치에서 4개의 글자만 추출(숫자)
 
+       /* split */
        const str2 = "드라이브,영화감상,게임,쇼핑,잠자기,여행";
        const hobby = str2.split(",");  // 배열
         /*
@@ -39,11 +60,11 @@
             hobby[5] = "여행";
         */
        for(let h of hobby){
-           console.log(h);
+           console.log(`취미 : ${h}`);
        }
 
        hobby.forEach(function(val, idx, arr){
-            console.log(`값:${val}, 인덱스:${idx}, 배열:${arr}`);
+            console.log(`값:${val},     인덱스:${idx},      배열:${arr}`);
         });
 
 
@@ -54,7 +75,7 @@
 
         const str3 = '          JavaScript          ';
         console.log(`|${str3}|`);
-        console.log(`|${str3.trim()}|`);
+        console.log(`|${str3.trim()}|`);    // 문자열의 앞뒤 공백을 제거
 
         console.log(str3.toLowerCase());  // 소문자
         console.log(str3.toUpperCase());  // 대문자

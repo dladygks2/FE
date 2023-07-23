@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            reset.css
+            -> body 부분에 기본으로 적용하는 스타일시트를 저장
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #444;
+            height: 4000px;
+        }
+
+        img{
+            border: 0;
+        }
+        ul, ol, li{
+            list-style: none;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            text-decoration: underline;
+        }
+        a:visited{
+            color: blueviolet;
+        }
+
+
+
+        /*
+        layout.css
+        */
+        div{
+            width: 150px;
+            height: 150px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .box00{
+            background-color: black;
+
+        }
+
+        .box01{
+            position: absolute; /*상단에서 500px 떨어지고, 왼쪽에서 500px 떨어짐*/
+            top: 500px;
+            left: 500px;
+            background-color: brown;
+            margin-right: 100px;
+        }
+        .box02{
+            position: relative; /* 자신을 기준으로 위로 500px 왼쪽으로 1000px*/
+            /* relative는 position: absolute; 가 아닌 요소를 인식하고 거리를 잰다.*/
+            top: 100px;
+            left: 1100px;
+            background-color: burlywood;
+            z-index: 2;
+            margin-right: 200px;
+        }
+        .box03{
+            /* float: left; 기존의 float를 무시하고 새로 float를 시작하는 거 */
+            position: fixed;
+            top: 300px;
+            right: 10px;
+            width: 80px;
+            height: 200px;
+            border-radius: 10px;
+            /* clear: both; 는 한 줄을 가득채운 것을 의미 */
+            background-color: cadetblue;
+        }
+        .box04{
+            /* float: left; 기존의 float를 무시하고 새로 float를 시작하는 거 */
+            /* clear: both; 는 한 줄을 가득채운 것을 의미 */
+            background-color: pink;
+            position: absolute;
+            top: 350px;
+            left: 1100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box00">box00</div>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+</body>
+</html>

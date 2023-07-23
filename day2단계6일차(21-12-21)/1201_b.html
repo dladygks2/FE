@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        img{border:0}
+        ul, li{list-style: none;}
+        a{text-decoration: none;}
+
+        /* 전체영역 - 얘는 실제로 사용자들이 보이는 부분을 의미하는 듯 */
+        #slider{
+            margin: 0 auto;
+            position: relative; /* 이 녀석을 기준으로 하겠다 */
+            width: 600px;
+            height: 350px;
+            border: 3px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 이미지 박스 */
+        #viewer{
+            height: 350px;
+            position: relative; /* 이 녀석을 기준으로 하겠다 */
+            /* opacity: 0.3; */
+        }
+        /* 이미지 좌표 */
+        #viewer > img{
+            position: absolute;
+            top: 0px;
+        }
+        #viewer > img:nth-child(1){
+            left: 0px;
+        }
+        #viewer > img:nth-child(2){
+            left: 600px;
+        }
+        #viewer > img:nth-child(3){
+            left: 1200px;
+        }
+        #viewer > img:nth-child(4){
+            left: 1800px;
+        }
+        /* 버튼 */
+        .btns{
+            position: absolute;
+            right: 20px;
+            top: 320px;
+        }
+        .btns li{
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-left: 6px;
+            /* margin-right: 6px; */
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 16px;
+        }
+        .btns li a{
+            display: block;
+            color:#fff;
+            background-color: #000;
+        }
+
+        .btns li.on a{
+            color: #000;
+            background-color: #fff;
+        }
+        #btn_g{
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 600px;
+        }
+        button{
+            border: none;
+            background-color: #000;
+            color: #fff;
+            padding: 5px 12px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="/day2단계6일차(21-12-21)/일반적인 슬라이딩 갤러리/js/jquery-1.7.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var current = 0;    // 현재 보이는 이미지 인덱스 값
+            var $current = $("#btn" + current).find("a");   // #btn0 > a
+            
+            $current.addClass("act");
+
+            $(".btns > li").click(function(e){
+                e.preventDefault();
+
+                var n = $(this).index();    // 지금 li가 4개가 있고, 클릭한 li의 인덱스를 담겠다
+
+                $(".btns > li").removeClass("on");
+                $(this).addClass("on"); // 숫자 버튼의 색깔을 바꿔주는 역할
+
+                slide_ani(n);   // 해당 인덱스에 따라서 이미지를 넘겨주는 함수를 불러옴
+            });
+
+            // next
+            $("#next").click(function(e){
+                e.preventDefault();
+                if(current < 3){
+                    current++;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slide_ani(current);
+                }else{
+                    current = 0;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slide_ani(current);
+                }
+            });
+
+            // prev
+            $("#prev").click(function(e){
+                e.preventDefault();
+                if(current > 0){
+                    current--;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+
+                    slide_ani(current);
+                }else{
+                    current = 3;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    
+                    slide_ani(current);
+                }
+            });
+
+            // viewer 이미지 그룹의 애니메이션
+            function slide_ani(n){  // n에는 index값이 들어간다
+                var pos = (-600) * n + "px";
+                current = n;
+                $("#viewer").animate({left:pos},500);
+            }
+        });
+    </script>
+</head>
+<body>
+     <div id="slider">
+        <div id="viewer">
+            <img src="../day2단계6일차(21-12-21)/일반적인 슬라이딩 갤러리/images/slide1.jpg" alt="">
+            <img src="../day2단계6일차(21-12-21)/일반적인 슬라이딩 갤러리/images/slide2.jpg" alt="">
+            <img src="../day2단계6일차(21-12-21)/일반적인 슬라이딩 갤러리/images/slide3.jpg" alt="">
+            <img src="../day2단계6일차(21-12-21)/일반적인 슬라이딩 갤러리/images/slide4.jpg" alt="">
+        </div>
+        <ul class="btns">
+            <li class="on"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+     </div>
+     <div id="btn_g">
+        <button id="prev">previous</button>
+        <button id="next">next</button>
+     </div>
+</body>
+</html>

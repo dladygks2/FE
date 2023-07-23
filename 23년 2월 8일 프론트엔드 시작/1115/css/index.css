@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+#wrap{
+    width: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 680px;
+    background: url(../images/mainslide01.jpg) no-repeat 50% -200px;
+    background-size: 100%;
+}
+
+#header{
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#header_in{ 
+    margin: 0 auto;
+    width: 1300px;
+    height: 140px;
+    background-color: aquamarine;
+}
+
+.logo{
+    float: left;
+    margin: 50px 0 0;
+}
+
+.r_box{
+    float: right; 
+    background-color: beige;
+}
+
+.info_mn{
+    float: right;
+    margin: 0 20px 0 20px; 
+    height: 50px;
+    background-color: blueviolet;
+}
+
+.info_mn li{
+    float: left;
+}
+
+.main_nav{
+    float: left;   
+    background-color: aquamarine;
+    width: 100%;
+    height: 90px;
+}
+.main_nav ul li{
+    float: left;
+}

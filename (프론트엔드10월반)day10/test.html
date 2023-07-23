@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #all{
+            margin: 0 auto;
+            width: 1220px;
+            height: 150px;
+        }
+        #all >div{
+            float: left;
+            margin-right: 10px;
+            width: 400px;
+            height: 150px;
+            background-color: aquamarine;
+        }
+        #all > div:last-child{
+            margin-right: 0;
+        }
+
+        #main01{
+            width: 100%;
+            height: 39vw;  /* 
+                                px은 화면크기에 따라서 변화가 없으니 %로 해야하는데 
+                                세로는 %가 잘 안먹힌다. 그래서 vw 를 사용한다
+                                v : viewport
+                                (vw랑 vh가 있다 w : width, h : height)
+                                현재 가로너비 : 1920px -> 그러면 현재 1vw = 19.2px 이겠네
+                                현재 세로높이 : 750px
+
+                                750 / (1920/100) = 39.2vw
+                                그래서 39vw를 넣어준다
+
+                            */
+            /* 배경이미지는 가로세로값이 무조건 들어가야한다*/
+            background: url(images/img_top2.jpg) no-repeat 50% 0;
+            background-size: 100%;
+            border-bottom: 3px solid red;
+        }
+
+        #main02{
+            width: 100%;
+            height: auto;   /* auto는 자신의 값을 자식요소에 맞추겠다는 의미*/
+            border-bottom: 3px solid blue;
+        }
+        #main02 img{
+            width: 100%;    /* 이미지는 가로값만 잡아주면 세로값은 비율 맞춰서 잡아줌 */
+        }
+
+        @media screen and (max-width:1210px){
+            /* 원래 크기를 기준으로 %로 선언해주는듯*/
+            #all{
+                margin: 0 auto;
+                width: 100%;    /*기존값 : 1220px, '%'는 자신의 크기를 부모의 크기 기준으로 나눈것*/
+                height: 150px;
+            }
+            #all >div{
+                float: left;
+                margin-right: 0.8%; /* (10px / 1210px) * 100 = 0.8% */
+                width: 32.7%;   /* 400px을 1210px으로 나누고 100 곱함 */ /* 400 * 1220 * 0.01 ==  */
+                height: 150px; /* (자신의 값 / 부모의 값) * 100 = 일반적인 % 계산법 */
+                background-color: aquamarine;
+            }
+            #all > div:last-child{
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width:1000px){
+            /* 원래 크기를 기준으로 %로 선언해주는듯*/
+            body{
+                background-color: pink;
+            }
+            #all{
+                margin: 0 auto;
+                width: 100%;    /*기존값 : 1220px, '%'는 자신의 크기를 부모의 크기 기준으로 나눈것*/
+                height: 150px;
+            }
+            #all >div{
+                float: left;
+                margin-right: 0.8%; /* (10px / 1210px) * 100 = 0.8% */
+                width: 32.7%;   /* 400px을 1210px으로 나누고 100 곱함 */ /* 400 * 1220 * 0.01 ==  */
+                height: 150px; /* (자신의 값 / 부모의 값) * 100 = 일반적인 % 계산법 */
+                background-color: aquamarine;
+            }
+            #all > div:last-child{
+                margin-right: 0;
+            }
+        }
+        @media screen and (max-width:800px){
+            /* 원래 크기를 기준으로 %로 선언해주는듯*/
+            body{
+                background-color: yellowgreen;
+            }
+            #all{
+                margin: 0 auto;
+                width: 100%;    /*기존값 : 1220px, '%'는 자신의 크기를 부모의 크기 기준으로 나눈것*/
+                height: 150px;
+            }
+            #all >div{
+                float: left;
+                margin-right: 0.8%; /* (10px / 1210px) * 100 = 0.8% */
+                width: 49.05%;   /* 400px을 1210px으로 나누고 100 곱함 */ /* 400 * 1220 * 0.01 ==  */
+                /* 
+                    너비 800px 이 부분에서는 div가 하나 없어지기 때문에 너비를 반반 가져간다
+                    32.7/2 = 16.35 씩 더하면
+                    49.05% 인듯
+                */
+                height: 150px; /* (자신의 값 / 부모의 값) * 100 = 일반적인 % 계산법 */
+                background-color: aquamarine;
+            }
+            #all > div:last-child{
+                margin-right: 0;
+            }
+
+            #all > div:nth-child(2){
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:480px){
+            /* 원래 크기를 기준으로 %로 선언해주는듯*/
+            body{
+                background-color: darkgoldenrod;
+            }
+            #all{
+                margin: 0 auto;
+                width: 100%;    /*기존값 : 1220px, '%'는 자신의 크기를 부모의 크기 기준으로 나눈것*/
+                height: 150px;
+            }
+            #all >div{
+                float: none;
+                margin-right: 0%; /* (10px / 1210px) * 100 = 0.8% */
+                margin-left: 5%;
+                margin-bottom: 10px;
+                width: 90%;   /* 400px을 1210px으로 나누고 100 곱함 */ /* 400 * 1220 * 0.01 ==  */
+
+                /* 
+                    너비 800px 이 부분에서는 div가 하나 없어지기 때문에 너비를 반반 가져간다
+                    32.7/2 = 16.35 씩 더하면
+                    49.05% 인듯
+                */
+                height: 150px; /* (자신의 값 / 부모의 값) * 100 = 일반적인 % 계산법 */
+                background-color: aquamarine;
+            }
+            #all > div:last-child{
+                margin-right: 0;
+            }
+
+            #all > div:nth-child(2){
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main01"></div>
+    <div id="main02"><img src="images/img_top2.jpg" alt=""></div>
+    <div id="all">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

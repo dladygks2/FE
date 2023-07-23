@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <!-- 
+        for 문
+        for(초기값; 조건식 ; 증감식){
+            조건식의 결과가 참인 동안 반복할 실행문;
+            ...
+        }
+
+        명시적 타입 변환
+        자바스크립트는 자동으로 타입 변환을 사용하지만 
+        종종 명시적으로 타입을 변환할 필요가 있습니다
+        이 때 사용하는 함수는 다음과 같습니다
+
+        Number() : 문자를 숫자로 변환
+        Number("10" + "5") (X)
+        String() : 숫자나 불린 등을 문자형으로 변환
+        Boolean() : 문자나 숫자 등을 불린형으로 변환
+        Object() : 모든 자료형을 객체형으로 변환
+        parseInt() : 문자형을 int형으로 변환
+        parseFloat() : 문자형을 float형으로 변환
+     -->
+     <script>
+        'use strict';
+        const dan = Number(prompt('원하는 단을 입력하세요')); 
+        document.write(`<p>${dan} 단</p>`);
+
+        for(let i = 1; i <=9; i++){ 
+            document.write(`${dan} * ${i} = ${dan * i}<br>`);
+        }
+        
+     </script>
+</body>
+</html>
